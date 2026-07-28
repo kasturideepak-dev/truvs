@@ -221,7 +221,8 @@
         }
 
         /* 2b) Click outside the drawer panel while open → close
-           (covers sticky-header cases where backdrop hit-target fails) */
+           (covers sticky-header cases where backdrop hit-target fails).
+           Do NOT preventDefault on real links — that blocked case-study navigation. */
         var openPanel = document.querySelector('.brxe-offcanvas.brx-open');
         if (openPanel) {
           var inner = openPanel.querySelector('.brx-offcanvas-inner');
@@ -229,14 +230,22 @@
           var onBackdrop =
             e.target.classList && e.target.classList.contains('brx-offcanvas-backdrop');
           var onToggle = e.target.closest && e.target.closest('button.brxe-toggle');
-          if (!inDrawer && !onToggle) {
+          var realLink = e.target.closest && e.target.closest('a[href]');
+          var href = realLink ? (realLink.getAttribute('href') || '') : '';
+          var isRealNav = href && href !== '#' && href.indexOf('javascript:') !== 0;
+
+          if (onBackdrop) {
             e.preventDefault();
             closeNav(openPanel);
             return;
           }
-          if (onBackdrop) {
-            e.preventDefault();
+          if (!inDrawer && !onToggle) {
             closeNav(openPanel);
+            if (isRealNav) {
+              /* allow the browser (or later handlers) to follow the link */
+              return;
+            }
+            e.preventDefault();
             return;
           }
         }
