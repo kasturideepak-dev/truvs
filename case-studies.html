@@ -1,0 +1,1014 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Case Studies | TruVs</title>
+  <meta name="description" content="TruVs Case Study Compendium — quantified outcomes across BVT, process modernization, supply chain, Lean Six Sigma, AI, and program management." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /><link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&display=swap" rel="stylesheet" /><style>
+    :root {
+      --primary: #65c324;
+      --primary-dark: #4fa018;
+      --primary-soft: rgba(101, 195, 36, 0.12);
+      --primary-glow: rgba(101, 195, 36, 0.35);
+      --secondary: #02369b;
+      --secondary-mid: #0a4bb8;
+      --dark: #010a35;
+      --cream: #f4f3ef;
+      --light: #f0f2f7;
+      --text: #1a1f2e;
+      --muted: #5c6578;
+      --white: #ffffff;
+      --line: rgba(1, 10, 53, 0.1);
+      --font-heading: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+      --font-body: "Poppins", system-ui, -apple-system, sans-serif;
+      --ease: cubic-bezier(0.4, 0, 0.2, 1);
+      --max: 1200px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-body);
+      font-size: 17px;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.65;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    button { font-family: inherit; cursor: pointer; border: none; background: none; }
+
+    :focus-visible {
+      outline: 3px solid var(--primary);
+      outline-offset: 3px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+
+    /* ═══ RESULTS SECTION (reference design) ═══ */
+    .results {
+      position: relative;
+      background: linear-gradient(180deg, #021a5c 0%, var(--dark) 45%, #01061f 100%);
+      overflow: hidden;
+      padding: 80px 0 90px;
+    }
+
+    .results::before {
+      content: "";
+      position: absolute;
+      width: 520px;
+      height: 520px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(2, 54, 155, 0.55), transparent 68%);
+      top: -160px;
+      left: 50%;
+      transform: translateX(-50%);
+      filter: blur(20px);
+      pointer-events: none;
+    }
+
+    .results::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(101, 195, 36, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(101, 195, 36, 0.04) 1px, transparent 1px);
+      background-size: 48px 48px;
+      mask-image: radial-gradient(ellipse 60% 50% at 50% 20%, black 10%, transparent 70%);
+      -webkit-mask-image: radial-gradient(ellipse 60% 50% at 50% 20%, black 10%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .results__head {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto 48px;
+    }
+
+    .results__eyebrow {
+      display: inline-block;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #c8f08f;
+      margin-bottom: 16px;
+    }
+
+    .results__head h1 {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 48px;
+      line-height: 1.15;
+      letter-spacing: 1px;
+      color: var(--white);
+      margin-bottom: 14px;
+    }
+
+    .results__head h1 em {
+      font-style: italic;
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    .results__head p {
+      font-size: 18px;
+      line-height: 1.65;
+      color: rgba(255, 255, 255, 0.82);
+    }
+
+    /* Filter on dark */
+    .filter-row {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 40px;
+    }
+
+    .filter-btn {
+      display: inline-flex;
+      align-items: center;
+      padding: 9px 16px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 600;
+      line-height: 1.3;
+      color: rgba(255, 255, 255, 0.8);
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      transition: background 0.25s var(--ease), color 0.25s var(--ease), border-color 0.25s var(--ease);
+    }
+    .filter-btn:hover {
+      background: rgba(255, 255, 255, 0.14);
+      color: var(--white);
+    }
+    .filter-btn.is-active {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: var(--dark);
+    }
+
+    .filter-count {
+      width: 100%;
+      text-align: center;
+      margin-top: 4px;
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.55);
+    }
+
+    /* ═══ RESULT CARDS (client-liked design) ═══ */
+    .results-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .result-card {
+      display: flex;
+      flex-direction: column;
+      background: var(--white);
+      border-radius: 24px;
+      overflow: hidden;
+      min-height: 100%;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.22);
+      transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
+      color: inherit;
+    }
+    .result-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 28px 60px rgba(0, 0, 0, 0.28);
+    }
+    .result-card.is-hidden { display: none; }
+
+    .result-card__header {
+      background: linear-gradient(160deg, #1a56d6 0%, var(--secondary) 55%, #012a78 100%);
+      padding: 36px 24px 32px;
+      text-align: center;
+      color: var(--white);
+    }
+
+    .result-card__metric {
+      display: block;
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 52px;
+      line-height: 1.05;
+      letter-spacing: 0.5px;
+      margin-bottom: 10px;
+    }
+
+    .result-card__metric-label {
+      display: block;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.85);
+      line-height: 1.35;
+    }
+
+    .result-card__body {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      padding: 24px 24px 22px;
+      background: var(--white);
+    }
+
+    .result-card__pill {
+      display: inline-flex;
+      align-self: flex-start;
+      padding: 6px 14px;
+      border-radius: 999px;
+      background: var(--light);
+      color: var(--secondary);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      line-height: 1.3;
+      margin-bottom: 14px;
+    }
+
+    .result-card__title {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 1.35;
+      letter-spacing: 0.3px;
+      color: var(--dark);
+      margin: 0 0 10px;
+      text-wrap: balance;
+      min-height: 72px;
+    }
+
+    .result-card__text {
+      font-size: 14px;
+      line-height: 1.6;
+      color: var(--muted);
+      margin: 0 0 18px;
+      flex: 1;
+    }
+
+    .result-card__compare {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      background: var(--light);
+      border-radius: 14px;
+      padding: 14px 12px;
+      margin-bottom: 18px;
+    }
+
+    .compare-col {
+      text-align: center;
+      padding: 4px 6px;
+    }
+
+    .compare-label {
+      display: block;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+
+    .compare-value {
+      display: block;
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 1.35;
+      color: var(--dark);
+    }
+
+    .compare-value--after {
+      color: var(--primary-dark);
+    }
+
+    .result-card__cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--secondary);
+      transition: gap 0.25s var(--ease), color 0.25s var(--ease);
+    }
+    .result-card:hover .result-card__cta {
+      color: var(--primary-dark);
+      gap: 10px;
+    }
+
+    .empty-state {
+      display: none;
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 48px 20px;
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 16px;
+    }
+    .empty-state.is-visible { display: block; }
+
+    /* ═══ STATS STRIP ═══ */
+    .proof {
+      background: var(--cream);
+      padding: 48px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .proof-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .proof-item {
+      text-align: center;
+      padding: 20px 12px;
+      background: var(--white);
+      border-radius: 16px;
+      border: 1px solid var(--line);
+    }
+
+    .proof-item__value {
+      display: block;
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 28px;
+      color: var(--secondary);
+      letter-spacing: 0.5px;
+      margin-bottom: 6px;
+    }
+
+    .proof-item__label {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.4;
+    }
+
+    /* ═══ CTA ═══ */
+    .cta {
+      background: var(--cream);
+      padding: 64px 0 72px;
+      text-align: center;
+    }
+
+    .cta h2 {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 32px;
+      letter-spacing: 1px;
+      color: var(--dark);
+      margin-bottom: 12px;
+    }
+
+    .cta p {
+      color: var(--muted);
+      font-size: 17px;
+      margin-bottom: 28px;
+      max-width: 520px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 14px 28px;
+      border-radius: 999px;
+      font-size: 16px;
+      font-weight: 600;
+      background: var(--primary);
+      color: var(--dark);
+      transition: transform 0.25s var(--ease), box-shadow 0.25s var(--ease);
+    }
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 28px var(--primary-glow);
+    }
+
+    .footer-note {
+      text-align: center;
+      padding: 0 40px 36px;
+      font-size: 13px;
+      color: var(--muted);
+      background: var(--cream);
+    }
+    .footer-note a { color: var(--secondary); font-weight: 600; }
+
+    @media (max-width: 1024px) {
+      .results-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .result-card__title { min-height: 0; }
+      .results__head h1 { font-size: 40px; }
+      .proof-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+
+    @media (max-width: 700px) {
+      .container { padding: 0 20px; }
+      .results { padding: 56px 0 64px; }
+      .results__head h1 { font-size: 32px; }
+      .results-grid { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto; }
+      .result-card__metric { font-size: 44px; }
+      .proof-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+      .proof-item__value { font-size: 22px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .result-card:hover, .btn:hover { transform: none; }
+    }
+  </style>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /><link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" /><link rel="stylesheet" href="assets/remote/wp-content/plugins/nextbricks/elements/css/next_arrow_button_v4.css" /><link rel="stylesheet" href="shared/site-chrome.css?v=27" /></head>
+<body class="has-truvs-chrome">
+<header id="brx-header"><section id="brxe-41e559" class="brxe-section "><div id="brxe-ea23e4" class="brxe-container "><div id="brxe-21c48c" class="brxe-block "><a id="brxe-5f4c7a" class="brxe-image tag" href="home.html"><img width="120" height="120" src="assets/remote/wp-content/uploads/2026/03/logo-white.png" class="css-filter size-full truvs-header-logo" alt="TruVs" decoding="async" style="width:78px;height:auto;display:block;opacity:1"></a></div><div id="brxe-c64274" class="brxe-block "><div id="brxe-a30461" class="brxe-block "><button id="brxe-bjpbpt" data-script-id="bjpbpt" class="brxe-toggle" aria-label="Open" aria-expanded="false"><span class="brxa-wrap"><span class="brxa-inner"></span></span></button><div id="brxe-bnohwn" data-script-id="bnohwn" class="brxe-offcanvas " aria-label="Offcanvas" data-direction="right"><div id="brxe-tnmhuq" class="brxe-block brx-offcanvas-inner "><button id="brxe-ltymgi" data-script-id="ltymgi" class="brxe-toggle" aria-label="Close" aria-expanded="false"><span class="truvs-close-x" aria-hidden="true"></span></button><div id="brxe-80ecc2" data-script-id="80ecc2" class="brxe-nav-menu"><nav class="bricks-nav-menu-wrapper mobile_landscape"><ul id="menu-main-menu" class="bricks-nav-menu"><li id="menu-item-2382" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home  page_item page-item-1371  menu-item-2382 bricks-menu-item" data-static="true" data-toggle="hover"><a href="home.html">Home</a></li>
+<li id="menu-item-474" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-474 bricks-menu-item" data-static="true" data-toggle="hover"><div class="brx-submenu-toggle icon-right"><a href="core-offerings.html" data-brx-anchor="true">Offerings</a><button aria-expanded="false" aria-label="Offerings Sub menu"><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12" fill="none" class="menu-item-icon"><path d="M1.50002 4L6.00002 8L10.5 4" stroke-width="1.5" stroke="currentcolor"></path></svg></button></div>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page bricks-menu-item" data-static="true" data-toggle="hover"><a href="bms.html">Business Process Modernization</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page bricks-menu-item" data-static="true" data-toggle="hover"><a href="core-offerings.html">Core Offerings Overview</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom bricks-menu-item" data-static="true" data-toggle="hover"><a href="core-offerings.html#offerings">Application Modernization</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom bricks-menu-item" data-static="true" data-toggle="hover"><a href="core-offerings.html#offerings">Data Modernization</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom bricks-menu-item" data-static="true" data-toggle="hover"><a href="core-offerings.html#offerings">AI Transformation</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom bricks-menu-item" data-static="true" data-toggle="hover"><a href="core-offerings.html#offerings">Transformation Services</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom bricks-menu-item" data-static="true" data-toggle="hover"><a href="core-offerings.html#offerings">Strategy and Planning</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom bricks-menu-item" data-static="true" data-toggle="hover"><a href="core-offerings.html#offerings">Business Validation and Testing</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom bricks-menu-item" data-static="true" data-toggle="hover"><a href="core-offerings.html#offerings">Program and Change Management</a></li>
+</ul>
+</li>
+<li id="menu-item-566" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-566 bricks-menu-item" data-static="true" data-toggle="hover"><div class="brx-submenu-toggle icon-right"><a href="industry-financial-services.html" data-brx-anchor="true">Industry Functions</a><button aria-expanded="false" aria-label="Industry Functions Sub menu"><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12" fill="none" class="menu-item-icon"><path d="M1.50002 4L6.00002 8L10.5 4" stroke-width="1.5" stroke="currentcolor"></path></svg></button></div>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-custom menu-item-object-custom bricks-menu-item" data-static="true" data-toggle="hover"><a href="industry-financial-services.html">Lead-to-Order</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom bricks-menu-item" data-static="true" data-toggle="hover"><a href="industry-financial-services.html">Order-to-Cash</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom bricks-menu-item" data-static="true" data-toggle="hover"><a href="industry-financial-services.html">Financial Services</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom bricks-menu-item" data-static="true" data-toggle="hover"><a href="industry-financial-services.html">Source-to-Pay</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom bricks-menu-item" data-static="true" data-toggle="hover"><a href="industry-financial-services.html">Supply Chain</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom bricks-menu-item" data-static="true" data-toggle="hover"><a href="industry-financial-services.html">Legal &amp; Compliance</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom bricks-menu-item" data-static="true" data-toggle="hover"><a href="industry-financial-services.html">Human Resources</a></li>
+</ul>
+</li>
+<li id="menu-item-574" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-574 bricks-menu-item" data-static="true" data-toggle="hover"><div class="brx-submenu-toggle icon-right"><a href="blog.html" data-brx-anchor="true">Resources</a><button aria-expanded="false" aria-label="Resources Sub menu"><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12" fill="none" class="menu-item-icon"><path d="M1.50002 4L6.00002 8L10.5 4" stroke-width="1.5" stroke="currentcolor"></path></svg></button></div>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page bricks-menu-item" data-static="true" data-toggle="hover"><a href="blog.html">Blog</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom bricks-menu-item" data-static="true" data-toggle="hover"><a href="case-studies.html">Case Studies</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom bricks-menu-item" data-static="true" data-toggle="hover"><a href="blog.html">Videos &amp; Webinars</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom bricks-menu-item" data-static="true" data-toggle="hover"><a href="careers.html">Careers</a></li>
+</ul>
+</li>
+<li id="menu-item-2275" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2275 bricks-menu-item" data-static="true" data-toggle="hover"><a href="about-us.html">About Us</a></li>
+<li id="menu-item-2380" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2380 bricks-menu-item" data-static="true" data-toggle="hover"><a href="contact.html">Contact Us</a></li>
+</ul></nav>			</div></div><div id="brxe-xjfagb" class="brxe-block brx-offcanvas-backdrop "></div></div></div>
+    <a href="case-studies.html" id="brxe-801e36" class="brxe-next-arrow-button-v4 nb-arrow-button-v4" style="text-decoration:none;color:inherit;cursor:pointer"><div class='nb-arrow-button-v4__icon nb-arrow-button-v4__icon--duplicate'>
+            <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'>
+        <path d='M11.293 4.707 17.586 11H4v2h13.586l-6.293 6.293 1.414 1.414L21.414 12l-8.707-8.707-1.414 1.414z'/></svg>
+        </div>
+        <div class='nb-arrow-button-v4__text'>
+            <span>Explore Our Work</span>
+        </div>
+        <div class='nb-arrow-button-v4__icon'>
+            <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'>
+        <path d='M11.293 4.707 17.586 11H4v2h13.586l-6.293 6.293 1.414 1.414L21.414 12l-8.707-8.707-1.414 1.414z'/></svg>
+        </div>
+    </a>
+    </div></div></section><section id="brxe-02d1bc" class="brxe-section sticky-header sticky-header "><div id="brxe-7562c7" class="brxe-container "><div id="brxe-98f39a" class="brxe-block "><a href="home.html" aria-label="TruVs home"><img width="535" height="557" src="assets/remote/wp-content/uploads/2026/03/logo-header.png" class="brxe-image css-filter size-full " alt="TruVs" id="brxe-8fcd58" decoding="async" fetchpriority="high" data-src="assets/remote/wp-content/uploads/2026/03/logo-header.png" data-type="string" /></a></div><div id="brxe-6ce44a" class="brxe-block "><div id="brxe-15b050" class="brxe-block "><button id="brxe-jmtzkj" data-script-id="jmtzkj" class="brxe-toggle" aria-label="Open" aria-expanded="false"><span class="brxa-wrap"><span class="brxa-inner"></span></span></button><div id="brxe-htuwgc" data-script-id="htuwgc" class="brxe-offcanvas " aria-label="Offcanvas" data-direction="right"><div id="brxe-llmjqc" class="brxe-block brx-offcanvas-inner "><button id="brxe-yfdiaq" data-script-id="yfdiaq" class="brxe-toggle" aria-label="Close" aria-expanded="false"><span class="truvs-close-x" aria-hidden="true"></span></button><div id="brxe-irwaau" data-script-id="irwaau" class="brxe-nav-menu"><nav class="bricks-nav-menu-wrapper mobile_landscape"><ul id="menu-main-menu-2" class="bricks-nav-menu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home  page_item page-item-1371  menu-item-2382 bricks-menu-item" data-static="true" data-toggle="hover"><a href="home.html">Home</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-474 bricks-menu-item" data-static="true" data-toggle="hover"><div class="brx-submenu-toggle icon-right"><a href="core-offerings.html" data-brx-anchor="true">Offerings</a><button aria-expanded="false" aria-label="Offerings Sub menu"><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12" fill="none" class="menu-item-icon"><path d="M1.50002 4L6.00002 8L10.5 4" stroke-width="1.5" stroke="currentcolor"></path></svg></button></div>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page bricks-menu-item" data-static="true" data-toggle="hover"><a href="bms.html">Business Process Modernization</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page bricks-menu-item" data-static="true" data-toggle="hover"><a href="core-offerings.html">Core Offerings Overview</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom bricks-menu-item" data-static="true" data-toggle="hover"><a href="core-offerings.html#offerings">Application Modernization</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom bricks-menu-item" data-static="true" data-toggle="hover"><a href="core-offerings.html#offerings">Data Modernization</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom bricks-menu-item" data-static="true" data-toggle="hover"><a href="core-offerings.html#offerings">AI Transformation</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom bricks-menu-item" data-static="true" data-toggle="hover"><a href="core-offerings.html#offerings">Transformation Services</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom bricks-menu-item" data-static="true" data-toggle="hover"><a href="core-offerings.html#offerings">Strategy and Planning</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom bricks-menu-item" data-static="true" data-toggle="hover"><a href="core-offerings.html#offerings">Business Validation and Testing</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom bricks-menu-item" data-static="true" data-toggle="hover"><a href="core-offerings.html#offerings">Program and Change Management</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-566 bricks-menu-item" data-static="true" data-toggle="hover"><div class="brx-submenu-toggle icon-right"><a href="industry-financial-services.html" data-brx-anchor="true">Industry Functions</a><button aria-expanded="false" aria-label="Industry Functions Sub menu"><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12" fill="none" class="menu-item-icon"><path d="M1.50002 4L6.00002 8L10.5 4" stroke-width="1.5" stroke="currentcolor"></path></svg></button></div>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-custom menu-item-object-custom bricks-menu-item" data-static="true" data-toggle="hover"><a href="industry-financial-services.html">Lead-to-Order</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom bricks-menu-item" data-static="true" data-toggle="hover"><a href="industry-financial-services.html">Order-to-Cash</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom bricks-menu-item" data-static="true" data-toggle="hover"><a href="industry-financial-services.html">Financial Services</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom bricks-menu-item" data-static="true" data-toggle="hover"><a href="industry-financial-services.html">Source-to-Pay</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom bricks-menu-item" data-static="true" data-toggle="hover"><a href="industry-financial-services.html">Supply Chain</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom bricks-menu-item" data-static="true" data-toggle="hover"><a href="industry-financial-services.html">Legal &amp; Compliance</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom bricks-menu-item" data-static="true" data-toggle="hover"><a href="industry-financial-services.html">Human Resources</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-574 bricks-menu-item" data-static="true" data-toggle="hover"><div class="brx-submenu-toggle icon-right"><a href="blog.html" data-brx-anchor="true">Resources</a><button aria-expanded="false" aria-label="Resources Sub menu"><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12" fill="none" class="menu-item-icon"><path d="M1.50002 4L6.00002 8L10.5 4" stroke-width="1.5" stroke="currentcolor"></path></svg></button></div>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page bricks-menu-item" data-static="true" data-toggle="hover"><a href="blog.html">Blog</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom bricks-menu-item" data-static="true" data-toggle="hover"><a href="case-studies.html">Case Studies</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom bricks-menu-item" data-static="true" data-toggle="hover"><a href="blog.html">Videos &amp; Webinars</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom bricks-menu-item" data-static="true" data-toggle="hover"><a href="careers.html">Careers</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2275 bricks-menu-item" data-static="true" data-toggle="hover"><a href="about-us.html">About Us</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2380 bricks-menu-item" data-static="true" data-toggle="hover"><a href="contact.html">Contact Us</a></li>
+</ul></nav>			</div></div><div id="brxe-twcxlg" class="brxe-block brx-offcanvas-backdrop "></div></div></div>
+    <a href="core-offerings.html" id="brxe-6e8333" class="brxe-next-arrow-button-v4 nb-arrow-button-v4" style="text-decoration:none;color:inherit;cursor:pointer"><div class='nb-arrow-button-v4__icon nb-arrow-button-v4__icon--duplicate'>
+            <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'>
+        <path d='M11.293 4.707 17.586 11H4v2h13.586l-6.293 6.293 1.414 1.414L21.414 12l-8.707-8.707-1.414 1.414z'/></svg>
+        </div>
+        <div class='nb-arrow-button-v4__text'>
+            <span>Know More</span>
+        </div>
+        <div class='nb-arrow-button-v4__icon'>
+            <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'>
+        <path d='M11.293 4.707 17.586 11H4v2h13.586l-6.293 6.293 1.414 1.414L21.414 12l-8.707-8.707-1.414 1.414z'/></svg>
+        </div>
+    </a>
+    </div></div></section></header>
+
+<section class="results">
+    <div class="container">
+      <div class="results__head">
+        <span class="results__eyebrow">Case Study Compendium</span>
+        <h1>Results That <em>Speak</em></h1>
+        <p>Quantified outcomes from organizations facing similar challenges — anonymized by industry and revenue segment.</p>
+      </div>
+
+      <div class="filter-row" role="toolbar" aria-label="Filter case studies">
+        <button type="button" class="filter-btn is-active" data-filter="all">All</button>
+        <button type="button" class="filter-btn" data-filter="bvt">Validation &amp; Testing</button>
+        <button type="button" class="filter-btn" data-filter="process">Process</button>
+        <button type="button" class="filter-btn" data-filter="supply">Supply Chain</button>
+        <button type="button" class="filter-btn" data-filter="app">Application</button>
+        <button type="button" class="filter-btn" data-filter="ai">AI &amp; Automation</button>
+        <button type="button" class="filter-btn" data-filter="lean">Lean Six Sigma</button>
+        <button type="button" class="filter-btn" data-filter="program">Program Mgmt</button>
+        <span class="filter-count" id="filter-count">Showing 13 case studies</span>
+      </div>
+
+      <div class="results-grid" id="cs-grid">
+        <a class="result-card" href="case-study-erp-transformation-enterprise-services.html" data-cats="bvt program"><div class="result-card__header">
+            <span class="result-card__metric">$0</span>
+            <span class="result-card__metric-label">Revenue leakage at go-live</span>
+          </div>
+          <div class="result-card__body">
+            <span class="result-card__pill">Enterprise Services</span>
+            <h3 class="result-card__title">Legacy ERP replaced without revenue leakage across 80+ countries.</h3>
+            <p class="result-card__text">End-to-end Business Validation Testing for Order-to-Cash across 80+ countries — real deal data, personas, and compliance scenarios.</p>
+            <div class="result-card__compare">
+              <div class="compare-col">
+                <span class="compare-label">Before</span>
+                <span class="compare-value compare-value--before">End-of-life ERP risk</span>
+              </div>
+              <div class="compare-col">
+                <span class="compare-label">After</span>
+                <span class="compare-value compare-value--after">Zero revenue leakage</span>
+              </div>
+            </div>
+            <span class="result-card__cta">Discuss similar outcomes <span aria-hidden="true">→</span></span>
+          </div>
+        </a>
+        <a class="result-card" href="case-study-erp-modernization-invoice-automation.html" data-cats="bvt ai"><div class="result-card__header">
+            <span class="result-card__metric">$3B</span>
+            <span class="result-card__metric-label">Annual revenue protected</span>
+          </div>
+          <div class="result-card__body">
+            <span class="result-card__pill">Customer Success</span>
+            <h3 class="result-card__title">Manual invoice handoffs and allocation disputes running into tens of millions.</h3>
+            <p class="result-card__text">Sole-sourced ERP modernization with RPA and AI — 2,000+ invoices automated and zero-touch billing for standard flows.</p>
+            <div class="result-card__compare">
+              <div class="compare-col">
+                <span class="compare-label">Before</span>
+                <span class="compare-value compare-value--before">Manual invoice processing</span>
+              </div>
+              <div class="compare-col">
+                <span class="compare-label">After</span>
+                <span class="compare-value compare-value--after">Zero-touch billing</span>
+              </div>
+            </div>
+            <span class="result-card__cta">Discuss similar outcomes <span aria-hidden="true">→</span></span>
+          </div>
+        </a>
+        <a class="result-card" href="case-study-modern-deal-management-microsoft-federal.html" data-cats="app bvt"><div class="result-card__header">
+            <span class="result-card__metric">40%</span>
+            <span class="result-card__metric-label">Faster deal management velocity</span>
+          </div>
+          <div class="result-card__body">
+            <span class="result-card__pill">Federal / Public Sector</span>
+            <h3 class="result-card__title">Legacy ERP blocked federal contracting agility and audit readiness.</h3>
+            <p class="result-card__text">SAP HANA deployed for 3,000+ federal employees with compliance-first configuration and real-time dashboards.</p>
+            <div class="result-card__compare">
+              <div class="compare-col">
+                <span class="compare-label">Before</span>
+                <span class="compare-value compare-value--before">Slow federal deal cycles</span>
+              </div>
+              <div class="compare-col">
+                <span class="compare-label">After</span>
+                <span class="compare-value compare-value--after">40% faster velocity</span>
+              </div>
+            </div>
+            <span class="result-card__cta">Discuss similar outcomes <span aria-hidden="true">→</span></span>
+          </div>
+        </a>
+        <a class="result-card" href="case-study-apac-sre-team-build-gaming.html" data-cats="app program"><div class="result-card__header">
+            <span class="result-card__metric">Q1→Q3</span>
+            <span class="result-card__metric-label">Full operational independence</span>
+          </div>
+          <div class="result-card__body">
+            <span class="result-card__pill">Gaming Technology</span>
+            <h3 class="result-card__title">APAC SRE capability built from zero during COVID talent disruption.</h3>
+            <p class="result-card__text">Structured Forming → Storming → Norming program delivered a certified APAC SRE team integrated into global operations.</p>
+            <div class="result-card__compare">
+              <div class="compare-col">
+                <span class="compare-label">Before</span>
+                <span class="compare-value compare-value--before">No APAC SRE capability</span>
+              </div>
+              <div class="compare-col">
+                <span class="compare-label">After</span>
+                <span class="compare-value compare-value--after">Independent SRE team</span>
+              </div>
+            </div>
+            <span class="result-card__cta">Discuss similar outcomes <span aria-hidden="true">→</span></span>
+          </div>
+        </a>
+        <a class="result-card" href="case-study-celonis-migration-uat-supply-chain.html" data-cats="process bvt"><div class="result-card__header">
+            <span class="result-card__metric">100%</span>
+            <span class="result-card__metric-label">UAT test case pass rate</span>
+          </div>
+          <div class="result-card__body">
+            <span class="result-card__pill">Cloud / Hyperscaler</span>
+            <h3 class="result-card__title">400 supply chain processes locked in a retiring legacy BPM system.</h3>
+            <p class="result-card__text">Native Celonis rebuild plus embedded UAT leadership — 712 bugs fixed and zero data-quality errors on baseline.</p>
+            <div class="result-card__compare">
+              <div class="compare-col">
+                <span class="compare-label">Before</span>
+                <span class="compare-value compare-value--before">Poor BPM data quality</span>
+              </div>
+              <div class="compare-col">
+                <span class="compare-label">After</span>
+                <span class="compare-value compare-value--after">Usable Celonis baseline</span>
+              </div>
+            </div>
+            <span class="result-card__cta">Discuss similar outcomes <span aria-hidden="true">→</span></span>
+          </div>
+        </a>
+        <a class="result-card" href="case-study-warehouse-enablement-bvt.html" data-cats="bvt supply"><div class="result-card__header">
+            <span class="result-card__metric">618</span>
+            <span class="result-card__metric-label">BVT scenarios executed</span>
+          </div>
+          <div class="result-card__body">
+            <span class="result-card__pill">Supply Chain</span>
+            <h3 class="result-card__title">Warehouse modernization blocked by scale of multi-SAP business validation.</h3>
+            <p class="result-card__text">End-to-end BVT across IBP, ERP, order, and payment systems — 83 gaps surfaced before release.</p>
+            <div class="result-card__compare">
+              <div class="compare-col">
+                <span class="compare-label">Before</span>
+                <span class="compare-value compare-value--before">Release-time BVT bottleneck</span>
+              </div>
+              <div class="compare-col">
+                <span class="compare-label">After</span>
+                <span class="compare-value compare-value--after">Scenario-driven validation</span>
+              </div>
+            </div>
+            <span class="result-card__cta">Discuss similar outcomes <span aria-hidden="true">→</span></span>
+          </div>
+        </a>
+        <a class="result-card" href="case-study-sap-ibp-migration-uat.html" data-cats="bvt supply"><div class="result-card__header">
+            <span class="result-card__metric">96%</span>
+            <span class="result-card__metric-label">CapEx UAT pass rate</span>
+          </div>
+          <div class="result-card__body">
+            <span class="result-card__pill">Supply Chain Planning</span>
+            <h3 class="result-card__title">Two concurrent SAP IBP migrations without dedicated UAT technical depth.</h3>
+            <p class="result-card__text">Embedded UAT leadership across storage and network planning streams with Celonis process documentation.</p>
+            <div class="result-card__compare">
+              <div class="compare-col">
+                <span class="compare-label">Before</span>
+                <span class="compare-value compare-value--before">Incomplete test cases</span>
+              </div>
+              <div class="compare-col">
+                <span class="compare-label">After</span>
+                <span class="compare-value compare-value--after">96% pass rate maintained</span>
+              </div>
+            </div>
+            <span class="result-card__cta">Discuss similar outcomes <span aria-hidden="true">→</span></span>
+          </div>
+        </a>
+        <a class="result-card" href="case-study-demand-planning-network-sop.html" data-cats="supply process"><div class="result-card__header">
+            <span class="result-card__metric">45→70%</span>
+            <span class="result-card__metric-label">Demand plan accuracy target</span>
+          </div>
+          <div class="result-card__body">
+            <span class="result-card__pill">Network S&amp;OP</span>
+            <h3 class="result-card__title">Demand planning ran at 45–55% accuracy with material inventory exposure.</h3>
+            <p class="result-card__text">Process design in Celonis plus SAP IBP UAT for T1/T2 — targeting ~$400M inventory reduction.</p>
+            <div class="result-card__compare">
+              <div class="compare-col">
+                <span class="compare-label">Before</span>
+                <span class="compare-value compare-value--before">45–55% forecast accuracy</span>
+              </div>
+              <div class="compare-col">
+                <span class="compare-label">After</span>
+                <span class="compare-value compare-value--after">65–70% accuracy target</span>
+              </div>
+            </div>
+            <span class="result-card__cta">Discuss similar outcomes <span aria-hidden="true">→</span></span>
+          </div>
+        </a>
+        <a class="result-card" href="case-study-commercial-cloud-order-release-lean.html" data-cats="process lean"><div class="result-card__header">
+            <span class="result-card__metric">50%</span>
+            <span class="result-card__metric-label">Targeted cancel/reject reduction</span>
+          </div>
+          <div class="result-card__body">
+            <span class="result-card__pill">Commercial Cloud</span>
+            <h3 class="result-card__title">~48% reservation cancellation and rejection rate on order release.</h3>
+            <p class="result-card__text">Lean Six Sigma process mapping of SPCN variability — first end-to-end map of the commercial cloud flow.</p>
+            <div class="result-card__compare">
+              <div class="compare-col">
+                <span class="compare-label">Before</span>
+                <span class="compare-value compare-value--before">~48% cancel/reject rate</span>
+              </div>
+              <div class="compare-col">
+                <span class="compare-label">After</span>
+                <span class="compare-value compare-value--after">~23% target rate</span>
+              </div>
+            </div>
+            <span class="result-card__cta">Discuss similar outcomes <span aria-hidden="true">→</span></span>
+          </div>
+        </a>
+        <a class="result-card" href="case-study-lean-six-sigma-uat-cloud-supply-chain.html" data-cats="lean process"><div class="result-card__header">
+            <span class="result-card__metric">14 mo</span>
+            <span class="result-card__metric-label">Embedded engagement</span>
+          </div>
+          <div class="result-card__body">
+            <span class="result-card__pill">Cloud Supply Chain</span>
+            <h3 class="result-card__title">Headcount reductions left Lean, documentation, and UAT work understaffed.</h3>
+            <p class="result-card__text">Certified Six Sigma bench plus UAT program management — Celonis became the CSCP system of record.</p>
+            <div class="result-card__compare">
+              <div class="compare-col">
+                <span class="compare-label">Before</span>
+                <span class="compare-value compare-value--before">Fragmented process knowledge</span>
+              </div>
+              <div class="compare-col">
+                <span class="compare-label">After</span>
+                <span class="compare-value compare-value--after">Celonis system of record</span>
+              </div>
+            </div>
+            <span class="result-card__cta">Discuss similar outcomes <span aria-hidden="true">→</span></span>
+          </div>
+        </a>
+        <a class="result-card" href="case-study-data-center-rack-delivery-automation.html" data-cats="bvt process"><div class="result-card__header">
+            <span class="result-card__metric">3×+</span>
+            <span class="result-card__metric-label">Intake demand over capacity</span>
+          </div>
+          <div class="result-card__body">
+            <span class="result-card__pill">Data Center</span>
+            <h3 class="result-card__title">AI infrastructure rack delivery colliding with hard daily data-center intake caps.</h3>
+            <p class="result-card__text">UAT readiness confirmed and first AS-IS process model in Celonis for rack-delivery scheduling automation.</p>
+            <div class="result-card__compare">
+              <div class="compare-col">
+                <span class="compare-label">Before</span>
+                <span class="compare-value compare-value--before">Manual rack scheduling</span>
+              </div>
+              <div class="compare-col">
+                <span class="compare-label">After</span>
+                <span class="compare-value compare-value--after">UAT-ready automation path</span>
+              </div>
+            </div>
+            <span class="result-card__cta">Discuss similar outcomes <span aria-hidden="true">→</span></span>
+          </div>
+        </a>
+        <a class="result-card" href="case-study-program-management-capacity-planning.html" data-cats="program"><div class="result-card__header">
+            <span class="result-card__metric">1.5 yr</span>
+            <span class="result-card__metric-label">Sustained embedded engagement</span>
+          </div>
+          <div class="result-card__body">
+            <span class="result-card__pill">Capacity Planning</span>
+            <h3 class="result-card__title">Engineering PMs operated without a coordinating prioritization layer.</h3>
+            <p class="result-card__text">Hybrid PM/DA/BA coordination across interdependent capacity planning initiatives for a Fortune 50 hyperscaler.</p>
+            <div class="result-card__compare">
+              <div class="compare-col">
+                <span class="compare-label">Before</span>
+                <span class="compare-value compare-value--before">Independent PM silos</span>
+              </div>
+              <div class="compare-col">
+                <span class="compare-label">After</span>
+                <span class="compare-value compare-value--after">Coordinated intake process</span>
+              </div>
+            </div>
+            <span class="result-card__cta">Discuss similar outcomes <span aria-hidden="true">→</span></span>
+          </div>
+        </a>
+        <a class="result-card" href="case-study-marketing-services-bpa-ai-agent.html" data-cats="process ai"><div class="result-card__header">
+            <span class="result-card__metric">16 wk</span>
+            <span class="result-card__metric-label">Delivery timeline</span>
+          </div>
+          <div class="result-card__body">
+            <span class="result-card__pill">Marketing Services</span>
+            <h3 class="result-card__title">Marketing process knowledge trapped with SMEs and siloed systems.</h3>
+            <p class="result-card__text">BPA foundation plus AI process-mapping agent — weeks of documentation condensed into hours of AI-assisted capture.</p>
+            <div class="result-card__compare">
+              <div class="compare-col">
+                <span class="compare-label">Before</span>
+                <span class="compare-value compare-value--before">Manual SME documentation</span>
+              </div>
+              <div class="compare-col">
+                <span class="compare-label">After</span>
+                <span class="compare-value compare-value--after">AI-driven process mapping</span>
+              </div>
+            </div>
+            <span class="result-card__cta">Discuss similar outcomes <span aria-hidden="true">→</span></span>
+          </div>
+        </a>
+        <p class="empty-state" id="empty-state">No case studies match this filter.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="proof">
+    <div class="container">
+      <div class="proof-grid">
+        <div class="proof-item">
+          <span class="proof-item__value">Fortune 500</span>
+          <span class="proof-item__label">Companies served</span>
+        </div>
+        <div class="proof-item">
+          <span class="proof-item__value">53+</span>
+          <span class="proof-item__label">Mission-critical projects</span>
+        </div>
+        <div class="proof-item">
+          <span class="proof-item__value">70+</span>
+          <span class="proof-item__label">Specialized consultants</span>
+        </div>
+        <div class="proof-item">
+          <span class="proof-item__value">15+</span>
+          <span class="proof-item__label">Years of modernization</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="container">
+      <h2>Discuss similar outcomes</h2>
+      <p>Explore how TruVs delivers mission-critical validation, modernization, and AI-enabled process work.</p>
+      <a class="btn" href="contact.html" target="_blank" rel="noopener noreferrer">Contact TruVs</a>
+    </div>
+  </section>
+
+  <p class="footer-note">TruVs.com · <a href="mailto:info@truvs.com">info@TruVs.com</a> · +1 (855) 998-7887<br />
+    Content from TruVs Case Study Compendium v7.</p>
+
+  <script>
+    (function () {
+      var buttons = document.querySelectorAll(".filter-btn");
+      var cards = document.querySelectorAll(".result-card");
+      var countEl = document.getElementById("filter-count");
+      var emptyEl = document.getElementById("empty-state");
+
+      function applyFilter(key) {
+        var visible = 0;
+        cards.forEach(function (card) {
+          var cats = (card.getAttribute("data-cats") || "").split(/\s+/);
+          var show = key === "all" || cats.indexOf(key) !== -1;
+          card.classList.toggle("is-hidden", !show);
+          if (show) visible += 1;
+        });
+        if (countEl) {
+          countEl.textContent = "Showing " + visible + " case stud" + (visible === 1 ? "y" : "ies");
+        }
+        if (emptyEl) emptyEl.classList.toggle("is-visible", visible === 0);
+      }
+
+      buttons.forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          buttons.forEach(function (b) { b.classList.remove("is-active"); });
+          btn.classList.add("is-active");
+          applyFilter(btn.getAttribute("data-filter") || "all");
+        });
+      });
+    })();
+  </script>
+<footer id="brx-footer" class="truvs-footer" role="contentinfo">
+  <div class="truvs-footer__inner">
+    <div class="truvs-footer__top">
+      <div class="truvs-footer__brand">
+        <a href="home.html" class="truvs-footer__logo" aria-label="TruVs home"><img
+            src="assets/remote/wp-content/uploads/2026/03/ss-3.webp" width="160" height="160" alt="TruVs" decoding="async" loading="lazy"
+          />
+        </a>
+      </div>
+
+      <div class="truvs-footer__col">
+                <h5 class="truvs-footer__heading">Offerings</h5>
+        <ul class="truvs-footer__list">
+          <li><a href="bms.html">Business Process Modernization</a></li>
+          <li><a href="core-offerings.html">Core Offerings</a></li>
+          <li><a href="core-offerings.html#offerings">Application Modernization</a></li>
+          <li><a href="core-offerings.html#offerings">Data Modernization</a></li>
+          <li><a href="core-offerings.html#offerings">AI Transformation</a></li>
+          <li><a href="core-offerings.html#offerings">Strategy and Planning</a></li>
+          <li><a href="core-offerings.html#offerings">Business Validation and Testing</a></li>
+          <li><a href="core-offerings.html#offerings">Program and Change Management</a></li>
+        </ul>
+      </div>
+
+      <div class="truvs-footer__col">
+        <h5 class="truvs-footer__heading">Industry Functions</h5>
+        <ul class="truvs-footer__list">
+          <li><a href="industry-financial-services.html">Lead-to-Order</a></li>
+          <li><a href="industry-financial-services.html">Order-to-Cash</a></li>
+          <li><a href="industry-financial-services.html">Financial Services</a></li>
+          <li><a href="industry-financial-services.html">Finance</a></li>
+          <li><a href="industry-financial-services.html">Source-to-Pay</a></li>
+          <li><a href="industry-financial-services.html">Supply Chain</a></li>
+          <li><a href="industry-financial-services.html">Legal &amp; Compliance</a></li>
+          <li><a href="industry-financial-services.html">Human Resources</a></li>
+        </ul>
+      </div>
+
+      <div class="truvs-footer__col">
+        <h5 class="truvs-footer__heading">Company</h5>
+        <ul class="truvs-footer__list">
+          <li><a href="about-us.html">About Us</a></li>
+          <li><a href="careers.html">Careers</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="partnerships.html">Partnerships</a></li>
+        </ul>
+      </div>
+
+      <div class="truvs-footer__col">
+        <h5 class="truvs-footer__heading">Resources</h5>
+        <ul class="truvs-footer__list">
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="case-studies.html">Case Studies</a></li>
+          <li><a href="blog.html">Videos &amp; Webinars</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="truvs-footer__mid">
+      <div class="truvs-footer__meta">
+        <h5 class="truvs-footer__heading">Office</h5>
+        <p>USA · Canada · India</p>
+      </div>
+      <div class="truvs-footer__meta">
+        <h5 class="truvs-footer__heading">Email us</h5>
+        <p><a href="mailto:info@truvs.com">info@truvs.com</a></p>
+      </div>
+      <div class="truvs-footer__meta">
+        <h5 class="truvs-footer__heading">Call Us</h5>
+        <p><a href="tel:+18559987887">+1 (855) 998-7887</a></p>
+      </div>
+      <div class="truvs-footer__meta">
+        <h5 class="truvs-footer__heading">Social Links</h5>
+        <ul class="truvs-footer__social" aria-label="Social media">
+          <li><a href="https://www.linkedin.com/company/truvs" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.88 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8.5h4V23h-4V8.5zM8.5 8.5h3.8v2h.05c.53-1 1.84-2.05 3.79-2.05 4.05 0 4.8 2.67 4.8 6.15V23h-4v-6.5c0-1.55-.03-3.55-2.16-3.55-2.16 0-2.49 1.69-2.49 3.43V23h-4V8.5z"/></svg>
+            </a>
+          </li>
+          <li><a href="https://www.facebook.com/TruVsSeattle" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0 0 22 12z"/></svg>
+            </a>
+          </li>
+          <li><a href="https://x.com/TrueValueSols" target="_blank" rel="noopener noreferrer" aria-label="X"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M18.9 2H22l-6.8 7.8L23 22h-6.6l-5.2-6.8L5.3 22H2.2l7.3-8.3L1 2h6.7l4.7 6.2L18.9 2zm-1.2 18h1.8L6.4 3.9H4.5L17.7 20z"/></svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="truvs-footer__bottom">
+    <div class="truvs-footer__inner truvs-footer__bottom-inner">
+            <div class="truvs-footer__copy">
+        <span>© 2026 TruVs Inc. All rights reserved.</span>
+        <span class="truvs-footer__credit">Designed And Developed By <a href="https://brandsynthesisglobal.com/" target="_blank" rel="noopener noreferrer">Brand Synthesis Global</a></span>
+      </div>
+      <div class="truvs-footer__legal">
+        <a href="terms.html">Terms of Use</a>
+        <a href="privacy.html">Privacy Policy</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<script src="shared/site-chrome.js?v=27" defer></script>
+</body>
+</html>

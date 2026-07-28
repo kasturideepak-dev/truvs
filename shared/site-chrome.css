@@ -1,0 +1,1928 @@
+
+/* ===== TruVs shared site chrome (homepage header + footer) ===== */
+@font-face{font-family:"Century Gothic";src:url("../fonts/centurygothic.ttf") format("truetype");font-weight:400;font-display:swap}
+@font-face{font-family:"Century Gothic";src:url("../fonts/centurygothic_bold.ttf") format("truetype");font-weight:700;font-display:swap}
+
+:root{
+  --truvs-green:#65c324;
+  --truvs-green-bright:#37CC31;
+  --truvs-navy:#010a35;
+  --truvs-blue:#02559a;
+  --truvs-font-heading:"Century Gothic","CenturyGothic",AppleGothic,sans-serif;
+  --truvs-font-body:"Poppins",system-ui,-apple-system,sans-serif;
+}
+
+/* Base bricks-like layout helpers used by header/footer markup */
+.brxe-section,.brxe-container,.brxe-block,.brxe-div{box-sizing:border-box}
+#brx-header .brxe-section,
+#brx-header .brxe-container,
+#brx-header .brxe-block{
+  display:flex;
+}
+#brx-header .brxe-container{
+  width:100%;
+  max-width:1300px;
+  margin-left:auto;
+  margin-right:auto;
+  flex-direction:row;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  padding-left:16px;
+  padding-right:16px;
+}
+#brx-header .brxe-block{flex-direction:row;align-items:center}
+#brx-header img{display:block;max-width:100%;height:auto}
+
+/* Top header over page */
+#brx-header{position:relative;z-index:1000}
+#brx-header > .brxe-section:first-child,
+#brxe-41e559{
+  position:absolute!important;
+  top:0!important;left:0!important;right:0!important;
+  width:100%!important;
+  z-index:100!important;
+  margin:0!important;
+  padding-top:14px!important;
+  padding-bottom:10px!important;
+  background:transparent!important;
+  min-height:0!important;
+}
+#brxe-ea23e4{
+  display:flex!important;
+  flex-direction:row!important;
+  flex-wrap:nowrap!important;
+  align-items:center!important;
+  justify-content:space-between!important;
+  width:100%!important;
+  max-width:1300px!important;
+  min-height:64px!important;
+}
+#brxe-21c48c{width:auto!important;flex:0 0 auto!important}
+#brxe-5f4c7a,#brxe-5f4c7a img,#brxe-21c48c img{
+  width:78px!important;max-width:78px!important;height:auto!important;
+  opacity:1!important;display:block!important;
+  filter:drop-shadow(0 2px 6px rgba(0,0,0,.35));
+}
+#brxe-c64274{
+  width:auto!important;flex:0 0 auto!important;margin-left:auto!important;
+  display:flex!important;flex-direction:row!important;align-items:center!important;
+  justify-content:flex-end!important;column-gap:16px!important;flex-wrap:nowrap!important;
+}
+#brxe-a30461{width:auto!important;padding:0!important;margin-left:0!important;display:flex!important;align-items:center!important}
+
+/* Hide header CTA on small screens so hamburger stays top-right */
+@media (max-width:991px){
+  #brxe-41e559 #brxe-801e36,
+  #brxe-41e559 .nb-arrow-button-v4,
+  #brxe-c64274 > .nb-arrow-button-v4{display:none!important}
+}
+
+/* Sticky header */
+.sticky-header.brxe-section,
+#brxe-02d1bc.sticky-header{
+  position:fixed!important;top:0!important;left:0!important;right:0!important;
+  width:100%!important;z-index:1000!important;margin:0!important;
+  transform:translateY(-120%)!important;
+  transition:transform .35s ease,background-color .35s ease,box-shadow .35s ease!important;
+  background-color:transparent!important;pointer-events:none!important;
+  padding-top:10px!important;padding-bottom:10px!important;
+}
+.sticky-header.brxe-section.is-sticky,
+#brxe-02d1bc.sticky-header.is-sticky{
+  transform:translateY(0)!important;
+  background-color:#fff!important;
+  box-shadow:0 8px 28px rgba(1,10,53,.1)!important;
+  pointer-events:auto!important;
+}
+#brxe-7562c7{
+  display:flex!important;flex-direction:row!important;align-items:center!important;
+  justify-content:space-between!important;width:100%!important;max-width:1300px!important;
+  margin:0 auto!important;min-height:64px!important;padding:0 16px!important;
+}
+#brxe-98f39a{flex:0 0 auto}
+#brxe-8fcd58,.sticky-header img{
+  width:62px!important;height:auto!important;opacity:1!important;display:block!important;
+  background:transparent!important;background-color:transparent!important;
+  box-shadow:none!important;border:0!important;border-radius:0!important;
+  mix-blend-mode:normal!important;object-fit:contain!important;
+}
+/* Logo link wrappers must not paint a white plate behind the mark */
+#brxe-98f39a,
+#brxe-98f39a a,
+.sticky-header #brxe-98f39a,
+.sticky-header a:has(#brxe-8fcd58),
+.sticky-header .brxe-image{
+  background:transparent!important;background-color:transparent!important;
+  box-shadow:none!important;border:0!important;
+}
+#brxe-6ce44a{
+  margin-left:auto!important;display:flex!important;align-items:center!important;
+  justify-content:flex-end!important;column-gap:16px!important;width:auto!important;
+}
+#brxe-15b050{width:auto!important;padding:0!important}
+.sticky-header.is-sticky .brxe-nav-menu a,
+.sticky-header.is-sticky a{color:#010a35!important}
+@media (max-width:991px){
+  #brxe-02d1bc .nb-arrow-button-v4,
+  #brxe-6ce44a > .nb-arrow-button-v4{display:none!important}
+}
+
+/* Arrow button in header (desktop) */
+#brx-header .nb-arrow-button-v4{
+  display:inline-flex;align-items:center;text-decoration:none;cursor:pointer;
+}
+#brx-header .nb-arrow-button-v4__text span{
+  font-family:var(--truvs-font-heading);font-weight:700;font-size:14px;
+}
+
+/* ===== Footer ===== */
+#brx-footer{
+  background:#010a35;
+  color:#fff;
+  font-family:var(--truvs-font-body);
+  margin-top:0;
+}
+#brx-footer .brxe-section{
+  display:block;
+  padding:56px 20px 28px;
+}
+#brx-footer .brxe-container{
+  max-width:1300px;
+  margin:0 auto;
+  width:100%;
+}
+#brx-footer a{color:rgba(255,255,255,.85);text-decoration:none}
+#brx-footer a:hover{color:var(--truvs-green)}
+#brx-footer .brxe-heading,
+#brx-footer h5{
+  font-family:var(--truvs-font-heading)!important;
+  font-weight:700!important;
+  color:#fff!important;
+  font-size:16px!important;
+  margin:0 0 14px!important;
+}
+#brx-footer .brxe-list{list-style:none;margin:0;padding:0}
+#brx-footer .brxe-list li{margin:0 0 8px}
+#brx-footer .brxe-list .title{font-size:14px;line-height:1.5}
+#brx-footer img{max-width:160px;height:auto;display:block}
+/* footer multi-column when structure is blocks */
+#brx-footer #brxe-oviaix,
+#brx-footer .brxe-container{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+  gap:28px 24px;
+  align-items:start;
+}
+#brx-footer #brxe-fuzirz{
+  display:contents;
+}
+#brx-footer #brxe-yjhsmc{
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+}
+@media(min-width:900px){
+  #brx-footer #brxe-oviaix{
+    grid-template-columns:1.2fr repeat(4,1fr);
+  }
+}
+
+/* Page body under absolute header */
+body.has-truvs-chrome{
+  margin:0;
+  font-family:var(--truvs-font-body);
+}
+/* prevent old simple nav conflict */
+.truvs-site-nav{display:none!important}
+
+
+/* Mobile hamburger + offcanvas (sitewide chrome) */
+button.brxe-toggle[aria-label="Open"] {
+  cursor: pointer !important;
+  background: transparent !important;
+  border: 0 !important;
+  padding: 10px !important;
+  margin: 0 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  z-index: 1010 !important;
+  position: relative !important;
+  color: #65c324 !important;
+  min-width: 44px !important;
+  min-height: 44px !important;
+  -webkit-appearance: none !important;
+  appearance: none !important;
+  pointer-events: auto !important;
+}
+button.brxe-toggle[aria-label="Open"] .brxa-wrap {
+  display: block !important;
+  width: 28px !important;
+  height: 20px !important;
+  position: relative !important;
+  pointer-events: none !important;
+}
+button.brxe-toggle[aria-label="Open"] .brxa-inner,
+button.brxe-toggle[aria-label="Open"] .brxa-inner:before,
+button.brxe-toggle[aria-label="Open"] .brxa-inner:after,
+button.brxe-toggle[aria-label="Open"] .brxa-inner::before,
+button.brxe-toggle[aria-label="Open"] .brxa-inner::after {
+  display: block !important;
+  position: absolute !important;
+  left: 0 !important;
+  width: 26px !important;
+  height: 2.5px !important;
+  background: currentColor !important;
+  border-radius: 2px !important;
+  content: "" !important;
+  transition: transform .25s ease, top .25s ease, opacity .2s ease !important;
+}
+button.brxe-toggle[aria-label="Open"] .brxa-inner { top: 9px !important; transform: none !important; }
+button.brxe-toggle[aria-label="Open"] .brxa-inner:before,
+button.brxe-toggle[aria-label="Open"] .brxa-inner::before { top: -8px !important; }
+button.brxe-toggle[aria-label="Open"] .brxa-inner:after,
+button.brxe-toggle[aria-label="Open"] .brxa-inner::after { top: 8px !important; }
+button.brxe-toggle[aria-label="Open"].is-active .brxa-inner { background: transparent !important; }
+button.brxe-toggle[aria-label="Open"].is-active .brxa-inner:before,
+button.brxe-toggle[aria-label="Open"].is-active .brxa-inner::before {
+  top: 0 !important; transform: rotate(45deg) !important;
+}
+button.brxe-toggle[aria-label="Open"].is-active .brxa-inner:after,
+button.brxe-toggle[aria-label="Open"].is-active .brxa-inner::after {
+  top: 0 !important; transform: rotate(-45deg) !important;
+}
+
+/* Header logo — crisp, no wash/circle */
+#brx-header #brxe-5f4c7a,
+#brx-header a.brxe-image {
+  display: inline-flex !important;
+  align-items: center !important;
+  background: transparent !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  overflow: visible !important;
+  width: auto !important;
+  min-width: 0 !important;
+  padding: 0 !important;
+}
+#brx-header #brxe-5f4c7a img,
+#brx-header .truvs-header-logo,
+#brx-header #brxe-21c48c img {
+  width: 78px !important;
+  max-width: 78px !important;
+  height: auto !important;
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  filter: none !important;
+  -webkit-filter: none !important;
+  mix-blend-mode: normal !important;
+  background: transparent !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  mask: none !important;
+  -webkit-mask: none !important;
+}
+#brx-header #brxe-8fcd58,
+#brx-header .sticky-header img {
+  width: 62px !important;
+  max-width: 62px !important;
+  height: auto !important;
+  opacity: 1 !important;
+  filter: none !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  border: 0 !important;
+  object-fit: contain !important;
+}
+#brx-header #brxe-98f39a,
+#brx-header #brxe-98f39a a {
+  background: transparent !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+
+/* Kill page-level image circles affecting header logo */
+#brx-header img,
+#brx-header .brxe-image {
+  border-radius: 0 !important;
+  background: transparent !important;
+  object-fit: contain !important;
+}
+
+/* ===== Offcanvas: right drawer only ===== */
+.brxe-offcanvas,
+#brxe-bnohwn,
+#brxe-htuwgc {
+  visibility: hidden !important;
+  position: fixed !important;
+  inset: 0 !important;
+  z-index: 100000 !important;
+  pointer-events: none !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  width: 100% !important;
+  max-width: none !important;
+  height: 100% !important;
+  transform: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  box-shadow: none !important;
+}
+.brxe-offcanvas.brx-open,
+#brxe-bnohwn.brx-open,
+#brxe-htuwgc.brx-open {
+  visibility: visible !important;
+  pointer-events: auto !important;
+  background: transparent !important;
+}
+.brxe-offcanvas .brx-offcanvas-inner,
+.brxe-offcanvas .brx-offcanvas-inner.brxe-block,
+#brxe-tnmhuq,
+#brxe-llmjqc {
+  position: fixed !important;
+  top: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  left: auto !important;
+  width: min(340px, 88vw) !important;
+  max-width: 340px !important;
+  min-width: 0 !important;
+  height: 100vh !important;
+  height: 100dvh !important;
+  z-index: 100002 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-start !important;
+  align-items: stretch !important;
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+  transform: translate3d(105%, 0, 0) !important;
+  transition: transform .3s cubic-bezier(.25, 0, .25, 1) !important;
+  background: #02559a !important;
+  background-color: #02559a !important;
+  padding: 20px 22px 40px !important;
+  box-sizing: border-box !important;
+  margin: 0 !important;
+  box-shadow: -12px 0 40px rgba(0,0,0,.28) !important;
+}
+.brxe-offcanvas.brx-open .brx-offcanvas-inner,
+.brxe-offcanvas.brx-open .brx-offcanvas-inner.brxe-block,
+.brxe-offcanvas.brx-open #brxe-tnmhuq,
+.brxe-offcanvas.brx-open #brxe-llmjqc {
+  transform: translate3d(0, 0, 0) !important;
+}
+.brx-offcanvas-backdrop,
+.brxe-offcanvas > .brx-offcanvas-backdrop {
+  position: fixed !important;
+  inset: 0 !important;
+  background: rgba(0, 0, 0, .55) !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  transition: opacity .25s ease !important;
+  z-index: 100001 !important;
+}
+.brxe-offcanvas.brx-open .brx-offcanvas-backdrop,
+.brxe-offcanvas.brx-open > .brx-offcanvas-backdrop {
+  opacity: 1 !important;
+  pointer-events: auto !important;
+}
+body.truvs-nav-open { overflow: hidden !important; }
+
+/* Sticky header transform traps position:fixed offcanvas — neutralize while open */
+body.truvs-nav-open .sticky-header.brxe-section,
+body.truvs-nav-open #brxe-02d1bc.sticky-header,
+body.truvs-nav-open .sticky-header.brxe-section.is-sticky,
+body.truvs-nav-open #brxe-02d1bc.sticky-header.is-sticky {
+  transform: none !important;
+  pointer-events: auto !important;
+}
+
+/* Kill white “pill” on current/hover items inside blue drawer
+   (sticky nav styles: white bg on .current-menu-item / :hover) */
+.brxe-offcanvas .bricks-nav-menu > .current-menu-item > a,
+.brxe-offcanvas .bricks-nav-menu > .current-menu-item > .brx-submenu-toggle,
+.brxe-offcanvas .bricks-nav-menu > .current-menu-item > .brx-submenu-toggle > a,
+.brxe-offcanvas .bricks-nav-menu > .current-menu-parent > a,
+.brxe-offcanvas .bricks-nav-menu > .current-menu-parent > .brx-submenu-toggle,
+.brxe-offcanvas .bricks-nav-menu > .current-menu-ancestor > a,
+.brxe-offcanvas .bricks-nav-menu > .current-menu-ancestor > .brx-submenu-toggle,
+.brxe-offcanvas .bricks-nav-menu > li:hover > a,
+.brxe-offcanvas .bricks-nav-menu > li:hover > .brx-submenu-toggle,
+.brxe-offcanvas .bricks-nav-menu > li > a,
+.brxe-offcanvas .bricks-nav-menu > li > .brx-submenu-toggle,
+.brxe-offcanvas #brxe-irwaau .bricks-nav-menu > .current-menu-item > a,
+.brxe-offcanvas #brxe-irwaau .bricks-nav-menu > .current-menu-item > .brx-submenu-toggle,
+.brxe-offcanvas #brxe-irwaau .bricks-nav-menu > li:hover > a,
+.brxe-offcanvas #brxe-irwaau .bricks-nav-menu > li:hover > .brx-submenu-toggle,
+.brxe-offcanvas #brxe-80ecc2 .bricks-nav-menu > .current-menu-item > a,
+.brxe-offcanvas #brxe-80ecc2 .bricks-nav-menu > li:hover > a {
+  background: transparent !important;
+  background-color: transparent !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+.brxe-offcanvas .bricks-nav-menu > .current-menu-item > a,
+.brxe-offcanvas .bricks-nav-menu > .current-menu-item > .brx-submenu-toggle > a {
+  color: #65c324 !important;
+  -webkit-text-fill-color: #65c324 !important;
+}
+
+/* Hide duplicate Bricks mobile menu (only use primary nav list) */
+.brxe-offcanvas .bricks-mobile-menu-toggle,
+.brxe-offcanvas .bricks-mobile-menu-wrapper,
+.brxe-offcanvas .bricks-mobile-menu,
+.brxe-offcanvas .bricks-mobile-menu-overlay,
+.brxe-offcanvas nav.bricks-mobile-menu-wrapper {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  overflow: hidden !important;
+  pointer-events: none !important;
+}
+
+/* Single clean nav list */
+.brxe-offcanvas .brxe-nav-menu,
+.brxe-offcanvas #brxe-80ecc2,
+.brxe-offcanvas #brxe-irwaau {
+  display: block !important;
+  width: 100% !important;
+  flex: 0 0 auto !important;
+  height: auto !important;
+}
+.brxe-offcanvas .bricks-nav-menu-wrapper {
+  display: block !important;
+  width: 100% !important;
+}
+.brxe-offcanvas .bricks-nav-menu {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-start !important;
+  gap: 2px !important;
+  list-style: none !important;
+  margin: 8px 0 0 !important;
+  padding: 0 !important;
+  width: 100% !important;
+  height: auto !important;
+}
+.brxe-offcanvas .bricks-nav-menu > li {
+  display: block !important;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  float: none !important;
+  position: relative !important;
+  height: auto !important;
+  background: transparent !important;
+}
+.brxe-offcanvas .bricks-nav-menu > li > a,
+.brxe-offcanvas .bricks-nav-menu .brx-submenu-toggle > a {
+  display: block !important;
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
+  font-family: "Century Gothic", "CenturyGothic", AppleGothic, sans-serif !important;
+  font-size: 17px !important;
+  font-weight: 700 !important;
+  padding: 12px 4px !important;
+  text-decoration: none !important;
+  opacity: 1 !important;
+  background: transparent !important;
+}
+/* Submenus collapsed by default */
+.brxe-offcanvas .bricks-nav-menu .sub-menu,
+.brxe-offcanvas .bricks-nav-menu ul.sub-menu {
+  list-style: none !important;
+  margin: 0 0 6px 10px !important;
+  padding: 0 !important;
+  display: none !important;
+  height: auto !important;
+}
+.brxe-offcanvas .bricks-nav-menu .menu-item-has-children.is-open > .sub-menu {
+  display: block !important;
+}
+.brxe-offcanvas .bricks-nav-menu .sub-menu a {
+  color: rgba(255,255,255,.9) !important;
+  -webkit-text-fill-color: rgba(255,255,255,.9) !important;
+  font-size: 15px !important;
+  font-weight: 500 !important;
+  font-family: "Poppins", system-ui, sans-serif !important;
+  padding: 8px 4px !important;
+  display: block !important;
+  text-decoration: none !important;
+}
+.brxe-offcanvas .brx-submenu-toggle {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  width: 100% !important;
+  gap: 8px !important;
+}
+.brxe-offcanvas .brx-submenu-toggle button {
+  background: transparent !important;
+  border: 0 !important;
+  color: #fff !important;
+  padding: 8px !important;
+  cursor: pointer !important;
+  flex: 0 0 auto !important;
+}
+.brxe-offcanvas .brx-submenu-toggle button svg {
+  width: 12px !important;
+  height: 12px !important;
+  stroke: currentColor !important;
+  display: block !important;
+  transition: transform .2s ease !important;
+}
+.brxe-offcanvas .menu-item-has-children.is-open > .brx-submenu-toggle button svg {
+  transform: rotate(180deg) !important;
+}
+
+/* Close button — green circle with X (no Font Awesome) */
+.brxe-offcanvas .brxe-toggle[aria-label="Close"] {
+  align-self: flex-end !important;
+  width: 40px !important;
+  height: 40px !important;
+  min-width: 40px !important;
+  margin: 0 0 12px auto !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 50% !important;
+  background: #65c324 !important;
+  color: #02559a !important;
+  cursor: pointer !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  position: relative !important;
+  z-index: 100003 !important;
+  font-size: 0 !important;
+}
+.brxe-offcanvas .brxe-toggle[aria-label="Close"] i,
+.brxe-offcanvas .brxe-toggle[aria-label="Close"] svg {
+  display: none !important;
+}
+.brxe-offcanvas .brxe-toggle[aria-label="Close"]::before,
+.brxe-offcanvas .brxe-toggle[aria-label="Close"]::after {
+  content: none !important;
+  display: none !important;
+}
+.brxe-offcanvas .brxe-toggle[aria-label="Close"] .truvs-close-x {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+  height: 100% !important;
+  font-size: 26px !important;
+  font-weight: 700 !important;
+  line-height: 1 !important;
+  color: #02559a !important;
+  font-family: system-ui, sans-serif !important;
+}
+.brxe-offcanvas .brxe-toggle[aria-label="Close"] .truvs-close-x::before {
+  content: "×";
+  font-size: 26px;
+  font-weight: 700;
+  color: #02559a;
+  line-height: 1;
+}
+
+/* Hide open hamburger while drawer open */
+body.truvs-nav-open button.brxe-toggle[aria-label="Open"],
+body.truvs-nav-open #brxe-801e36,
+body.truvs-nav-open #brx-header .nb-arrow-button-v4 {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+/* Footer main grid — logo + 4 link columns */
+#brx-footer #brxe-yekaxl{background:#010a35;padding:64px 24px 0}
+#brx-footer #brxe-fuzirz{
+  display:grid!important;
+  grid-template-columns:1.3fr repeat(4,minmax(120px,1fr));
+  gap:32px 28px;
+  width:100%;
+  max-width:1300px;
+  margin:0 auto;
+  align-items:start;
+}
+#brx-footer #brxe-yjhsmc{display:flex;flex-direction:column;gap:18px}
+#brx-footer #brxe-kyeeve,
+#brx-footer #brxe-prbjlt,
+#brx-footer > section > .brxe-container > .brxe-block > .brxe-block{
+  min-width:0;
+}
+#brx-footer .brxe-list .content{display:block}
+#brx-footer .brxe-list .title{
+  font-family:var(--truvs-font-body);
+  font-size:14px;
+  font-weight:400;
+  color:rgba(255,255,255,.8);
+}
+#brx-footer a:hover .title{color:#65c324}
+@media(max-width:991px){
+  #brx-footer #brxe-fuzirz{
+    grid-template-columns:1fr 1fr;
+  }
+}
+@media(max-width:560px){
+  #brx-footer #brxe-fuzirz{grid-template-columns:1fr}
+}
+
+/* Contact strip + social */
+#brx-footer .brxe-icon-box,
+#brx-footer [class*="icon-box"]{color:#fff}
+
+/* Marquee / discuss CTA band */
+#brx-footer #section,
+#brx-footer .marquee-section{
+  position:relative;
+  overflow:hidden;
+  background:#010a35;
+  color:#fff;
+  min-height:120px;
+  display:flex;
+  align-items:center;
+}
+#brx-footer .marquee-track h1,
+#brx-footer .track1 h1,
+#brx-footer .track2 h1{
+  font-family:var(--truvs-font-heading)!important;
+  font-size:clamp(28px,5vw,48px)!important;
+  white-space:nowrap;
+  margin:0 24px!important;
+  color:rgba(255,255,255,.9)!important;
+}
+#brx-footer #box{
+  position:absolute;
+  opacity:0;
+  pointer-events:auto;
+  z-index:5;
+  background:#65c324;
+  color:#010a35;
+  padding:12px 18px;
+  border-radius:999px;
+  font-weight:700;
+  text-decoration:none;
+}
+
+/* Hamburger color on dark heroes */
+button.brxe-toggle[aria-label="Open"]{color:#65c324!important}
+.sticky-header.is-sticky button.brxe-toggle[aria-label="Open"]{color:#65c324!important}
+
+
+/* ===== Footer layout fix (prevent marquee blow-up) ===== */
+#brx-footer{overflow:hidden}
+#brx-footer #brxe-yekaxl{padding-bottom:0}
+#brx-footer #brxe-oviaix{
+  display:block!important;
+  max-width:1300px;
+  margin:0 auto;
+  padding:0 24px;
+}
+#brx-footer #brxe-fuzirz{
+  display:grid!important;
+  grid-template-columns:1.4fr repeat(4,minmax(0,1fr));
+  gap:28px 24px;
+  padding:56px 0 40px;
+  align-items:start;
+}
+/* Direct column children of fuzirz */
+#brx-footer #brxe-fuzirz > .brxe-block{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  min-width:0;
+}
+#brx-footer #brxe-yjhsmc{display:flex;flex-direction:column;gap:16px}
+#brx-footer #brxe-utcgyx img,
+#brx-footer #brxe-xfaohh{max-width:140px!important;width:140px!important;height:auto!important}
+
+/* Marquee band */
+#brx-footer #section,
+#brx-footer .marquee-section,
+#brx-footer [id="section"]{
+  position:relative!important;
+  overflow:hidden!important;
+  height:140px!important;
+  min-height:140px!important;
+  max-height:160px!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  background:#010a35!important;
+  margin:0!important;
+  padding:0!important;
+}
+#brx-footer .marquee-track,
+#brx-footer .track1,
+#brx-footer .track2{
+  display:inline-flex!important;
+  width:max-content!important;
+  flex-shrink:0!important;
+  height:auto!important;
+}
+#brx-footer .marquee-track h1,
+#brx-footer .track1 h1,
+#brx-footer .track2 h1,
+#brx-footer #brxe-nqjehe,
+#brx-footer #brxe-zprcsc,
+#brx-footer #brxe-hzcysq,
+#brx-footer #brxe-gigtik{
+  font-size:clamp(22px,4vw,40px)!important;
+  line-height:1.2!important;
+  white-space:nowrap!important;
+  margin:0 20px!important;
+  color:rgba(255,255,255,.85)!important;
+  font-family:var(--truvs-font-heading)!important;
+}
+#brx-footer #box{
+  position:absolute!important;
+  left:0;top:0;
+  opacity:0;
+  z-index:5;
+  background:#65c324!important;
+  color:#010a35!important;
+  padding:12px 20px!important;
+  border-radius:999px!important;
+  font-weight:700!important;
+  text-decoration:none!important;
+  pointer-events:auto;
+}
+#brx-footer .floating-box{display:none!important}
+@media(max-width:900px){
+  #brx-footer #brxe-fuzirz{grid-template-columns:1fr 1fr!important}
+}
+@media(max-width:560px){
+  #brx-footer #brxe-fuzirz{grid-template-columns:1fr!important}
+}
+
+
+/* ===== Footer columns: force homepage multi-col layout ===== */
+#brx-footer #brxe-yjhsmc{
+  display:grid!important;
+  grid-template-columns:minmax(140px,1.2fr) repeat(4,minmax(0,1fr));
+  gap:24px 28px!important;
+  align-items:start!important;
+  width:100%!important;
+  height:auto!important;
+}
+#brx-footer #brxe-yjhsmc > .brxe-block{
+  display:flex!important;
+  flex-direction:column!important;
+  gap:10px!important;
+  height:auto!important;
+  min-height:0!important;
+  width:auto!important;
+}
+#brx-footer #brxe-fuzirz{
+  display:flex!important;
+  flex-direction:column!important;
+  gap:40px!important;
+  height:auto!important;
+  padding:48px 0 24px!important;
+}
+#brx-footer #brxe-bqwmri{
+  display:grid!important;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:20px;
+  padding:8px 0 24px;
+  border-top:1px solid rgba(255,255,255,.08);
+}
+#brx-footer .brxe-list,
+#brx-footer ul.brxe-list{
+  display:block!important;
+  list-style:none!important;
+  margin:0!important;
+  padding:0!important;
+  height:auto!important;
+  max-height:none!important;
+}
+#brx-footer .brxe-list > li,
+#brx-footer ul.brxe-list > li{
+  display:block!important;
+  margin:0 0 8px!important;
+  padding:0!important;
+  height:auto!important;
+  min-height:0!important;
+  line-height:1.45!important;
+  border:0!important;
+  background:transparent!important;
+  box-shadow:none!important;
+  position:static!important;
+  float:none!important;
+  width:auto!important;
+}
+#brx-footer .brxe-list .content,
+#brx-footer .brxe-list li .content{
+  display:block!important;
+  margin:0!important;
+  padding:0!important;
+  height:auto!important;
+  min-height:0!important;
+  background:none!important;
+  border:0!important;
+  box-shadow:none!important;
+}
+#brx-footer .brxe-list .title,
+#brx-footer .brxe-list span.title{
+  display:inline!important;
+  font-size:14px!important;
+  line-height:1.45!important;
+  font-weight:400!important;
+  color:rgba(255,255,255,.82)!important;
+  font-family:var(--truvs-font-body)!important;
+  white-space:normal!important;
+}
+#brx-footer .brxe-heading,
+#brx-footer h5.brxe-heading{
+  margin:0 0 12px!important;
+  padding:0!important;
+  font-size:15px!important;
+  color:#fff!important;
+  height:auto!important;
+}
+#brx-footer #brxe-utcgyx{grid-column:auto}
+#brx-footer #brxe-xfaohh,
+#brx-footer #brxe-utcgyx img{
+  width:130px!important;
+  max-width:130px!important;
+  height:auto!important;
+}
+#brx-footer #brxe-yekaxl,
+#brx-footer #brxe-oviaix,
+#brx-footer #brxe-fuzirz,
+#brx-footer #brxe-yjhsmc{
+  height:auto!important;
+  max-height:none!important;
+  overflow:visible!important;
+}
+@media(max-width:900px){
+  #brx-footer #brxe-yjhsmc{grid-template-columns:1fr 1fr!important}
+  #brx-footer #brxe-bqwmri{grid-template-columns:1fr 1fr!important}
+}
+@media(max-width:560px){
+  #brx-footer #brxe-yjhsmc{grid-template-columns:1fr!important}
+  #brx-footer #brxe-bqwmri{grid-template-columns:1fr!important}
+}
+
+
+/* =========================================================
+   SITEWIDE CTA — green pill + arrow circle
+   Design: "View all case studies" (nb-arrow-button-v4)
+   Hover: text slides right; arrow swaps left/right
+   ========================================================= */
+:root {
+  --truvs-cta-green: #65c324;
+  --truvs-cta-green-hover: #57ad1c;
+  --truvs-cta-navy-hover: #062d88;
+  --truvs-cta-icon: 48px;
+  --truvs-cta-gap: 6px;
+  --truvs-cta-duration: 0.5s;
+  --truvs-cta-ease: cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+a.nb-arrow-button-v4,
+.nb-arrow-button-v4,
+.brxe-next-arrow-button-v4.nb-arrow-button-v4,
+a.brxe-next-arrow-button-v4 {
+  --icon-dimensions: var(--truvs-cta-icon) !important;
+  --transition-duration: var(--truvs-cta-duration) !important;
+  --transition-easing: var(--truvs-cta-ease) !important;
+  --stroke: #ffffff !important;
+
+  position: relative !important;
+  display: inline-flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  width: fit-content !important;
+  max-width: 100% !important;
+  gap: 0 !important;
+  cursor: pointer !important;
+  text-decoration: none !important;
+  color: #fff !important;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  line-height: 1 !important;
+  vertical-align: middle !important;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.nb-arrow-button-v4__text {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  height: fit-content !important;
+  z-index: 2 !important;
+  padding: 14px 28px !important;
+  background: var(--truvs-cta-green) !important;
+  border-radius: 100px !important;
+  transition:
+    transform var(--truvs-cta-duration) var(--truvs-cta-ease),
+    background-color var(--truvs-cta-duration) var(--truvs-cta-ease) !important;
+  box-shadow: none !important;
+  border: 0 !important;
+}
+
+.nb-arrow-button-v4__text span {
+  display: block !important;
+  font-family: "Century Gothic", "CenturyGothic", AppleGothic, sans-serif !important;
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  line-height: 1.2 !important;
+  letter-spacing: -0.01em !important;
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  white-space: nowrap !important;
+  text-transform: none !important;
+}
+
+.nb-arrow-button-v4__icon {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  height: var(--icon-dimensions) !important;
+  width: var(--icon-dimensions) !important;
+  min-width: var(--icon-dimensions) !important;
+  min-height: var(--icon-dimensions) !important;
+  padding: 0 !important;
+  margin-left: var(--truvs-cta-gap) !important;
+  background: var(--truvs-cta-green) !important;
+  border-radius: 100px !important;
+  transform: scale(1) rotate(0.001deg) !important;
+  transform-origin: right !important;
+  stroke: #fff !important;
+  fill: #fff !important;
+  transition:
+    transform var(--truvs-cta-duration) var(--truvs-cta-ease),
+    background-color var(--truvs-cta-duration) var(--truvs-cta-ease) !important;
+  box-sizing: border-box !important;
+}
+
+.nb-arrow-button-v4__icon svg {
+  display: block !important;
+  width: 18px !important;
+  height: 18px !important;
+  fill: #fff !important;
+  stroke: none !important;
+  flex-shrink: 0 !important;
+}
+.nb-arrow-button-v4__icon path {
+  fill: #fff !important;
+  stroke: none !important;
+}
+
+/* Duplicate arrow sits under/left; scales in on hover */
+.nb-arrow-button-v4__icon--duplicate {
+  position: absolute !important;
+  left: 0 !important;
+  top: 50% !important;
+  margin-left: 0 !important;
+  margin-top: 0 !important;
+  transform: translateY(-50%) scale(0) rotate(0.001deg) !important;
+  transform-origin: left center !important;
+  background: var(--truvs-cta-green) !important;
+  z-index: 1 !important;
+  pointer-events: none !important;
+}
+
+/* Hover animation — same as NextBricks v4 */
+.nb-arrow-button-v4:hover .nb-arrow-button-v4__text,
+.nb-arrow-button-v4:focus-visible .nb-arrow-button-v4__text {
+  transform: translateX(var(--icon-dimensions)) rotate(0.001deg) !important;
+  background: var(--truvs-cta-green-hover) !important;
+}
+.nb-arrow-button-v4:hover .nb-arrow-button-v4__icon:not(.nb-arrow-button-v4__icon--duplicate),
+.nb-arrow-button-v4:focus-visible .nb-arrow-button-v4__icon:not(.nb-arrow-button-v4__icon--duplicate) {
+  transform: scale(0) rotate(0.001deg) !important;
+  background: var(--truvs-cta-green-hover) !important;
+}
+.nb-arrow-button-v4:hover .nb-arrow-button-v4__icon--duplicate,
+.nb-arrow-button-v4:focus-visible .nb-arrow-button-v4__icon--duplicate {
+  transform: translateY(-50%) scale(1) rotate(0.001deg) !important;
+  background: var(--truvs-cta-green-hover) !important;
+}
+
+/* Optional navy hover variant */
+.nb-arrow-button-v4.nb-arrow-button-v4--navy-hover:hover .nb-arrow-button-v4__text,
+.nb-arrow-button-v4.nb-arrow-button-v4--navy-hover:hover .nb-arrow-button-v4__icon,
+.nb-arrow-button-v4.nb-arrow-button-v4--navy-hover:hover .nb-arrow-button-v4__icon--duplicate {
+  background: var(--truvs-cta-navy-hover) !important;
+}
+
+/* Header Explore — keep dual-pill (do not paint outer shell) */
+#brx-header .nb-arrow-button-v4,
+#brxe-801e36.nb-arrow-button-v4 {
+  background: transparent !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  color: #fff !important;
+}
+#brx-header .nb-arrow-button-v4__text span {
+  font-size: 15px !important;
+}
+
+/* Outline / light surface CTAs still use green fill for brand consistency */
+a.bricks-button,
+button.bricks-button,
+.truvs-cta,
+a.truvs-cta {
+  /* enhanced to nb structure by JS; fallback style */
+}
+
+/* Case-study / standalone page buttons that get enhanced */
+.truvs-cta-enhanced {
+  display: inline-flex !important;
+}
+
+@media (max-width: 480px) {
+  .nb-arrow-button-v4__text {
+    padding: 12px 20px !important;
+  }
+  .nb-arrow-button-v4__text span {
+    font-size: 15px !important;
+  }
+  :root {
+    --truvs-cta-icon: 44px;
+  }
+}
+
+
+/* =========================================================
+   FOOTER — full-width content (max 1300px), correct links
+   ========================================================= */
+#brx-footer.truvs-footer,
+.truvs-footer {
+  background: #0a0a0f !important;
+  color: rgba(255,255,255,.88) !important;
+  font-family: "Poppins", system-ui, sans-serif !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100% !important;
+  max-width: none !important;
+  overflow: hidden !important;
+}
+.truvs-footer * { box-sizing: border-box; }
+
+.truvs-footer__inner {
+  width: 100% !important;
+  max-width: 1300px !important;
+  margin: 0 auto !important;
+  padding: 64px 24px 28px !important;
+}
+
+.truvs-footer__top {
+  display: grid !important;
+  grid-template-columns: minmax(140px, 1.15fr) repeat(4, minmax(0, 1fr)) !important;
+  gap: 32px 40px !important;
+  align-items: start !important;
+  width: 100% !important;
+}
+
+.truvs-footer__brand {
+  min-width: 0;
+}
+.truvs-footer__logo {
+  display: inline-block;
+  text-decoration: none;
+}
+.truvs-footer__logo img {
+  width: 140px !important;
+  max-width: 100% !important;
+  height: auto !important;
+  display: block !important;
+  opacity: 1 !important;
+  filter: none !important;
+}
+
+.truvs-footer__heading,
+.truvs-footer h5 {
+  margin: 0 0 16px !important;
+  padding: 0 !important;
+  font-family: "Century Gothic", "CenturyGothic", AppleGothic, sans-serif !important;
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  color: #ffffff !important;
+  letter-spacing: -0.01em !important;
+  line-height: 1.3 !important;
+}
+
+.truvs-footer__list {
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.truvs-footer__list li {
+  margin: 0 0 10px !important;
+  padding: 0 !important;
+  list-style: none !important;
+}
+.truvs-footer__list a,
+.truvs-footer__meta a,
+.truvs-footer__legal a {
+  color: rgba(255,255,255,.78) !important;
+  text-decoration: none !important;
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  line-height: 1.45 !important;
+  transition: color .2s ease !important;
+}
+.truvs-footer__list a:hover,
+.truvs-footer__meta a:hover,
+.truvs-footer__legal a:hover,
+.truvs-footer__social a:hover {
+  color: #65c324 !important;
+}
+
+.truvs-footer__mid {
+  display: grid !important;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  gap: 24px 32px !important;
+  margin-top: 48px !important;
+  padding-top: 28px !important;
+  border-top: 1px solid rgba(255,255,255,.12) !important;
+  width: 100% !important;
+}
+.truvs-footer__meta p {
+  margin: 0 !important;
+  font-size: 14px !important;
+  line-height: 1.55 !important;
+  color: rgba(255,255,255,.75) !important;
+}
+
+.truvs-footer__social {
+  display: flex !important;
+  align-items: center !important;
+  gap: 14px !important;
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.truvs-footer__social a {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 36px !important;
+  height: 36px !important;
+  border: 1px solid rgba(255,255,255,.25) !important;
+  border-radius: 8px !important;
+  color: #fff !important;
+  transition: border-color .2s ease, color .2s ease, background .2s ease !important;
+}
+.truvs-footer__social a:hover {
+  border-color: #65c324 !important;
+  background: rgba(101,195,36,.12) !important;
+  color: #65c324 !important;
+}
+
+.truvs-footer__bottom {
+  background: #02559a !important;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.truvs-footer__bottom-inner {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 16px 24px !important;
+  flex-wrap: wrap !important;
+  padding-top: 14px !important;
+  padding-bottom: 14px !important;
+}
+.truvs-footer__copy {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  gap: 6px !important;
+  font-size: 14px !important;
+  color: rgba(255,255,255,.9) !important;
+  line-height: 1.45 !important;
+}
+.truvs-footer__credit {
+  font-size: 13px !important;
+  color: rgba(255,255,255,.72) !important;
+}
+.truvs-footer__credit a {
+  color: #65c324 !important;
+  -webkit-text-fill-color: #65c324 !important;
+  text-decoration: none !important;
+  font-weight: 600 !important;
+}
+.truvs-footer__credit a:hover {
+  color: #7ad93a !important;
+  -webkit-text-fill-color: #7ad93a !important;
+  text-decoration: underline !important;
+}
+.truvs-footer__legal {
+  display: flex !important;
+  align-items: center !important;
+  gap: 20px !important;
+}
+.truvs-footer__legal a {
+  color: rgba(255,255,255,.9) !important;
+  font-size: 14px !important;
+}
+
+@media (max-width: 1100px) {
+  .truvs-footer__top {
+    grid-template-columns: minmax(120px, 1fr) repeat(2, minmax(0, 1fr)) !important;
+  }
+  .truvs-footer__brand { grid-column: 1 / -1; }
+}
+@media (max-width: 767px) {
+  .truvs-footer__inner { padding: 48px 18px 24px !important; }
+  .truvs-footer__top {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 28px 20px !important;
+  }
+  .truvs-footer__mid {
+    grid-template-columns: 1fr 1fr !important;
+  }
+}
+@media (max-width: 480px) {
+  .truvs-footer__top,
+  .truvs-footer__mid {
+    grid-template-columns: 1fr !important;
+  }
+  .truvs-footer__bottom-inner {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+}
+
+/* Hide legacy nested Bricks footer chrome if any remnants exist */
+#brx-footer .marquee-section,
+#brx-footer #section,
+#brx-footer #box,
+#brx-footer .floating-box {
+  display: none !important;
+}
+
+
+/* =========================================================
+   HEADER ALIGNMENT — identical sitewide
+   Logo left | Explore CTA + hamburger right (CTA then ☰)
+   ========================================================= */
+#brx-header {
+  position: relative !important;
+  z-index: 1000 !important;
+  width: 100% !important;
+}
+#brx-header > .brxe-section:first-child,
+#brxe-41e559 {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  width: 100% !important;
+  z-index: 100 !important;
+  margin: 0 !important;
+  padding: 12px 0 !important;
+  background: transparent !important;
+  min-height: 0 !important;
+  display: block !important;
+}
+#brxe-ea23e4 {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  width: 100% !important;
+  max-width: 1300px !important;
+  margin: 0 auto !important;
+  min-height: 72px !important;
+  padding: 0 24px !important;
+  box-sizing: border-box !important;
+  column-gap: 16px !important;
+}
+#brxe-21c48c {
+  width: auto !important;
+  flex: 0 0 auto !important;
+  display: flex !important;
+  align-items: center !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+#brxe-c64274 {
+  width: auto !important;
+  flex: 0 0 auto !important;
+  margin-left: auto !important;
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  column-gap: 14px !important;
+  padding: 0 !important;
+}
+/* Hamburger group */
+#brxe-a30461,
+#brxe-15b050 {
+  order: 2 !important; /* hamburger after CTA */
+  width: auto !important;
+  flex: 0 0 auto !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+}
+/* Explore CTA before hamburger */
+#brxe-801e36,
+#brxe-c64274 > .nb-arrow-button-v4,
+#brxe-c64274 > a.nb-arrow-button-v4 {
+  order: 1 !important;
+  margin: 0 !important;
+  flex: 0 0 auto !important;
+}
+button.brxe-toggle[aria-label="Open"] {
+  margin: 0 !important;
+}
+
+/* Sticky header same alignment */
+#brxe-7562c7 {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  width: 100% !important;
+  max-width: 1300px !important;
+  margin: 0 auto !important;
+  min-height: 64px !important;
+  padding: 0 24px !important;
+  box-sizing: border-box !important;
+}
+#brxe-6ce44a {
+  margin-left: auto !important;
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  column-gap: 14px !important;
+  width: auto !important;
+}
+#brxe-15b050 { order: 2 !important; }
+#brxe-6ce44a > .nb-arrow-button-v4 { order: 1 !important; }
+
+@media (max-width: 991px) {
+  #brxe-801e36,
+  #brxe-c64274 > .nb-arrow-button-v4,
+  #brxe-6ce44a > .nb-arrow-button-v4 {
+    display: none !important;
+  }
+  #brxe-ea23e4,
+  #brxe-7562c7 {
+    padding: 0 16px !important;
+  }
+}
+
+/* Submenu open — extra-specific so page CSS cannot block */
+.brxe-offcanvas.brx-open .bricks-nav-menu .menu-item-has-children.is-open > .sub-menu,
+.brxe-offcanvas .bricks-nav-menu li.menu-item-has-children.is-open > ul.sub-menu,
+.brxe-offcanvas .menu-item-has-children.is-open > .sub-menu {
+  display: block !important;
+  visibility: visible !important;
+  height: auto !important;
+  max-height: none !important;
+  opacity: 1 !important;
+  overflow: visible !important;
+  pointer-events: auto !important;
+}
+.brxe-offcanvas .bricks-nav-menu .sub-menu,
+.brxe-offcanvas ul.sub-menu {
+  display: none !important;
+}
+
+
+/* Stacking fix — panel must receive clicks above backdrop */
+.brxe-offcanvas.brx-open {
+  z-index: 200000 !important;
+}
+.brxe-offcanvas .brx-offcanvas-backdrop,
+.brxe-offcanvas > .brx-offcanvas-backdrop,
+#brxe-xjfagb,
+#brxe-twcxlg {
+  z-index: 200001 !important;
+}
+.brxe-offcanvas .brx-offcanvas-inner,
+.brxe-offcanvas .brx-offcanvas-inner.brxe-block,
+#brxe-tnmhuq,
+#brxe-llmjqc,
+.brxe-offcanvas.brx-open .brx-offcanvas-inner,
+.brxe-offcanvas.brx-open #brxe-tnmhuq,
+.brxe-offcanvas.brx-open #brxe-llmjqc {
+  z-index: 200010 !important;
+  pointer-events: auto !important;
+}
+/* Clickable, but do NOT force position:relative on every descendant
+   (that broke submenu stacking / absolute Bricks chrome). */
+.brxe-offcanvas.brx-open .bricks-nav-menu,
+.brxe-offcanvas.brx-open .brx-submenu-toggle,
+.brxe-offcanvas.brx-open .brx-submenu-toggle button,
+.brxe-offcanvas.brx-open .bricks-nav-menu a {
+  pointer-events: auto !important;
+}
+/* Backdrop should not sit above panel content */
+.brxe-offcanvas.brx-open > .brx-offcanvas-backdrop {
+  z-index: 200001 !important;
+}
+
+
+/* Final submenu visibility override (must win over page styles) */
+.brxe-offcanvas .bricks-nav-menu li.menu-item-has-children > ul.sub-menu,
+.brxe-offcanvas .bricks-nav-menu .sub-menu {
+  display: none !important;
+}
+.brxe-offcanvas .bricks-nav-menu li.menu-item-has-children.is-open > ul.sub-menu,
+.brxe-offcanvas .bricks-nav-menu .menu-item-has-children.is-open > .sub-menu,
+.brxe-offcanvas.brx-open li.is-open > ul.sub-menu {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  height: auto !important;
+  max-height: 80vh !important;
+  overflow: visible !important;
+}
+
+/* Bricks uses .open on menu items — support both .open and .is-open */
+.brxe-offcanvas .bricks-nav-menu li.menu-item-has-children.open > .sub-menu,
+.brxe-offcanvas .bricks-nav-menu li.menu-item-has-children.open > ul.sub-menu,
+.brxe-offcanvas .bricks-nav-menu li.open[data-static] > .sub-menu {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  position: static !important;
+  transform: none !important;
+  min-width: 0 !important;
+  background: transparent !important;
+  line-height: 1.4 !important;
+  pointer-events: auto !important;
+}
+
+
+/* Offcanvas submenu items — kill Bricks desktop dropdown chrome */
+.brxe-offcanvas .bricks-nav-menu .sub-menu,
+.brxe-offcanvas .bricks-nav-menu li.open > .sub-menu,
+.brxe-offcanvas .bricks-nav-menu li.is-open > .sub-menu,
+.brxe-offcanvas .bricks-nav-menu li[data-static] .sub-menu,
+.brxe-offcanvas .bricks-nav-menu li.open[data-static] > .sub-menu {
+  background: transparent !important;
+  background-color: transparent !important;
+  color: #fff !important;
+  line-height: 1.45 !important;
+  min-width: 0 !important;
+  width: 100% !important;
+  position: static !important;
+  top: auto !important;
+  left: auto !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
+  box-shadow: none !important;
+  border: 0 !important;
+  padding: 0 0 6px 8px !important;
+  margin: 0 0 4px 4px !important;
+  white-space: normal !important;
+  pointer-events: auto !important;
+}
+.brxe-offcanvas .bricks-nav-menu .sub-menu li {
+  width: 100% !important;
+  border: 0 !important;
+  background: transparent !important;
+  line-height: 1.45 !important;
+  min-height: 0 !important;
+  height: auto !important;
+}
+.brxe-offcanvas .bricks-nav-menu .sub-menu a,
+.brxe-offcanvas .bricks-nav-menu .sub-menu button {
+  display: block !important;
+  color: rgba(255,255,255,.92) !important;
+  -webkit-text-fill-color: rgba(255,255,255,.92) !important;
+  background: transparent !important;
+  padding: 8px 6px !important;
+  font-size: 15px !important;
+  font-weight: 500 !important;
+  font-family: "Poppins", system-ui, sans-serif !important;
+  line-height: 1.4 !important;
+  white-space: normal !important;
+  text-decoration: none !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+.brxe-offcanvas .bricks-nav-menu .sub-menu a:hover {
+  color: #65c324 !important;
+  -webkit-text-fill-color: #65c324 !important;
+}
+/* collapsed when not open AND not hovered (hover expands on fine pointers) */
+.brxe-offcanvas .bricks-nav-menu li.menu-item-has-children:not(.open):not(.is-open):not(:hover):not(:focus-within) > .sub-menu {
+  display: none !important;
+}
+
+/* ------------------------------------------------------------------
+   Offcanvas text visibility — kill white-on-white / sticky dark links
+   Sticky header sets a{color:#010a35} which leaked into the drawer.
+   ------------------------------------------------------------------ */
+.sticky-header .brxe-offcanvas a,
+.sticky-header.is-sticky .brxe-offcanvas a,
+.sticky-header .brxe-offcanvas .bricks-nav-menu a,
+.sticky-header.is-sticky .brxe-offcanvas .bricks-nav-menu a,
+.sticky-header .brxe-offcanvas .sub-menu a,
+.sticky-header.is-sticky .brxe-offcanvas .sub-menu a,
+.brxe-offcanvas a,
+.brxe-offcanvas .bricks-nav-menu a,
+.brxe-offcanvas .bricks-nav-menu .brx-submenu-toggle > a,
+.brxe-offcanvas .bricks-nav-menu .sub-menu a,
+.brxe-offcanvas .bricks-nav-menu .sub-menu .menu-item a,
+.brxe-offcanvas li a {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  background: transparent !important;
+  background-color: transparent !important;
+}
+.brxe-offcanvas .bricks-nav-menu .sub-menu a {
+  color: rgba(255, 255, 255, 0.92) !important;
+  -webkit-text-fill-color: rgba(255, 255, 255, 0.92) !important;
+}
+.brxe-offcanvas .bricks-nav-menu .sub-menu a:hover,
+.brxe-offcanvas .bricks-nav-menu > li > a:hover,
+.brxe-offcanvas .brx-submenu-toggle > a:hover {
+  color: #65c324 !important;
+  -webkit-text-fill-color: #65c324 !important;
+}
+/* Never paint white dropdown panels inside the blue drawer */
+.sticky-header .brxe-offcanvas .sub-menu,
+.sticky-header.is-sticky .brxe-offcanvas .sub-menu,
+.brxe-offcanvas .bricks-nav-menu .sub-menu,
+.brxe-offcanvas .bricks-nav-menu ul.sub-menu,
+.brxe-offcanvas .bricks-nav-menu li .sub-menu,
+.brxe-offcanvas .bricks-nav-menu li.open > .sub-menu,
+.brxe-offcanvas .bricks-nav-menu li.is-open > .sub-menu {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
+  border: 0 !important;
+  color: #fff !important;
+}
+.brxe-offcanvas .bricks-nav-menu .sub-menu li,
+.brxe-offcanvas .bricks-nav-menu .sub-menu .menu-item {
+  background: transparent !important;
+  background-color: transparent !important;
+  color: #fff !important;
+}
+/* Parent labels always readable on blue */
+.brxe-offcanvas .brx-submenu-toggle,
+.brxe-offcanvas .brx-submenu-toggle a,
+.brxe-offcanvas .brx-submenu-toggle button,
+.brxe-offcanvas .brx-submenu-toggle button svg,
+.brxe-offcanvas .brx-submenu-toggle button svg path {
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
+  stroke: #fff !important;
+  fill: none !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+
+/* =========================================================
+   PAGE SECTION NAV — stick under site sticky header
+   (BMS + Core Offerings internal navigation)
+   ========================================================= */
+:root {
+  --truvs-site-header-h: 0px;
+  --truvs-section-nav-h: 3.5rem;
+}
+
+/* When site sticky header is visible, section nav sits under it */
+.bpm-service-landing-section-nav,
+.section-nav,
+nav.section-nav,
+nav#section-nav,
+nav#bpm-service-landing-section-nav {
+  position: sticky !important;
+  position: -webkit-sticky !important;
+  top: var(--truvs-site-header-h, 0px) !important;
+  z-index: 950 !important; /* below site sticky header (1000), above page content */
+  width: 100% !important;
+}
+
+.bpm-service-landing-section-nav.is-stuck,
+.section-nav.is-stuck {
+  box-shadow: 0 8px 28px rgba(1, 10, 53, 0.1) !important;
+}
+
+/* Site sticky header stays above page section nav */
+#brx-header .sticky-header,
+#brxe-02d1bc.sticky-header,
+.sticky-header.brxe-section {
+  z-index: 1000 !important;
+}
+.sticky-header.brxe-section.is-sticky,
+#brxe-02d1bc.sticky-header.is-sticky {
+  z-index: 1000 !important;
+}
+
+/* Anchor scroll offset = site header + section nav */
+html {
+  scroll-padding-top: calc(var(--truvs-site-header-h, 0px) + var(--truvs-section-nav-h, 3.5rem) + 12px) !important;
+}
+
+.bpm-service-landing [id^="bpm-service-landing-"],
+.bpm-service-landing-section[id],
+#the-idea,
+#offerings,
+#why-truvs,
+#how-we-engage,
+#where-we-engage,
+#accelerators,
+#cta,
+[data-section] {
+  scroll-margin-top: calc(var(--truvs-site-header-h, 0px) + var(--truvs-section-nav-h, 3.5rem) + 12px) !important;
+}
+
+@media (max-width: 767px) {
+  :root {
+    --truvs-section-nav-h: 3rem;
+  }
+}
+
+
+/* Top header logo: white mark on dark/transparent bar */
+#brx-header #brxe-5f4c7a img,
+#brx-header .truvs-header-logo {
+  background: transparent !important;
+  filter: none !important;
+}
+/* Sticky header keeps color logo */
+#brx-header .sticky-header #brxe-8fcd58,
+#brx-header .sticky-header img {
+  filter: none !important;
+}
+
+
+/* =========================================================
+   OFFCANVAS MENU — ALWAYS vertical (never horizontal row).
+   Nav lives only inside .brxe-offcanvas (#brxe-80ecc2 / #brxe-irwaau).
+   Beat Bricks defaults: display:flex row, line-height:60px,
+   white item panels, absolute dropdowns.
+   ========================================================= */
+
+.brxe-offcanvas #brxe-80ecc2,
+.brxe-offcanvas #brxe-irwaau,
+.brxe-offcanvas .brxe-nav-menu {
+  display: block !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  flex: 0 0 auto !important;
+  height: auto !important;
+  overflow: visible !important;
+}
+
+.brxe-offcanvas #brxe-80ecc2 .bricks-nav-menu-wrapper,
+.brxe-offcanvas #brxe-irwaau .bricks-nav-menu-wrapper,
+.brxe-offcanvas .bricks-nav-menu-wrapper {
+  display: block !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow: visible !important;
+}
+
+/* Root list: column stack — ID specificity beats Bricks + old desktop row rules */
+.brxe-offcanvas #brxe-80ecc2 .bricks-nav-menu,
+.brxe-offcanvas #brxe-irwaau .bricks-nav-menu,
+.brxe-offcanvas .bricks-nav-menu {
+  display: flex !important;
+  flex-direction: column !important;
+  flex-wrap: nowrap !important;
+  align-items: stretch !important;
+  justify-content: flex-start !important;
+  gap: 2px !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  height: auto !important;
+  margin: 8px 0 0 !important;
+  padding: 0 !important;
+  list-style: none !important;
+}
+
+.brxe-offcanvas #brxe-80ecc2 .bricks-nav-menu > li,
+.brxe-offcanvas #brxe-irwaau .bricks-nav-menu > li,
+.brxe-offcanvas .bricks-nav-menu > li {
+  display: block !important;
+  position: relative !important;
+  float: none !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  flex: 0 0 auto !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  height: auto !important;
+  min-height: 0 !important;
+  line-height: 1.35 !important;
+  background: transparent !important;
+  white-space: normal !important;
+}
+
+/* Parent row: label + chevron */
+.brxe-offcanvas #brxe-80ecc2 .brx-submenu-toggle,
+.brxe-offcanvas #brxe-irwaau .brx-submenu-toggle,
+.brxe-offcanvas .brx-submenu-toggle {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  width: 100% !important;
+  gap: 8px !important;
+}
+
+/* Submenus: nested vertical list (static, not floating dropdown) */
+.brxe-offcanvas #brxe-80ecc2 .bricks-nav-menu .sub-menu,
+.brxe-offcanvas #brxe-irwaau .bricks-nav-menu .sub-menu,
+.brxe-offcanvas #brxe-80ecc2 .bricks-nav-menu > .menu-item-has-children > .sub-menu,
+.brxe-offcanvas #brxe-irwaau .bricks-nav-menu > .menu-item-has-children > .sub-menu,
+.brxe-offcanvas .bricks-nav-menu .sub-menu,
+.brxe-offcanvas .bricks-nav-menu ul.sub-menu {
+  display: none !important;
+  flex-direction: column !important;
+  flex-wrap: nowrap !important;
+  align-items: stretch !important;
+  position: static !important;
+  top: auto !important;
+  left: auto !important;
+  right: auto !important;
+  bottom: auto !important;
+  float: none !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  height: auto !important;
+  max-height: none !important;
+  margin: 0 0 6px 8px !important;
+  padding: 0 0 4px 8px !important;
+  list-style: none !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
+  line-height: 1.4 !important;
+  white-space: normal !important;
+  overflow: visible !important;
+  pointer-events: auto !important;
+  z-index: auto !important;
+}
+
+.brxe-offcanvas #brxe-80ecc2 .bricks-nav-menu > .menu-item-has-children.is-open > .sub-menu,
+.brxe-offcanvas #brxe-80ecc2 .bricks-nav-menu > .menu-item-has-children.open > .sub-menu,
+.brxe-offcanvas #brxe-irwaau .bricks-nav-menu > .menu-item-has-children.is-open > .sub-menu,
+.brxe-offcanvas #brxe-irwaau .bricks-nav-menu > .menu-item-has-children.open > .sub-menu,
+.brxe-offcanvas .bricks-nav-menu > .menu-item-has-children.is-open > .sub-menu,
+.brxe-offcanvas .bricks-nav-menu > .menu-item-has-children.open > .sub-menu,
+.brxe-offcanvas .bricks-nav-menu li.menu-item-has-children.is-open > ul.sub-menu,
+.brxe-offcanvas .bricks-nav-menu li.menu-item-has-children.open > ul.sub-menu {
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.brxe-offcanvas #brxe-80ecc2 .bricks-nav-menu .sub-menu > li,
+.brxe-offcanvas #brxe-irwaau .bricks-nav-menu .sub-menu > li,
+.brxe-offcanvas #brxe-80ecc2 .bricks-nav-menu .sub-menu .menu-item,
+.brxe-offcanvas #brxe-irwaau .bricks-nav-menu .sub-menu .menu-item,
+.brxe-offcanvas .bricks-nav-menu .sub-menu > li,
+.brxe-offcanvas .bricks-nav-menu .sub-menu .menu-item {
+  display: block !important;
+  float: none !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  flex: 0 0 auto !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  height: auto !important;
+  min-height: 0 !important;
+  line-height: 1.4 !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  border: 0 !important;
+  white-space: normal !important;
+}
+
+.brxe-offcanvas #brxe-80ecc2 .bricks-nav-menu .sub-menu a,
+.brxe-offcanvas #brxe-irwaau .bricks-nav-menu .sub-menu a,
+.brxe-offcanvas #brxe-80ecc2 .bricks-nav-menu .sub-menu > li > a,
+.brxe-offcanvas #brxe-irwaau .bricks-nav-menu .sub-menu > li > a,
+.brxe-offcanvas .bricks-nav-menu .sub-menu a {
+  display: block !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+  color: rgba(255, 255, 255, 0.92) !important;
+  -webkit-text-fill-color: rgba(255, 255, 255, 0.92) !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  padding: 8px 6px !important;
+  margin: 0 !important;
+  font-size: 15px !important;
+  font-weight: 500 !important;
+  font-family: "Poppins", system-ui, sans-serif !important;
+  line-height: 1.4 !important;
+  height: auto !important;
+  min-height: 0 !important;
+  white-space: normal !important;
+  text-decoration: none !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.brxe-offcanvas #brxe-80ecc2 .bricks-nav-menu .sub-menu a:hover,
+.brxe-offcanvas #brxe-irwaau .bricks-nav-menu .sub-menu a:hover,
+.brxe-offcanvas .bricks-nav-menu .sub-menu a:hover {
+  color: #65c324 !important;
+  -webkit-text-fill-color: #65c324 !important;
+  background: transparent !important;
+}
+
+/* Kill Bricks white panels + 60px line-height on submenu items */
+.brxe-offcanvas #brxe-80ecc2 .bricks-nav-menu .sub-menu .menu-item:hover,
+.brxe-offcanvas #brxe-irwaau .bricks-nav-menu .sub-menu .menu-item:hover {
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
+/* =========================================================
+   OFFCANVAS ONLY — vertical menu in blue drawer.
+   Submenu opens on HOVER (and .open/.is-open for touch/JS).
+   Closes when cursor leaves that parent <li> — not the panel.
+   ========================================================= */
+
+/* Highest-specificity show rules (must beat every earlier display:none) */
+.brxe-offcanvas #brxe-80ecc2 .bricks-nav-menu > li.menu-item-has-children:hover > ul.sub-menu,
+.brxe-offcanvas #brxe-80ecc2 .bricks-nav-menu > li.menu-item-has-children:focus-within > ul.sub-menu,
+.brxe-offcanvas #brxe-80ecc2 .bricks-nav-menu > li.menu-item-has-children.is-open > ul.sub-menu,
+.brxe-offcanvas #brxe-80ecc2 .bricks-nav-menu > li.menu-item-has-children.open > ul.sub-menu,
+.brxe-offcanvas #brxe-irwaau .bricks-nav-menu > li.menu-item-has-children:hover > ul.sub-menu,
+.brxe-offcanvas #brxe-irwaau .bricks-nav-menu > li.menu-item-has-children:focus-within > ul.sub-menu,
+.brxe-offcanvas #brxe-irwaau .bricks-nav-menu > li.menu-item-has-children.is-open > ul.sub-menu,
+.brxe-offcanvas #brxe-irwaau .bricks-nav-menu > li.menu-item-has-children.open > ul.sub-menu,
+.brxe-offcanvas .bricks-nav-menu > li.menu-item-has-children:hover > ul.sub-menu,
+.brxe-offcanvas .bricks-nav-menu > li.menu-item-has-children:focus-within > ul.sub-menu,
+.brxe-offcanvas .bricks-nav-menu > li.menu-item-has-children.is-open > ul.sub-menu,
+.brxe-offcanvas .bricks-nav-menu > li.menu-item-has-children.open > ul.sub-menu,
+.brxe-offcanvas #brxe-80ecc2 .bricks-nav-menu > li.menu-item-has-children:hover > .sub-menu,
+.brxe-offcanvas #brxe-80ecc2 .bricks-nav-menu > li.menu-item-has-children.is-open > .sub-menu,
+.brxe-offcanvas #brxe-80ecc2 .bricks-nav-menu > li.menu-item-has-children.open > .sub-menu,
+.brxe-offcanvas #brxe-irwaau .bricks-nav-menu > li.menu-item-has-children:hover > .sub-menu,
+.brxe-offcanvas #brxe-irwaau .bricks-nav-menu > li.menu-item-has-children.is-open > .sub-menu,
+.brxe-offcanvas #brxe-irwaau .bricks-nav-menu > li.menu-item-has-children.open > .sub-menu {
+  display: flex !important;
+  flex-direction: column !important;
+  flex-wrap: nowrap !important;
+  align-items: stretch !important;
+  position: static !important;
+  top: auto !important;
+  left: auto !important;
+  float: none !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  height: auto !important;
+  max-height: none !important;
+  margin: 0 0 6px 8px !important;
+  padding: 0 0 4px 8px !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
+  overflow: visible !important;
+  pointer-events: auto !important;
+  line-height: 1.4 !important;
+  white-space: normal !important;
+  list-style: none !important;
+  z-index: auto !important;
+}
+
+.brxe-offcanvas .bricks-nav-menu > li.menu-item-has-children:hover > .brx-submenu-toggle button svg,
+.brxe-offcanvas .bricks-nav-menu > li.menu-item-has-children.is-open > .brx-submenu-toggle button svg,
+.brxe-offcanvas .bricks-nav-menu > li.menu-item-has-children.open > .brx-submenu-toggle button svg {
+  transform: rotate(180deg) !important;
+}
+
+/* Keep hamburger available at every width (drawer-only nav) */
+#brx-header button.brxe-toggle[aria-label="Open"] {
+  display: inline-flex !important;
+}

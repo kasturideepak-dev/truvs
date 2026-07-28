@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Commercial Cloud Order Release — Lean Process Transformation | TruVs Case Study</title>
+  <meta name="description" content="~48% reservation cancellation/rejection rate. Lean Six Sigma root-cause analysis targeting 50% reduction." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /><link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet" /><style>
+    :root {
+      --primary: #65c324;
+      --primary-dark: #4fa018;
+      --primary-soft: rgba(101, 195, 36, 0.12);
+      --primary-glow: rgba(101, 195, 36, 0.32);
+      --secondary: #02369b;
+      --dark: #010a35;
+      --cream: #f4f3ef;
+      --light: #f6f7f8;
+      --text: #1a1f2e;
+      --muted: #5c6578;
+      --white: #ffffff;
+      --line: rgba(1, 10, 53, 0.1);
+      --font-heading: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+      --font-body: "Poppins", system-ui, -apple-system, sans-serif;
+      --ease: cubic-bezier(0.4, 0, 0.2, 1);
+      --max: 1120px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { -webkit-font-smoothing: antialiased; scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-body);
+      font-size: 17px;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.7;
+    }
+    a { color: inherit; text-decoration: none; }
+    ul { list-style: none; }
+    :focus-visible { outline: 3px solid var(--primary); outline-offset: 3px; }
+    .container { width: 100%; max-width: var(--max); margin: 0 auto; padding: 0 40px; }
+
+    .banner {
+      position: relative;
+      background: var(--dark);
+      overflow: hidden;
+      padding: 128px 24px 96px;
+      text-align: center;
+    }
+    .banner__bg { position: absolute; inset: 0; pointer-events: none; }
+    .banner__grid {
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(101, 195, 36, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(101, 195, 36, 0.05) 1px, transparent 1px);
+      background-size: 56px 56px;
+      mask-image: radial-gradient(ellipse 70% 70% at 60% 40%, black 12%, transparent 72%);
+      -webkit-mask-image: radial-gradient(ellipse 70% 70% at 60% 40%, black 12%, transparent 72%);
+    }
+    .banner__orb {
+      position: absolute; border-radius: 50%; filter: blur(90px); opacity: 0.4;
+    }
+    .banner__orb--1 {
+      width: 380px; height: 380px;
+      background: radial-gradient(circle, rgba(2, 54, 155, 0.55), transparent 70%);
+      top: -80px; right: 8%;
+    }
+    .banner__orb--2 {
+      width: 240px; height: 240px;
+      background: radial-gradient(circle, rgba(101, 195, 36, 0.3), transparent 70%);
+      bottom: -60px; left: 10%;
+    }
+    .banner .container {
+      display: flex;
+      justify-content: center;
+    }
+    .banner__inner {
+      position: relative;
+      z-index: 2;
+      max-width: 880px;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .banner__crumb {
+      display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 8px;
+      font-size: 13px; color: rgba(255,255,255,0.6); margin-bottom: 28px;
+    }
+    .banner__crumb a { color: rgba(255,255,255,0.85); font-weight: 500; }
+    .banner__crumb a:hover { color: var(--primary); }
+    .banner__eyebrow {
+      display: inline-block;
+      font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase;
+      color: #c8f08f; background: rgba(101,195,36,0.18); border: 1px solid rgba(101,195,36,0.28);
+      padding: 9px 18px; border-radius: 999px; margin-bottom: 24px; line-height: 1.3;
+    }
+    .banner h1 {
+      font-family: var(--font-heading); font-weight: 700; font-size: clamp(30px, 4vw, 44px);
+      line-height: 1.22; letter-spacing: -0.02em; color: var(--white);
+      margin: 0 auto 20px; text-wrap: balance; text-align: center;
+      max-width: 18ch;
+    }
+    .banner__lead {
+      font-size: 17px; line-height: 1.75; color: rgba(255,255,255,0.86);
+      max-width: 620px; margin: 0 auto; text-align: center;
+    }
+
+    .metrics-bar {
+      margin-top: -32px; position: relative; z-index: 3; margin-bottom: 28px;
+    }
+    .metrics-bar__grid {
+      display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px;
+      max-width: 1100px; margin: 0 auto;
+    }
+    .metric {
+      background: var(--white); border: 1px solid var(--line); border-radius: 16px;
+      padding: 22px 16px 18px; text-align: center;
+      box-shadow: 0 10px 28px rgba(1,10,53,0.08);
+      border-top: 3px solid var(--primary);
+    }
+    .metric__value {
+      display: block; font-family: var(--font-heading); font-weight: 700;
+      font-size: 24px; line-height: 1.2; color: var(--secondary); margin-bottom: 8px; letter-spacing: 0.3px;
+    }
+    .metric__label {
+      display: block; font-size: 12px; font-weight: 500; color: var(--muted); line-height: 1.35;
+    }
+
+    .profile {
+      margin: 32px auto 0;
+      max-width: 1100px;
+      background: var(--dark); color: rgba(255,255,255,0.9);
+      border-radius: 14px; padding: 18px 22px;
+      display: flex; flex-wrap: wrap; gap: 10px 18px; align-items: baseline;
+      justify-content: center;
+      text-align: center;
+      border-left: 4px solid var(--primary);
+    }
+    .profile__label {
+      font-size: 11px; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase;
+      color: #c8f08f;
+    }
+    .profile__text { font-size: 14px; line-height: 1.5; flex: 1; min-width: 200px; }
+
+    .content { padding: 40px 0 56px; }
+    .layout {
+      display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 36px; align-items: start;
+    }
+    .main { min-width: 0; }
+
+    .panel {
+      border: 1px solid var(--line); border-radius: 16px; overflow: hidden; margin-bottom: 20px;
+      background: var(--white);
+    }
+    .panel__head {
+      background: var(--dark); color: var(--white);
+      font-family: var(--font-heading); font-weight: 700; font-size: 14px;
+      letter-spacing: 0.06em; text-transform: uppercase; padding: 12px 18px;
+    }
+    .panel__body { padding: 18px 20px; }
+    .panel--split .panel__body {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 0;
+      padding: 0;
+    }
+    .panel--split .col { padding: 18px 20px; }
+    .panel--split .col + .col { border-left: 1px solid var(--line); }
+    .col h3 {
+      font-family: var(--font-heading); font-size: 13px; letter-spacing: 0.05em;
+      text-transform: uppercase; color: var(--secondary); margin-bottom: 12px;
+    }
+    .col p, .panel__body p {
+      font-size: 15px; line-height: 1.7; color: var(--muted); margin-bottom: 12px;
+    }
+    .col p:last-child, .panel__body p:last-child { margin-bottom: 0; }
+
+    .outcomes { display: grid; gap: 8px; }
+    .outcomes li {
+      position: relative; padding: 12px 14px 12px 36px;
+      background: var(--light); border-radius: 10px;
+      font-size: 15px; line-height: 1.55; color: var(--text);
+    }
+    .outcomes li::before {
+      content: ""; position: absolute; left: 14px; top: 18px;
+      width: 8px; height: 8px; border-radius: 50%; background: var(--primary);
+    }
+
+    .insight {
+      margin-top: 4px; padding: 18px 20px; border-radius: 14px;
+      background: linear-gradient(90deg, rgba(101,195,36,0.12), rgba(101,195,36,0.04));
+      border-left: 4px solid var(--primary);
+    }
+    .insight__label {
+      display: block; font-size: 11px; font-weight: 700; letter-spacing: 0.07em;
+      text-transform: uppercase; color: var(--primary-dark); margin-bottom: 8px;
+    }
+    .insight p {
+      font-size: 16px; line-height: 1.65; color: var(--dark); font-style: italic; margin: 0;
+    }
+
+    .tags {
+      display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; padding-top: 18px;
+      border-top: 1px solid var(--line);
+    }
+    .tag {
+      display: inline-flex; padding: 6px 12px; border-radius: 999px;
+      background: var(--light); border: 1px solid var(--line);
+      font-size: 12px; font-weight: 600; color: var(--secondary);
+    }
+
+    .back { margin-top: 22px; }
+    .back a {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 15px; font-weight: 600; color: var(--secondary);
+    }
+    .back a:hover { color: var(--primary-dark); }
+    .back svg { width: 16px; height: 16px; }
+
+    .sidebar { position: sticky; top: 20px; }
+    .side-card {
+      background: var(--cream); border: 1px solid var(--line); border-radius: 16px; padding: 18px 16px;
+    }
+    .side-card h2 {
+      font-family: var(--font-heading); font-size: 16px; letter-spacing: 0.4px;
+      color: var(--dark); margin-bottom: 12px;
+    }
+    .related-item {
+      display: grid; grid-template-columns: 36px 1fr; gap: 10px; align-items: start;
+      padding: 12px 0; border-bottom: 1px solid var(--line);
+    }
+    .related-item:last-child { border-bottom: 0; padding-bottom: 0; }
+    .related-item__num {
+      width: 36px; height: 28px; border-radius: 8px; background: var(--primary-soft);
+      color: var(--primary-dark); font-family: var(--font-heading); font-weight: 700;
+      font-size: 12px; display: flex; align-items: center; justify-content: center;
+    }
+    .related-item__title {
+      display: block; font-size: 13px; font-weight: 700; color: var(--dark);
+      line-height: 1.35; margin-bottom: 4px; font-family: var(--font-heading); letter-spacing: 0.2px;
+    }
+    .related-item:hover .related-item__title { color: var(--secondary); }
+    .related-item__sum { display: block; font-size: 12px; color: var(--muted); line-height: 1.45; }
+    .side-card__footer { margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--line); }
+    .side-card__footer a { font-size: 13px; font-weight: 600; color: var(--secondary); }
+    .side-card__footer a:hover { color: var(--primary-dark); }
+
+    .cta {
+      background: var(--dark); padding: 48px 0; text-align: center;
+    }
+    .cta h2 {
+      font-family: var(--font-heading); font-size: 28px; color: var(--white);
+      letter-spacing: 1px; margin-bottom: 10px;
+    }
+    .cta p { color: rgba(255,255,255,0.8); font-size: 16px; margin-bottom: 22px; }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      padding: 14px 24px; border-radius: 999px; font-weight: 600; font-size: 15px;
+      background: var(--primary); color: var(--dark);
+      transition: transform 0.25s var(--ease), box-shadow 0.25s var(--ease);
+    }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 12px 28px var(--primary-glow); }
+
+    @media (max-width: 900px) {
+      .container { padding: 0 28px; }
+      .banner h1 { font-size: 32px; max-width: none; }
+      .metrics-bar__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .layout { grid-template-columns: 1fr; }
+      .sidebar { position: static; }
+      .panel--split .panel__body { grid-template-columns: 1fr; }
+      .panel--split .col + .col { border-left: 0; border-top: 1px solid var(--line); }
+    }
+    @media (max-width: 640px) {
+      .container { padding: 0 20px; }
+      .banner { padding: 100px 20px 72px; }
+      .banner h1 { font-size: 28px; max-width: none; }
+      .metrics-bar { margin-top: -28px; }
+      .metric__value { font-size: 18px; }
+      .content { padding: 28px 0 44px; }
+    }
+  </style>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /><link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" /><link rel="stylesheet" href="assets/remote/wp-content/plugins/nextbricks/elements/css/next_arrow_button_v4.css" /><link rel="stylesheet" href="shared/site-chrome.css?v=27" /></head>
+<body class="has-truvs-chrome">
+<header id="brx-header"><section id="brxe-41e559" class="brxe-section "><div id="brxe-ea23e4" class="brxe-container "><div id="brxe-21c48c" class="brxe-block "><a id="brxe-5f4c7a" class="brxe-image tag" href="home.html"><img width="120" height="120" src="assets/remote/wp-content/uploads/2026/03/logo-white.png" class="css-filter size-full truvs-header-logo" alt="TruVs" decoding="async" style="width:78px;height:auto;display:block;opacity:1"></a></div><div id="brxe-c64274" class="brxe-block "><div id="brxe-a30461" class="brxe-block "><button id="brxe-bjpbpt" data-script-id="bjpbpt" class="brxe-toggle" aria-label="Open" aria-expanded="false"><span class="brxa-wrap"><span class="brxa-inner"></span></span></button><div id="brxe-bnohwn" data-script-id="bnohwn" class="brxe-offcanvas " aria-label="Offcanvas" data-direction="right"><div id="brxe-tnmhuq" class="brxe-block brx-offcanvas-inner "><button id="brxe-ltymgi" data-script-id="ltymgi" class="brxe-toggle" aria-label="Close" aria-expanded="false"><span class="truvs-close-x" aria-hidden="true"></span></button><div id="brxe-80ecc2" data-script-id="80ecc2" class="brxe-nav-menu"><nav class="bricks-nav-menu-wrapper mobile_landscape"><ul id="menu-main-menu" class="bricks-nav-menu"><li id="menu-item-2382" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home  page_item page-item-1371  menu-item-2382 bricks-menu-item" data-static="true" data-toggle="hover"><a href="home.html">Home</a></li>
+<li id="menu-item-474" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-474 bricks-menu-item" data-static="true" data-toggle="hover"><div class="brx-submenu-toggle icon-right"><a href="core-offerings.html" data-brx-anchor="true">Offerings</a><button aria-expanded="false" aria-label="Offerings Sub menu"><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12" fill="none" class="menu-item-icon"><path d="M1.50002 4L6.00002 8L10.5 4" stroke-width="1.5" stroke="currentcolor"></path></svg></button></div>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page bricks-menu-item" data-static="true" data-toggle="hover"><a href="bms.html">Business Process Modernization</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page bricks-menu-item" data-static="true" data-toggle="hover"><a href="core-offerings.html">Core Offerings Overview</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom bricks-menu-item" data-static="true" data-toggle="hover"><a href="core-offerings.html#offerings">Application Modernization</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom bricks-menu-item" data-static="true" data-toggle="hover"><a href="core-offerings.html#offerings">Data Modernization</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom bricks-menu-item" data-static="true" data-toggle="hover"><a href="core-offerings.html#offerings">AI Transformation</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom bricks-menu-item" data-static="true" data-toggle="hover"><a href="core-offerings.html#offerings">Transformation Services</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom bricks-menu-item" data-static="true" data-toggle="hover"><a href="core-offerings.html#offerings">Strategy and Planning</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom bricks-menu-item" data-static="true" data-toggle="hover"><a href="core-offerings.html#offerings">Business Validation and Testing</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom bricks-menu-item" data-static="true" data-toggle="hover"><a href="core-offerings.html#offerings">Program and Change Management</a></li>
+</ul>
+</li>
+<li id="menu-item-566" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-566 bricks-menu-item" data-static="true" data-toggle="hover"><div class="brx-submenu-toggle icon-right"><a href="industry-financial-services.html" data-brx-anchor="true">Industry Functions</a><button aria-expanded="false" aria-label="Industry Functions Sub menu"><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12" fill="none" class="menu-item-icon"><path d="M1.50002 4L6.00002 8L10.5 4" stroke-width="1.5" stroke="currentcolor"></path></svg></button></div>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-custom menu-item-object-custom bricks-menu-item" data-static="true" data-toggle="hover"><a href="industry-financial-services.html">Lead-to-Order</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom bricks-menu-item" data-static="true" data-toggle="hover"><a href="industry-financial-services.html">Order-to-Cash</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom bricks-menu-item" data-static="true" data-toggle="hover"><a href="industry-financial-services.html">Financial Services</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom bricks-menu-item" data-static="true" data-toggle="hover"><a href="industry-financial-services.html">Source-to-Pay</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom bricks-menu-item" data-static="true" data-toggle="hover"><a href="industry-financial-services.html">Supply Chain</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom bricks-menu-item" data-static="true" data-toggle="hover"><a href="industry-financial-services.html">Legal &amp; Compliance</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom bricks-menu-item" data-static="true" data-toggle="hover"><a href="industry-financial-services.html">Human Resources</a></li>
+</ul>
+</li>
+<li id="menu-item-574" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-574 bricks-menu-item" data-static="true" data-toggle="hover"><div class="brx-submenu-toggle icon-right"><a href="blog.html" data-brx-anchor="true">Resources</a><button aria-expanded="false" aria-label="Resources Sub menu"><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12" fill="none" class="menu-item-icon"><path d="M1.50002 4L6.00002 8L10.5 4" stroke-width="1.5" stroke="currentcolor"></path></svg></button></div>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page bricks-menu-item" data-static="true" data-toggle="hover"><a href="blog.html">Blog</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom bricks-menu-item" data-static="true" data-toggle="hover"><a href="case-studies.html">Case Studies</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom bricks-menu-item" data-static="true" data-toggle="hover"><a href="blog.html">Videos &amp; Webinars</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom bricks-menu-item" data-static="true" data-toggle="hover"><a href="careers.html">Careers</a></li>
+</ul>
+</li>
+<li id="menu-item-2275" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2275 bricks-menu-item" data-static="true" data-toggle="hover"><a href="about-us.html">About Us</a></li>
+<li id="menu-item-2380" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2380 bricks-menu-item" data-static="true" data-toggle="hover"><a href="contact.html">Contact Us</a></li>
+</ul></nav>			</div></div><div id="brxe-xjfagb" class="brxe-block brx-offcanvas-backdrop "></div></div></div>
+    <a href="case-studies.html" id="brxe-801e36" class="brxe-next-arrow-button-v4 nb-arrow-button-v4" style="text-decoration:none;color:inherit;cursor:pointer"><div class='nb-arrow-button-v4__icon nb-arrow-button-v4__icon--duplicate'>
+            <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'>
+        <path d='M11.293 4.707 17.586 11H4v2h13.586l-6.293 6.293 1.414 1.414L21.414 12l-8.707-8.707-1.414 1.414z'/></svg>
+        </div>
+        <div class='nb-arrow-button-v4__text'>
+            <span>Explore Our Work</span>
+        </div>
+        <div class='nb-arrow-button-v4__icon'>
+            <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'>
+        <path d='M11.293 4.707 17.586 11H4v2h13.586l-6.293 6.293 1.414 1.414L21.414 12l-8.707-8.707-1.414 1.414z'/></svg>
+        </div>
+    </a>
+    </div></div></section><section id="brxe-02d1bc" class="brxe-section sticky-header sticky-header "><div id="brxe-7562c7" class="brxe-container "><div id="brxe-98f39a" class="brxe-block "><a href="home.html" aria-label="TruVs home"><img width="535" height="557" src="assets/remote/wp-content/uploads/2026/03/logo-header.png" class="brxe-image css-filter size-full " alt="TruVs" id="brxe-8fcd58" decoding="async" fetchpriority="high" data-src="assets/remote/wp-content/uploads/2026/03/logo-header.png" data-type="string" /></a></div><div id="brxe-6ce44a" class="brxe-block "><div id="brxe-15b050" class="brxe-block "><button id="brxe-jmtzkj" data-script-id="jmtzkj" class="brxe-toggle" aria-label="Open" aria-expanded="false"><span class="brxa-wrap"><span class="brxa-inner"></span></span></button><div id="brxe-htuwgc" data-script-id="htuwgc" class="brxe-offcanvas " aria-label="Offcanvas" data-direction="right"><div id="brxe-llmjqc" class="brxe-block brx-offcanvas-inner "><button id="brxe-yfdiaq" data-script-id="yfdiaq" class="brxe-toggle" aria-label="Close" aria-expanded="false"><span class="truvs-close-x" aria-hidden="true"></span></button><div id="brxe-irwaau" data-script-id="irwaau" class="brxe-nav-menu"><nav class="bricks-nav-menu-wrapper mobile_landscape"><ul id="menu-main-menu-2" class="bricks-nav-menu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home  page_item page-item-1371  menu-item-2382 bricks-menu-item" data-static="true" data-toggle="hover"><a href="home.html">Home</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-474 bricks-menu-item" data-static="true" data-toggle="hover"><div class="brx-submenu-toggle icon-right"><a href="core-offerings.html" data-brx-anchor="true">Offerings</a><button aria-expanded="false" aria-label="Offerings Sub menu"><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12" fill="none" class="menu-item-icon"><path d="M1.50002 4L6.00002 8L10.5 4" stroke-width="1.5" stroke="currentcolor"></path></svg></button></div>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page bricks-menu-item" data-static="true" data-toggle="hover"><a href="bms.html">Business Process Modernization</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page bricks-menu-item" data-static="true" data-toggle="hover"><a href="core-offerings.html">Core Offerings Overview</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom bricks-menu-item" data-static="true" data-toggle="hover"><a href="core-offerings.html#offerings">Application Modernization</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom bricks-menu-item" data-static="true" data-toggle="hover"><a href="core-offerings.html#offerings">Data Modernization</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom bricks-menu-item" data-static="true" data-toggle="hover"><a href="core-offerings.html#offerings">AI Transformation</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom bricks-menu-item" data-static="true" data-toggle="hover"><a href="core-offerings.html#offerings">Transformation Services</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom bricks-menu-item" data-static="true" data-toggle="hover"><a href="core-offerings.html#offerings">Strategy and Planning</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom bricks-menu-item" data-static="true" data-toggle="hover"><a href="core-offerings.html#offerings">Business Validation and Testing</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom bricks-menu-item" data-static="true" data-toggle="hover"><a href="core-offerings.html#offerings">Program and Change Management</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-566 bricks-menu-item" data-static="true" data-toggle="hover"><div class="brx-submenu-toggle icon-right"><a href="industry-financial-services.html" data-brx-anchor="true">Industry Functions</a><button aria-expanded="false" aria-label="Industry Functions Sub menu"><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12" fill="none" class="menu-item-icon"><path d="M1.50002 4L6.00002 8L10.5 4" stroke-width="1.5" stroke="currentcolor"></path></svg></button></div>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-custom menu-item-object-custom bricks-menu-item" data-static="true" data-toggle="hover"><a href="industry-financial-services.html">Lead-to-Order</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom bricks-menu-item" data-static="true" data-toggle="hover"><a href="industry-financial-services.html">Order-to-Cash</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom bricks-menu-item" data-static="true" data-toggle="hover"><a href="industry-financial-services.html">Financial Services</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom bricks-menu-item" data-static="true" data-toggle="hover"><a href="industry-financial-services.html">Source-to-Pay</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom bricks-menu-item" data-static="true" data-toggle="hover"><a href="industry-financial-services.html">Supply Chain</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom bricks-menu-item" data-static="true" data-toggle="hover"><a href="industry-financial-services.html">Legal &amp; Compliance</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom bricks-menu-item" data-static="true" data-toggle="hover"><a href="industry-financial-services.html">Human Resources</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-574 bricks-menu-item" data-static="true" data-toggle="hover"><div class="brx-submenu-toggle icon-right"><a href="blog.html" data-brx-anchor="true">Resources</a><button aria-expanded="false" aria-label="Resources Sub menu"><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12" fill="none" class="menu-item-icon"><path d="M1.50002 4L6.00002 8L10.5 4" stroke-width="1.5" stroke="currentcolor"></path></svg></button></div>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page bricks-menu-item" data-static="true" data-toggle="hover"><a href="blog.html">Blog</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom bricks-menu-item" data-static="true" data-toggle="hover"><a href="case-studies.html">Case Studies</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom bricks-menu-item" data-static="true" data-toggle="hover"><a href="blog.html">Videos &amp; Webinars</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom bricks-menu-item" data-static="true" data-toggle="hover"><a href="careers.html">Careers</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2275 bricks-menu-item" data-static="true" data-toggle="hover"><a href="about-us.html">About Us</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2380 bricks-menu-item" data-static="true" data-toggle="hover"><a href="contact.html">Contact Us</a></li>
+</ul></nav>			</div></div><div id="brxe-twcxlg" class="brxe-block brx-offcanvas-backdrop "></div></div></div>
+    <a href="core-offerings.html" id="brxe-6e8333" class="brxe-next-arrow-button-v4 nb-arrow-button-v4" style="text-decoration:none;color:inherit;cursor:pointer"><div class='nb-arrow-button-v4__icon nb-arrow-button-v4__icon--duplicate'>
+            <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'>
+        <path d='M11.293 4.707 17.586 11H4v2h13.586l-6.293 6.293 1.414 1.414L21.414 12l-8.707-8.707-1.414 1.414z'/></svg>
+        </div>
+        <div class='nb-arrow-button-v4__text'>
+            <span>Know More</span>
+        </div>
+        <div class='nb-arrow-button-v4__icon'>
+            <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'>
+        <path d='M11.293 4.707 17.586 11H4v2h13.586l-6.293 6.293 1.414 1.414L21.414 12l-8.707-8.707-1.414 1.414z'/></svg>
+        </div>
+    </a>
+    </div></div></section></header>
+
+<header class="banner">
+    <div class="banner__bg" aria-hidden="true">
+      <div class="banner__grid"></div>
+      <div class="banner__orb banner__orb--1"></div>
+      <div class="banner__orb banner__orb--2"></div>
+    </div>
+    <div class="container">
+      <div class="banner__inner">
+        <nav class="banner__crumb" aria-label="Breadcrumb">
+          <a href="case-studies.html">Case Studies</a>
+          <span aria-hidden="true">/</span>
+          <span>Case Study 09</span>
+        </nav>
+        <span class="banner__eyebrow">Case Study 09 · Process Transformation · Lean Six Sigma</span>
+        <h1>Commercial Cloud Order Release — Lean Process Transformation</h1>
+        <p class="banner__lead">~48% reservation cancellation/rejection rate. Lean Six Sigma root-cause analysis targeting 50% reduction.</p>
+      </div>
+    </div>
+  </header>
+
+  <div class="metrics-bar">
+    <div class="container">
+      <div class="metrics-bar__grid"><div class="metric">
+          <span class="metric__value">~48%</span>
+          <span class="metric__label">Cancel/Reject Rate Baseline</span>
+        </div><div class="metric">
+          <span class="metric__value">~23%</span>
+          <span class="metric__label">Target Rate Post-Implementation</span>
+        </div><div class="metric">
+          <span class="metric__value">50%</span>
+          <span class="metric__label">Targeted Reduction</span>
+        </div><div class="metric">
+          <span class="metric__value">5 Months</span>
+          <span class="metric__label">Discover → Design → UAT</span>
+        </div></div>
+      <div class="profile">
+        <span class="profile__label">Client profile</span>
+        <span class="profile__text">Fortune 50 hyperscaler · Cloud Infrastructure · Jan–May 2026 · CSCP Commercial Cloud</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="content">
+    <div class="container">
+      <div class="layout">
+        <div class="main">
+          <div class="panel panel--split">
+            <div class="panel__head">Challenge &amp; Approach</div>
+            <div class="panel__body">
+              <div class="col">
+                <h3>Challenge &amp; context</h3>
+                <p>The client&#x27;s Commercial Cloud Order Release process had a ~48% combined cancellation and rejection rate on reservations. Root cause: highly unstable inputs for space, power, cooling, and network (SPCN) capacity at data centers.</p><p>The client had no end-to-end process map of the order release and reservation workflow. Without visibility into where SPCN variability was introduced, engineering investment could not be directed to the right fix.</p>
+              </div>
+              <div class="col">
+                <h3>TruVs approach</h3>
+                <p>Project 1 — Commercial Cloud Order Release: Conducted end-to-end process mapping using Lean/Six Sigma methodology. Identified wastes and root causes across SPCN input variability. Transferred process documentation to Celonis and produced the improvement plan that justified engineering investment.</p><p>Project 2 — UAT Readiness for DC Supply Visibility Tool: Leading UAT readiness for the engineering tool being built to address SPCN visibility — ensuring the fix addresses the root causes identified in Project 1.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel">
+            <div class="panel__head">Outcomes</div>
+            <div class="panel__body">
+              <ul class="outcomes"><li>First-ever end-to-end process map of the Commercial Cloud Order Release flow created</li><li>Root causes of SPCN variability identified and documented — enabling data-driven engineering prioritization</li><li>Cross-functional visibility established: process owners can now see where variability is introduced and why</li><li>Celonis integration established as the process documentation foundation for this workstream</li><li>Improvement plan produced; engineering investment directed at identified root causes</li><li>UAT readiness for DC supply visibility tool in progress</li></ul>
+            </div>
+          </div>
+
+          <div class="insight">
+            <span class="insight__label">Key insight</span>
+            <p>The most expensive process failures are the ones nobody can see. TruVs brought the first visual map of this flow — and with it, the ability to direct engineering investment at the actual root cause rather than the most recent symptom.</p>
+          </div>
+
+          <div class="tags"><span class="tag">Lean Six Sigma</span><span class="tag">Process Transformation</span><span class="tag">Celonis</span><span class="tag">Commercial Cloud</span><span class="tag">UAT Readiness</span><span class="tag">SPCN</span></div>
+
+          <p class="back"><a href="case-studies.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+              All case studies
+            </a></p>
+        </div>
+
+        <aside class="sidebar"><div class="side-card">
+            <h2>More case studies</h2>
+            <a class="related-item" href="case-study-erp-transformation-enterprise-services.html"><span class="related-item__num">01</span>
+          <span class="related-item__body"><span class="related-item__title">ERP Transformation — Enterprise Services Division</span>
+            <span class="related-item__sum">Legacy ERP replaced without a dollar of revenue leakage across 80+ countries.</span></span>
+        </a><a class="related-item" href="case-study-erp-modernization-invoice-automation.html"><span class="related-item__num">02</span>
+          <span class="related-item__body"><span class="related-item__title">ERP Modernization &amp; Invoice Automation — Customer Success Division</span>
+            <span class="related-item__sum">Sole-sourced on performance. 2,000+ invoices automated. $3B revenue protected.</span></span>
+        </a><a class="related-item" href="case-study-modern-deal-management-microsoft-federal.html"><span class="related-item__num">03</span>
+          <span class="related-item__body"><span class="related-item__title">Modern Deal Management — Microsoft Federal (SAP HANA)</span>
+            <span class="related-item__sum">SAP HANA deployed for 3,000+ federal employees. 40% deal management velocity improvement.</span></span>
+        </a><a class="related-item" href="case-study-apac-sre-team-build-gaming.html"><span class="related-item__num">04</span>
+          <span class="related-item__body"><span class="related-item__title">APAC SRE Team Build — Global Gaming Technology Platform</span>
+            <span class="related-item__sum">A fully operational APAC SRE team built from zero. Full independence achieved in one quarter.</span></span>
+        </a>
+            <div class="side-card__footer">
+              <a href="case-studies.html">View all 13 →</a>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </div>
+
+  <section class="cta">
+    <div class="container">
+      <h2>Discuss a similar engagement</h2>
+      <p>Talk with TruVs about validation, modernization, supply chain, or AI-enabled process work.</p>
+      <a class="btn" href="contact.html" target="_blank" rel="noopener noreferrer">Contact TruVs</a>
+    </div>
+  </section>
+<footer id="brx-footer" class="truvs-footer" role="contentinfo">
+  <div class="truvs-footer__inner">
+    <div class="truvs-footer__top">
+      <div class="truvs-footer__brand">
+        <a href="home.html" class="truvs-footer__logo" aria-label="TruVs home"><img
+            src="assets/remote/wp-content/uploads/2026/03/ss-3.webp" width="160" height="160" alt="TruVs" decoding="async" loading="lazy"
+          />
+        </a>
+      </div>
+
+      <div class="truvs-footer__col">
+                <h5 class="truvs-footer__heading">Offerings</h5>
+        <ul class="truvs-footer__list">
+          <li><a href="bms.html">Business Process Modernization</a></li>
+          <li><a href="core-offerings.html">Core Offerings</a></li>
+          <li><a href="core-offerings.html#offerings">Application Modernization</a></li>
+          <li><a href="core-offerings.html#offerings">Data Modernization</a></li>
+          <li><a href="core-offerings.html#offerings">AI Transformation</a></li>
+          <li><a href="core-offerings.html#offerings">Strategy and Planning</a></li>
+          <li><a href="core-offerings.html#offerings">Business Validation and Testing</a></li>
+          <li><a href="core-offerings.html#offerings">Program and Change Management</a></li>
+        </ul>
+      </div>
+
+      <div class="truvs-footer__col">
+        <h5 class="truvs-footer__heading">Industry Functions</h5>
+        <ul class="truvs-footer__list">
+          <li><a href="industry-financial-services.html">Lead-to-Order</a></li>
+          <li><a href="industry-financial-services.html">Order-to-Cash</a></li>
+          <li><a href="industry-financial-services.html">Financial Services</a></li>
+          <li><a href="industry-financial-services.html">Finance</a></li>
+          <li><a href="industry-financial-services.html">Source-to-Pay</a></li>
+          <li><a href="industry-financial-services.html">Supply Chain</a></li>
+          <li><a href="industry-financial-services.html">Legal &amp; Compliance</a></li>
+          <li><a href="industry-financial-services.html">Human Resources</a></li>
+        </ul>
+      </div>
+
+      <div class="truvs-footer__col">
+        <h5 class="truvs-footer__heading">Company</h5>
+        <ul class="truvs-footer__list">
+          <li><a href="about-us.html">About Us</a></li>
+          <li><a href="careers.html">Careers</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="partnerships.html">Partnerships</a></li>
+        </ul>
+      </div>
+
+      <div class="truvs-footer__col">
+        <h5 class="truvs-footer__heading">Resources</h5>
+        <ul class="truvs-footer__list">
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="case-studies.html">Case Studies</a></li>
+          <li><a href="blog.html">Videos &amp; Webinars</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="truvs-footer__mid">
+      <div class="truvs-footer__meta">
+        <h5 class="truvs-footer__heading">Office</h5>
+        <p>USA · Canada · India</p>
+      </div>
+      <div class="truvs-footer__meta">
+        <h5 class="truvs-footer__heading">Email us</h5>
+        <p><a href="mailto:info@truvs.com">info@truvs.com</a></p>
+      </div>
+      <div class="truvs-footer__meta">
+        <h5 class="truvs-footer__heading">Call Us</h5>
+        <p><a href="tel:+18559987887">+1 (855) 998-7887</a></p>
+      </div>
+      <div class="truvs-footer__meta">
+        <h5 class="truvs-footer__heading">Social Links</h5>
+        <ul class="truvs-footer__social" aria-label="Social media">
+          <li><a href="https://www.linkedin.com/company/truvs" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.88 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8.5h4V23h-4V8.5zM8.5 8.5h3.8v2h.05c.53-1 1.84-2.05 3.79-2.05 4.05 0 4.8 2.67 4.8 6.15V23h-4v-6.5c0-1.55-.03-3.55-2.16-3.55-2.16 0-2.49 1.69-2.49 3.43V23h-4V8.5z"/></svg>
+            </a>
+          </li>
+          <li><a href="https://www.facebook.com/TruVsSeattle" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0 0 22 12z"/></svg>
+            </a>
+          </li>
+          <li><a href="https://x.com/TrueValueSols" target="_blank" rel="noopener noreferrer" aria-label="X"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M18.9 2H22l-6.8 7.8L23 22h-6.6l-5.2-6.8L5.3 22H2.2l7.3-8.3L1 2h6.7l4.7 6.2L18.9 2zm-1.2 18h1.8L6.4 3.9H4.5L17.7 20z"/></svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="truvs-footer__bottom">
+    <div class="truvs-footer__inner truvs-footer__bottom-inner">
+            <div class="truvs-footer__copy">
+        <span>© 2026 TruVs Inc. All rights reserved.</span>
+        <span class="truvs-footer__credit">Designed And Developed By <a href="https://brandsynthesisglobal.com/" target="_blank" rel="noopener noreferrer">Brand Synthesis Global</a></span>
+      </div>
+      <div class="truvs-footer__legal">
+        <a href="terms.html">Terms of Use</a>
+        <a href="privacy.html">Privacy Policy</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<script src="shared/site-chrome.js?v=27" defer></script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+.DS_Store
+**/.DS_Store
+node_modules/
+.vscode/
+.idea/
+*.log
+.env
+.env.*
+.grok/
+*.zip
+Archive*
+about-closed*.png
+about-menu-open.png

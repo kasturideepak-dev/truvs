@@ -1,0 +1,55 @@
+    /*Button*/
+    .nb-arrow-button-v4 {
+        position: relative;
+        display: flex;
+        align-items: center;
+        width: fit-content;
+
+        cursor: pointer;
+        text-decoration: none;
+    }
+    .nb-arrow-button-v4__text {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: fit-content;
+
+        z-index: 2;
+
+        transition: transform var(--transition-duration) var(--transition-easing);
+    }
+    .nb-arrow-button-v4__icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        height: var(--icon-dimensions);
+        width: var(--icon-dimensions);
+
+        transform: scale(1) rotate(0.001deg);
+        transform-origin: right;
+
+        stroke: var(--stroke);
+        fill: var(--stroke);
+
+        transition: transform var(--transition-duration) var(--transition-easing);
+    }
+    .nb-arrow-button-v4__icon--duplicate {
+        position: absolute;
+        transform: scale(0) rotate(0.001deg);
+        transform-origin: left;
+    }
+    .nb-arrow-button-v4__icon svg {
+        display: flex;
+    }
+
+    /* Hover */
+    .nb-arrow-button-v4:hover .nb-arrow-button-v4__text {
+        transform: translateX(var(--icon-dimensions)) rotate(0.001deg);
+    }
+    .nb-arrow-button-v4:hover .nb-arrow-button-v4__icon {
+        transform: scale(0) rotate(0.001deg);
+    }
+    .nb-arrow-button-v4:hover .nb-arrow-button-v4__icon--duplicate {
+        transform: scale(1) rotate(0.001deg);
+    }

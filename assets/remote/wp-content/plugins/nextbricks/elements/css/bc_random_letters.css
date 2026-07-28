@@ -1,0 +1,19 @@
+/*
+*RANDOM LETTERS*
+*/
+.bc-random-letters__anchor{
+    display: block;
+    width: fit-content;
+    height: fit-content;
+}
+.bc-random-letters{
+    display: block;
+    width: fit-content;
+    height: fit-content;
+}
+.bc-random-letters__element{
+    text-align: center;
+}
+.bc-to-hide{
+    opacity: 0;
+}
