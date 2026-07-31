@@ -2411,6 +2411,34 @@
           tab.addEventListener('click', () => activateOffer(tab));
         });
 
+        // Deep-link from homepage / nav: #application-modernization, #data-modernization, etc.
+        const offerHashMap = {
+          'application-modernization': '1',
+          'data-modernization': '2',
+          'ai-transformation': '3',
+          'transformation-services': '4',
+          'transformation-advisory': '4',
+          'offer-panel-1': '1',
+          'offer-panel-2': '2',
+          'offer-panel-3': '3',
+          'offer-panel-4': '4',
+          'offer-tab-1': '1',
+          'offer-tab-2': '2',
+          'offer-tab-3': '3',
+          'offer-tab-4': '4'
+        };
+        function activateOfferFromHash() {
+          const raw = (location.hash || '').slice(1).toLowerCase();
+          if (!raw) return;
+          const offerId = offerHashMap[raw];
+          if (offerId) {
+            const tab = offerTabs.find((t) => t.getAttribute('data-offer') === offerId);
+            if (tab) activateOffer(tab);
+          }
+        }
+        activateOfferFromHash();
+        window.addEventListener('hashchange', activateOfferFromHash);
+
         tablist.addEventListener('keydown', (e) => {
           const i = offerTabs.indexOf(document.activeElement);
           if (i < 0) return;
