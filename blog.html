@@ -7,7 +7,7 @@
   <meta name="description" content="Insights from TruVs on RPA, AI in testing, healthcare AI, and enterprise modernization." />
   <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /><link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet" /><style>
     /* ═══════════════════════════════════════════════════════════
-       TRUVS Blog — AI Fusion X card structure (VamTam clip-path)
+       TRUVS Blog — card grid
        Units: px only · Larger type/spacing · Banner hero
        Brand: BMS · Posts: truvs.com/blog
     ═══════════════════════════════════════════════════════════ */
@@ -25,8 +25,6 @@
       --ease: cubic-bezier(0.4, 0, 0.2, 1);
       --max: 1280px;
       --gap: 32px;
-      /* exact VamTam theme clip (vamtam-cp-bot-left-sm) */
-      --vamtam-cp-bot-left-sm: polygon(calc(100% - 20px) 0px, calc(100% - 20px) 0px, calc(100% - 16.755822px) 0.26176637px, calc(100% - 13.678336px) 1.01961376px, calc(100% - 10.808714px) 2.23236459px, calc(100% - 8.188128px) 3.85884128px, calc(100% - 5.85775px) 5.85786625px, calc(100% - 3.858752px) 8.18826192px, calc(100% - 2.232306px) 10.80885071px, calc(100% - 1.019584px) 13.67845504px, calc(100% - 0.261758px) 16.75589733px, calc(100% - 0px) 20px, calc(100% - 0px) calc(100% - 20px), calc(100% - 0px) calc(100% - 20px), calc(100% - 0.261758px) calc(100% - 16.755822px), calc(100% - 1.019584px) calc(100% - 13.678336px), calc(100% - 2.232306px) calc(100% - 10.808714px), calc(100% - 3.858752px) calc(100% - 8.188128px), calc(100% - 5.85775px) calc(100% - 5.85775px), calc(100% - 8.188128px) calc(100% - 3.858752px), calc(100% - 10.808714px) calc(100% - 2.232306px), calc(100% - 13.678336px) calc(100% - 1.019584px), calc(100% - 16.755822px) calc(100% - 0.261758px), calc(100% - 20px) calc(100% - 0px), calc(100% - 20px) calc(100% - 0px), calc(100% - 24.914044px) calc(100% - 0px), calc(100% - 38.552352px) calc(100% - 0px), calc(100% - 59.259188px) calc(100% - 0px), calc(100% - 85.378816px) calc(100% - 0px), calc(100% - 115.2555px) calc(100% - 0px), calc(100% - 147.233504px) calc(100% - 0px), calc(100% - 179.657092px) calc(100% - 0px), calc(100% - 210.870528px) calc(100% - 0px), calc(100% - 239.218076px) calc(100% - 0px), calc(100% - 263.044px) calc(100% - 0px), 148.956px calc(100% - 0px), 141.7424066px calc(100% - 0.868261px), 135.7796128px calc(100% - 3.269048px), 130.7435982px calc(100% - 6.819867px), 126.3103424px calc(100% - 11.138224px), 122.155825px calc(100% - 15.841625px), 117.9560256px calc(100% - 20.547576px), 113.3869238px calc(100% - 24.873583px), 108.1244992px calc(100% - 28.437152px), 101.8447314px calc(100% - 30.855789px), 94.2236px calc(100% - 31.747px), 22.2305px calc(100% - 31.747px), 22.2305px calc(100% - 31.747px), 16.19741876px calc(100% - 32.257571px), 11.36840101px calc(100% - 33.643488px), 7.60942554px calc(100% - 35.686057px), 4.78647114px calc(100% - 38.166584px), 2.76551661px calc(100% - 40.866375px), 1.41254076px calc(100% - 43.566736px), 0.59352237px calc(100% - 46.048973px), 0.17444025px calc(100% - 48.094392px), 0.0212732px calc(100% - 49.484299px), 0px calc(100% - 50px), 0px 20px, 0px 20px, 0.26176637px 16.75589733px, 1.01961376px 13.67845504px, 2.23236459px 10.80885071px, 3.85884128px 8.18826192px, 5.85786625px 5.85786625px, 8.18826192px 3.85884128px, 10.80885071px 2.23236459px, 13.67845504px 1.01961376px, 16.75589733px 0.26176637px, 20px 0px, calc(100% - 20px) 0px);
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -211,24 +209,32 @@
       width: 100%;
     }
 
-    /* VamTam image container + exact clip-path */
+    /* Full artwork, no clip-path crop — simple rounded media */
     .blog-card__media {
       position: relative;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+      display: block;
       width: 100%;
-      min-height: 420px;
-      height: 420px;
+      aspect-ratio: 1200 / 628;
+      height: auto;
+      min-height: 0;
       overflow: hidden;
       background-color: #0c1226;
-      background-position: center center;
-      background-repeat: no-repeat;
-      background-size: cover;
-      -webkit-clip-path: var(--vamtam-cp-bot-left-sm);
-      clip-path: var(--vamtam-cp-bot-left-sm);
+      border-radius: 16px;
       margin-bottom: 24px;
       transition: transform 0.4s var(--ease), filter 0.4s var(--ease);
+    }
+
+    .blog-card__media > img {
+      position: absolute !important;
+      inset: 0 !important;
+      width: 100% !important;
+      height: 100% !important;
+      max-width: none !important;
+      max-height: none !important;
+      object-fit: cover !important;
+      object-position: center center !important;
+      display: block !important;
+      pointer-events: none;
     }
 
     .blog-card:hover .blog-card__media {
@@ -237,12 +243,13 @@
     }
 
     .blog-card__tag {
-      position: relative;
+      position: absolute;
       z-index: 2;
-      align-self: flex-start;
+      top: 14px;
+      left: 14px;
       display: inline-flex;
       align-items: center;
-      margin: 14px;
+      margin: 0;
       padding: 8px 18px;
       border-radius: 20px;
       background: var(--white);
@@ -339,10 +346,6 @@
 
     @media (max-width: 1100px) {
       .banner h1 { font-size: 44px; }
-      .blog-card__media {
-        min-height: 360px;
-        height: 360px;
-      }
       .blog-card__title { font-size: 22px; min-height: 58px; }
       .blog-card__excerpt { min-height: 0; }
     }
@@ -369,10 +372,6 @@
         max-width: calc(50% - 14px);
         justify-self: center;
       }
-      .blog-card__media {
-        min-height: 320px;
-        height: 320px;
-      }
     }
 
     @media (max-width: 640px) {
@@ -398,10 +397,6 @@
       .blog-card:nth-child(3) {
         max-width: none;
         grid-column: auto;
-      }
-      .blog-card__media {
-        min-height: 300px;
-        height: 300px;
       }
       .blog-card__title { font-size: 22px; min-height: 0; }
       .blog-card__excerpt { font-size: 16px; min-height: 0; }
@@ -553,8 +548,8 @@
       <div id="blog-grid" class="blog-grid">
 
         <article class="blog-card"><a
-            class="blog-card__media" href="blog-post.html" aria-label="Unleash the Power of RPA: Exploring the Benefits and Myths" style="background-image:url('images/blog/rpa-benefits.png')"
-          ><span class="blog-card__tag">Automation &amp; RPA</span>
+            class="blog-card__media" href="blog-post.html" aria-label="Unleash the Power of RPA: Exploring the Benefits and Myths"
+          ><img src="images/blog/rpa-benefits.png" alt="" width="1200" height="628" loading="lazy" decoding="async" /><span class="blog-card__tag">Automation &amp; RPA</span>
           </a>
           <div class="blog-card__body">
             <h3 class="blog-card__title"><a href="blog-post.html" title="Unleash the Power of RPA: Exploring the Benefits and Myths">Unleash the Power of RPA: Exploring the Benefits and Myths</a></h3>
@@ -563,8 +558,8 @@
         </article>
 
         <article class="blog-card"><a
-            class="blog-card__media" href="blog-post-ai-testing.html" style="background-image:url('images/blog/ai-functional-testing-hero.jpg')" aria-label="Transformative Impact of AI on Functional Testing"
-          ><span class="blog-card__tag">AI &amp; Testing</span>
+            class="blog-card__media" href="blog-post-ai-testing.html" aria-label="Transformative Impact of AI on Functional Testing"
+          ><img src="images/blog/ai-functional-testing-hero.jpg" alt="" width="1200" height="628" loading="lazy" decoding="async" /><span class="blog-card__tag">AI &amp; Testing</span>
           </a>
           <div class="blog-card__body">
             <h3 class="blog-card__title"><a href="blog-post-ai-testing.html" title="Transformative Impact of AI on Functional Testing">Transformative Impact of AI on Functional Testing</a></h3>
@@ -573,8 +568,8 @@
         </article>
 
         <article class="blog-card"><a
-            class="blog-card__media" href="blog-post-healthcare-ai.html" style="background-image:url('images/blog/healthcare-digital-future.png')" aria-label="Embracing a Digital Future"
-          ><span class="blog-card__tag">Healthcare &amp; AI</span>
+            class="blog-card__media" href="blog-post-healthcare-ai.html" aria-label="Embracing a Digital Future"
+          ><img src="images/blog/healthcare-digital-future.png" alt="" width="1200" height="628" loading="lazy" decoding="async" /><span class="blog-card__tag">Healthcare &amp; AI</span>
           </a>
           <div class="blog-card__body">
             <h3 class="blog-card__title"><a href="blog-post-healthcare-ai.html" title="Embracing a Digital Future">Embracing a Digital Future</a></h3>
