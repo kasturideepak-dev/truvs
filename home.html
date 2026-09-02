@@ -1088,28 +1088,34 @@ h1.truvs-display-heading,
 }
 #home-team .ht-team-card {
   position: relative;
-  border-radius: 20px;
+  border-radius: 24px;
   overflow: hidden;
-  background: #e8eaed;
+  background: #ffffff;
   cursor: pointer;
   box-shadow: 0 10px 32px rgba(1, 10, 53, 0.08);
   transition: transform 0.35s var(--ht-ease), box-shadow 0.35s var(--ht-ease);
-  min-height: 360px;
-  aspect-ratio: 3 / 4;
+  min-height: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 #home-team .ht-team-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 20px 44px rgba(1, 10, 53, 0.14);
 }
 #home-team .ht-team-card__photo {
-  position: absolute;
-  inset: 0;
+  position: relative;
+  aspect-ratio: 1;
+  margin: 18px 18px 0;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #e8eaed;
 }
 #home-team .ht-team-card__photo img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: top center;
+  object-position: center center;
   filter: grayscale(100%);
   transition: filter 0.45s ease, transform 0.5s ease;
 }
@@ -1118,15 +1124,16 @@ h1.truvs-display-heading,
   transform: scale(1.04);
 }
 #home-team .ht-team-card__label {
-  position: absolute;
-  left: 14px;
-  right: 14px;
-  bottom: 14px;
-  background: rgba(255, 255, 255, 0.97);
-  border-radius: 14px;
-  padding: 14px 16px;
-  box-shadow: 0 8px 22px rgba(1, 10, 53, 0.12);
-  text-align: left;
+  position: static;
+  background: transparent;
+  border-radius: 0;
+  padding: 14px 16px 18px;
+  box-shadow: none;
+  text-align: center;
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 #home-team .ht-team-card__name {
   display: block;
@@ -1146,6 +1153,7 @@ h1.truvs-display-heading,
   font-weight: 500;
   color: var(--ht-muted);
   line-height: 1.35;
+  min-height: 2.7em;
 }
 
 /* CTA — match site-wide nb-arrow-button-v4 (green pill + circle) */
@@ -1257,8 +1265,9 @@ h1.truvs-display-heading,
 #home-team .home-team-modal__head img {
   width: 80px;
   height: 80px;
-  border-radius: 12px;
+  border-radius: 50%;
   object-fit: cover;
+  object-position: center center;
   filter: grayscale(100%);
 }
 #home-team #home-team-modal-name {
@@ -1297,11 +1306,11 @@ h1.truvs-display-heading,
   }
   #home-team .ht-team-card {
     min-height: 0;
-    aspect-ratio: 3 / 4;
   }
+  #home-team .ht-team-card__photo { margin: 12px 12px 0; }
   #home-team .ht-team-card__name { font-size: 13px !important; }
   #home-team .ht-team-card__role { font-size: 11px; }
-  #home-team .ht-team-card__label { left: 8px; right: 8px; bottom: 8px; padding: 10px 12px; }
+  #home-team .ht-team-card__label { padding: 10px 10px 14px; }
 }
 </style>
 
@@ -1372,6 +1381,24 @@ h1.truvs-display-heading,
   flex-direction: column;
   min-width: 0;
   width: 100%;
+  height: 100%;
+  padding: 14px 14px 18px;
+  border: 1.5px solid rgba(1, 10, 53, 0.06);
+  border-radius: 20px;
+  background: transparent;
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: transform 0.35s var(--hb-ease),
+              box-shadow 0.35s var(--hb-ease),
+              border-color 0.35s var(--hb-ease),
+              background-color 0.35s var(--hb-ease);
+}
+#home-blog .blog-card:hover,
+#home-blog .blog-card:focus-within {
+  transform: translateY(-6px);
+  border-color: var(--hb-primary);
+  background: var(--hb-white);
+  box-shadow: 0 18px 44px rgba(1, 10, 53, 0.10);
 }
 /* Full artwork, no clip-path crop — simple rounded media */
 #home-blog .blog-card__media {
@@ -1383,9 +1410,8 @@ h1.truvs-display-heading,
   min-height: 0;
   overflow: hidden;
   background-color: #0c1226;
-  border-radius: 16px;
-  margin-bottom: 20px;
-  transition: transform 0.4s var(--hb-ease), filter 0.4s var(--hb-ease);
+  border-radius: 14px;
+  margin-bottom: 16px;
   text-decoration: none;
 }
 #home-blog .blog-card__media > img {
@@ -1399,10 +1425,16 @@ h1.truvs-display-heading,
   object-position: center center !important;
   display: block !important;
   pointer-events: none;
+  transition: transform 0.5s var(--hb-ease);
 }
-#home-blog .blog-card:hover .blog-card__media {
-  transform: translateY(-4px);
-  filter: brightness(1.04);
+#home-blog .blog-card:hover .blog-card__media > img,
+#home-blog .blog-card:focus-within .blog-card__media > img {
+  transform: scale(1.05);
+}
+#home-blog .blog-card:hover .blog-card__title a,
+#home-blog .blog-card:focus-within .blog-card__title a {
+  color: var(--hb-primary) !important;
+  -webkit-text-fill-color: var(--hb-primary) !important;
 }
 #home-blog .blog-card__tag {
   position: absolute;
@@ -1551,7 +1583,13 @@ h1.truvs-display-heading,
   }
 }
 @media (prefers-reduced-motion: reduce) {
-  #home-blog .blog-card:hover .blog-card__media { transform: none; }
+  #home-blog .blog-card,
+  #home-blog .blog-card:hover,
+  #home-blog .blog-card:focus-within,
+  #home-blog .blog-card:hover .blog-card__media > img,
+  #home-blog .blog-card:focus-within .blog-card__media > img {
+    transform: none;
+  }
 }
 </style>
 
@@ -2351,7 +2389,7 @@ engagement, and data-driven workforce planning.​</span></div></div></div></div
       <p class="home-team__lead">Operators, technologists, and consultants who have built modernization programs at scale.</p>
     </header>
     <div class="home-team__grid" role="list">
-<article class="ht-team-card" data-name="Sridhar Katta" data-role="Founder, CEO" data-bio="Sridhar is a serial entrepreneur who has 20+ years of experience in the industry. Before becoming a founder of TruVs, Sridhar worked for premier consulting companies such as Capgemini and Tech Mahindra. Sridhar has a rich consulting and business experience and has managed relationships with Fortune 100 enterprises. He has excelled everywhere he worked. Sridhar is an undergraduate in Mechanical engineering and completed his MBA from the Indian School of Business, a premier business school in India. He also did several Graduate level courses from Carnegie Melon University. Sridhar is an Advanced Scrum Product Owner, Team Software Process Launch Coach, Personal Software Process instructor, Scrum Master, Six Sigma Blackbelt, and a business process expert." data-image="https://www.truvs.com/assets/images/about/1727074762.jpg"><div class="ht-team-card__photo"><img src="https://www.truvs.com/assets/images/about/1727074762.jpg" alt="Sridhar Katta" loading="lazy" width="400" height="480"></div><div class="ht-team-card__label"><strong class="ht-team-card__name">Sridhar Katta</strong><span class="ht-team-card__role">Founder, CEO</span></div></article><article class="ht-team-card" data-name="Sailaja Rachamadugu" data-role="President" data-bio="Sailaja is a backbone for TruVs. Graduated in Microbiology from Central University, one of the premier institutions in India, Sailaja is a serial entrepreneuer and has diverse experience in a number of industries. She heads operations and recruitment for TruVs." data-image="https://www.truvs.com/assets/images/about/1744383979.jpg"><div class="ht-team-card__photo"><img src="https://www.truvs.com/assets/images/about/1744383979.jpg" alt="Sailaja Rachamadugu" loading="lazy" width="400" height="480"></div><div class="ht-team-card__label"><strong class="ht-team-card__name">Sailaja Rachamadugu</strong><span class="ht-team-card__role">President</span></div></article><article class="ht-team-card" data-name="Ram Sarma" data-role="COO" data-bio="Ram is passionate about empowering teams and delivering impactful business solutions. With expertise in consulting, leadership, program management, and relationship management, he excels in solving complex business challenges. Currently, he advises Microsoft on a multi-year transformation project and oversees business operations at TruVs in an advisory role." data-image="https://www.truvs.com/assets/images/about/1726915418.jpg"><div class="ht-team-card__photo"><img src="https://www.truvs.com/assets/images/about/1726915418.jpg" alt="Ram Sarma" loading="lazy" width="400" height="480"></div><div class="ht-team-card__label"><strong class="ht-team-card__name">Ram Sarma</strong><span class="ht-team-card__role">COO</span></div></article><article class="ht-team-card" data-name="Brian Cawelti" data-role="CTO" data-bio="Brian Cawelti, CTO of TruVs Inc., brings 20+ years of expertise in digital transformation, sustainability, and innovative technology solutions. He leads initiatives to help Fortune 500 companies modernize and achieve operational excellence. An expert in sustainability and cloud transformation, Brian integrates tools like Microsoft Sustainability Manager and Azure to meet ESG goals and optimize resources. Previously, he held leadership roles at Microsoft and Avanade, driving enterprise-scale solutions. With a Master&#x27;s in Systems Engineering from the University of Arizona, Brian aligns technical innovation with strategic vision to foster sustainable growth globally." data-image="https://www.truvs.com/assets/images/about/1737715742.jpg"><div class="ht-team-card__photo"><img src="https://www.truvs.com/assets/images/about/1737715742.jpg" alt="Brian Cawelti" loading="lazy" width="400" height="480"></div><div class="ht-team-card__label"><strong class="ht-team-card__name">Brian Cawelti</strong><span class="ht-team-card__role">CTO</span></div></article>
+<article class="ht-team-card" data-name="Sailaja Rachamadugu" data-role="Owner, Founder" data-bio="Sailaja is a backbone for TruVs. Graduated in Microbiology from Central University, one of the premier institutions in India, Sailaja is a serial entrepreneuer and has diverse experience in a number of industries. She heads operations and recruitment for TruVs." data-image="assets/images/team/sailaja-rachamadugu.webp"><div class="ht-team-card__photo"><img src="assets/images/team/sailaja-rachamadugu.webp" alt="Sailaja Rachamadugu" loading="lazy" width="303" height="379"></div><div class="ht-team-card__label"><strong class="ht-team-card__name">Sailaja Rachamadugu</strong><span class="ht-team-card__role">Owner, Founder</span></div></article><article class="ht-team-card" data-name="Sridhar Katta" data-role="CEO, Co-Founder" data-bio="Sridhar is a serial entrepreneur who has 20+ years of experience in the industry. Before becoming a founder of TruVs, Sridhar worked for premier consulting companies such as Capgemini and Tech Mahindra. Sridhar has a rich consulting and business experience and has managed relationships with Fortune 100 enterprises. He has excelled everywhere he worked. Sridhar is an undergraduate in Mechanical engineering and completed his MBA from the Indian School of Business, a premier business school in India. He also did several Graduate level courses from Carnegie Melon University. Sridhar is an Advanced Scrum Product Owner, Team Software Process Launch Coach, Personal Software Process instructor, Scrum Master, Six Sigma Blackbelt, and a business process expert." data-image="assets/images/team/sridhar-katta.webp"><div class="ht-team-card__photo"><img src="assets/images/team/sridhar-katta.webp" alt="Sridhar Katta" loading="lazy" width="321" height="321"></div><div class="ht-team-card__label"><strong class="ht-team-card__name">Sridhar Katta</strong><span class="ht-team-card__role">CEO, Co-Founder</span></div></article><article class="ht-team-card" data-name="Ram Sarma" data-role="COO, Practice Lead &#x2013; Business Testing" data-bio="Ram is passionate about empowering teams and delivering impactful business solutions. With expertise in consulting, leadership, program management, and relationship management, he excels in solving complex business challenges. Currently, he advises Microsoft on a multi-year transformation project and oversees business operations at TruVs in an advisory role." data-image="assets/images/team/ram-sarma.webp"><div class="ht-team-card__photo"><img src="assets/images/team/ram-sarma.webp" alt="Ram Sarma" loading="lazy" width="600" height="600"></div><div class="ht-team-card__label"><strong class="ht-team-card__name">Ram Sarma</strong><span class="ht-team-card__role">COO, Practice Lead &#x2013; Business Testing</span></div></article><article class="ht-team-card" data-name="Brian Cawelti" data-role="CTO" data-bio="Brian Cawelti, CTO of TruVs Inc., brings 20+ years of expertise in digital transformation, sustainability, and innovative technology solutions. He leads initiatives to help Fortune 500 companies modernize and achieve operational excellence. An expert in sustainability and cloud transformation, Brian integrates tools like Microsoft Sustainability Manager and Azure to meet ESG goals and optimize resources. Previously, he held leadership roles at Microsoft and Avanade, driving enterprise-scale solutions. With a Master&#x27;s in Systems Engineering from the University of Arizona, Brian aligns technical innovation with strategic vision to foster sustainable growth globally." data-image="assets/images/team/brian-cawelti.webp"><div class="ht-team-card__photo"><img src="assets/images/team/brian-cawelti.webp" alt="Brian Cawelti" loading="lazy" width="600" height="600"></div><div class="ht-team-card__label"><strong class="ht-team-card__name">Brian Cawelti</strong><span class="ht-team-card__role">CTO</span></div></article>
     </div>
     
     <div class="home-team__cta-wrap">
@@ -2471,7 +2509,7 @@ engagement, and data-driven workforce planning.​</span></div></div></div></div
     <div class="truvs-footer__mid">
       <div class="truvs-footer__meta">
         <h5 class="truvs-footer__heading">Office</h5>
-        <p>USA · Canada · India · Singapore — 1 Fullerton Road #02-01, One Fullerton, 049213</p>
+        <p>USA · Canada · India · Singapore</p>
       </div>
       <div class="truvs-footer__meta">
         <h5 class="truvs-footer__heading">Email us</h5>
