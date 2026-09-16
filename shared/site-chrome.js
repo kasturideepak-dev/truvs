@@ -357,6 +357,7 @@
     if (el.getAttribute('role') === 'tab') return true;
     if (el.classList.contains('filter-btn')) return true;
     if (el.closest('nav, .bricks-nav-menu, .menu, .breadcrumb, .section-nav')) return true;
+    if (el.classList.contains('text-link') || el.closest('.form-alt, .check-list')) return true;
     var href = el.getAttribute('href') || '';
     if (href.startsWith('mailto:') || href.startsWith('tel:')) return true;
     var label = labelOf(el);
