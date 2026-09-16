@@ -3,9 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Core Offerings | TruVs</title>
-  <meta name="description" content="One idea. Four ways we apply it. Test decisions before you commit — across applications, data, AI, and transformation strategy." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /><link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet" /><style>
+  <title>Supporting Offerings | TruVs</title>
+  <meta name="description" content="TruVs Supporting Offerings — Business Validation and Testing, Program and Change Management, and Sustainability Transformation. The disciplines that make transformation stick." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /><link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet" />
+<style>
     /* ═══════════════════════════════════════════════════════════
        TRUVS Brand tokens — matched to BPM service landing
        https://truvs-ui.brandsynthesisglobal.com/.../business-process-modernization/
@@ -173,6 +174,13 @@
       position: relative;
     }
     .section--alt { background: var(--light); }
+    /* Consecutive light sections shouldn't stack a full 7rem+7rem gap */
+    .section.section--alt + .section.section--alt {
+      padding-top: clamp(1.5rem, 3vw, 2.25rem);
+    }
+    #how-we-engage.section {
+      padding-bottom: clamp(2rem, 3.5vw, 2.75rem);
+    }
     .section--dark {
       background: var(--dark);
       color: var(--white);
@@ -672,8 +680,8 @@
       position: relative;
       width: 100%;
       aspect-ratio: 1;
-      max-width: 460px;
-      margin: 0 auto;
+      max-width: 500px;
+      margin: 36px auto 4px;
     }
 
     .hub__center {
@@ -723,7 +731,7 @@
       position: absolute;
       top: 50%; left: 50%;
       transform: translate(-50%, -50%);
-      width: 195px; height: 195px;
+      width: 220px; height: 220px;
       border-radius: 50%;
       border: 2px dashed rgba(101, 195, 36, 0.4);
       z-index: 1;
@@ -736,15 +744,16 @@
 
     .hub__ring-text {
       position: absolute;
-      top: 50%; left: 50%;
-      transform: translate(-50%, calc(-50% - 108px));
+      top: -22px;
+      left: 50%;
+      transform: translateX(-50%);
       font-size: 0.65rem;
       font-weight: 600;
       color: var(--secondary);
       background: var(--light);
       padding: 2px 8px;
       white-space: nowrap;
-      z-index: 2;
+      z-index: 5;
     }
 
     .hub__spoke {
@@ -783,14 +792,13 @@
       letter-spacing: 1px;
     }
 
-    .spoke-1 { top: 0; left: 50%; transform: translateX(-50%); }
+    /* Three practices sit in an even triangle around the hub */
+    .spoke-1 { top: 7%; left: 50%; transform: translateX(-50%); }
     .spoke-1:hover { transform: translateX(-50%) scale(1.05); }
-    .spoke-2 { top: 50%; right: 0; transform: translateY(-50%); }
-    .spoke-2:hover { transform: translateY(-50%) scale(1.05); }
-    .spoke-3 { bottom: 0; left: 50%; transform: translateX(-50%); }
-    .spoke-3:hover { transform: translateX(-50%) scale(1.05); }
-    .spoke-4 { top: 50%; left: 0; transform: translateY(-50%); }
-    .spoke-4:hover { transform: translateY(-50%) scale(1.05); }
+    .spoke-2 { top: 56%; right: 2%; bottom: auto; }
+    .spoke-2:hover { transform: scale(1.05); }
+    .spoke-3 { top: 56%; left: 2%; bottom: auto; }
+    .spoke-3:hover { transform: scale(1.05); }
 
     .idea__caption {
       margin-top: 3rem;
@@ -827,7 +835,7 @@
     /* Tab bar — equal columns, clear borders */
     .offer-tabs {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       border-bottom: 1px solid rgba(1, 10, 53, 0.12);
       background: var(--light);
     }
@@ -1354,7 +1362,8 @@
 
     .accel-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 360px));
+      justify-content: center;
       gap: 1.15rem;
     }
 
@@ -1508,7 +1517,7 @@
       .hub { max-width: 400px; }
       .principles { grid-template-columns: 1fr; }
       .functions { grid-template-columns: repeat(2, 1fr); }
-      .accel-grid { grid-template-columns: repeat(2, 1fr); }
+      .accel-grid { grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 340px)); justify-content: center; }
       .proof__grid { grid-template-columns: repeat(3, 1fr); }
       .proof__item:nth-child(3) { border-right: none; }
       .proof__item:nth-child(n+4) { border-top: 1px solid rgba(1, 10, 53, 0.08); }
@@ -1564,7 +1573,7 @@
       .step p { margin: 0; max-width: none; }
 
       .functions { grid-template-columns: 1fr; }
-      .accel-grid { grid-template-columns: 1fr; }
+      .accel-grid { grid-template-columns: minmax(0, 360px); justify-content: center; }
 
       .offer-tabs {
         grid-template-columns: 1fr 1fr;
@@ -1600,6 +1609,12 @@
       .hub__spoke { width: 108px; padding: 0.65rem 0.5rem; }
       .hub__spoke-label { font-size: 0.62rem; }
       .hub__center { width: 100px; height: 100px; }
+      .hub__ring-text {
+        white-space: normal;
+        max-width: 90%;
+        text-align: center;
+        line-height: 1.3;
+      }
 
       .trust { flex-direction: column; align-items: center; gap: 0.9rem; }
 
@@ -1611,14 +1626,33 @@
         padding: 0.45rem 0.75rem;
       }
     }
+
+    /* Supporting offerings: 3 tabs */
+    .offer-tabs { grid-template-columns: repeat(3, 1fr); }
+    @media (max-width: 1024px) {
+      .offer-tabs { grid-template-columns: 1fr; }
+      .offer-tab { border-right: none; border-bottom: 1px solid rgba(1, 10, 53, 0.12); }
+      .offer-tab:last-child { border-bottom: none; }
+    }
     @media (max-width: 899px) {
       .section-nav__inner {
         justify-content: flex-start !important;
       }
     }
+    @media (prefers-reduced-motion: reduce) {
+      .hub__ring,
+      .hub__center,
+      .hero__orb,
+      .twin-card,
+      .twin-layer,
+      .twin-dot,
+      .twin-badge {
+        animation: none !important;
+      }
+    }
   </style>
-
-<link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /><link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" /><link rel="stylesheet" href="assets/remote/wp-content/plugins/nextbricks/elements/css/next_arrow_button_v4.css" /><link rel="stylesheet" href="shared/site-chrome.css?v=32" /></head>
+<link rel="stylesheet" href="assets/remote/wp-content/plugins/nextbricks/elements/css/next_arrow_button_v4.css" />
+<link rel="stylesheet" href="shared/site-chrome.css?v=32" /></head>
 <body class="has-truvs-chrome">
 <header id="brx-header"><section id="brxe-41e559" class="brxe-section "><div id="brxe-ea23e4" class="brxe-container "><div id="brxe-21c48c" class="brxe-block "><a id="brxe-5f4c7a" class="brxe-image tag" href="home.html"><img width="120" height="120" src="assets/remote/wp-content/uploads/2026/03/logo-white.png" class="css-filter size-full truvs-header-logo" alt="TruVs" decoding="async" style="width:78px;height:auto;display:block;opacity:1"></a></div><div id="brxe-c64274" class="brxe-block "><div id="brxe-a30461" class="brxe-block "><button id="brxe-bjpbpt" data-script-id="bjpbpt" class="brxe-toggle" aria-label="Open" aria-expanded="false"><span class="brxa-wrap"><span class="brxa-inner"></span></span></button><div id="brxe-bnohwn" data-script-id="bnohwn" class="brxe-offcanvas " aria-label="Offcanvas" data-direction="right"><div id="brxe-tnmhuq" class="brxe-block brx-offcanvas-inner "><button id="brxe-ltymgi" data-script-id="ltymgi" class="brxe-toggle" aria-label="Close" aria-expanded="false"><span class="truvs-close-x" aria-hidden="true"></span></button><div id="brxe-80ecc2" data-script-id="80ecc2" class="brxe-nav-menu"><nav class="bricks-nav-menu-wrapper mobile_landscape"><ul id="menu-main-menu" class="bricks-nav-menu"><li id="menu-item-2382" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home  page_item page-item-1371  menu-item-2382 bricks-menu-item" data-static="true" data-toggle="hover"><a href="home.html">Home</a></li>
 <li id="menu-item-474" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-474 bricks-menu-item" data-static="true" data-toggle="hover"><div class="brx-submenu-toggle icon-right"><a href="bms.html" data-brx-anchor="true">Offerings</a><button aria-expanded="false" aria-label="Offerings Sub menu"><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12" fill="none" class="menu-item-icon"><path d="M1.50002 4L6.00002 8L10.5 4" stroke-width="1.5" stroke="currentcolor"></path></svg></button></div>
@@ -1683,51 +1717,27 @@
         </div>
     </a>
     </div></div></section></header>
-
-<!-- ═══════════ HERO ═══════════ -->
   <section class="hero" aria-label="Hero">
     <div class="hero__bg" aria-hidden="true">
       <div class="hero__photo">
-        <img
-          src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1400&q=80&auto=format&fit=crop" alt="" width="1400" height="900" decoding="async"
-        />
+        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1400&q=80&auto=format&fit=crop" alt="" width="1400" height="900" />
       </div>
       <div class="hero__grid"></div>
       <div class="hero__orb hero__orb--1"></div>
       <div class="hero__orb hero__orb--2"></div>
-      <svg class="hero__nodes" viewBox="0 0 600 700" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
-        <defs>
-          <linearGradient id="lg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#65c324" stop-opacity="0.45"/>
-            <stop offset="100%" stop-color="#02369b" stop-opacity="0.25"/>
-          </linearGradient>
-        </defs>
-        <line x1="120" y1="100" x2="280" y2="200" stroke="url(#lg)" stroke-width="1"/><line x1="280" y1="200" x2="450" y2="140" stroke="url(#lg)" stroke-width="1"/><line x1="280" y1="200" x2="200" y2="350" stroke="url(#lg)" stroke-width="1"/><line x1="280" y1="200" x2="420" y2="320" stroke="url(#lg)" stroke-width="1"/><line x1="200" y1="350" x2="350" y2="450" stroke="url(#lg)" stroke-width="1"/><line x1="420" y1="320" x2="350" y2="450" stroke="url(#lg)" stroke-width="1"/><line x1="450" y1="140" x2="520" y2="280" stroke="url(#lg)" stroke-width="1"/><line x1="520" y1="280" x2="420" y2="320" stroke="url(#lg)" stroke-width="1"/><line x1="350" y1="450" x2="480" y2="550" stroke="url(#lg)" stroke-width="1"/><line x1="200" y1="350" x2="100" y2="480" stroke="url(#lg)" stroke-width="1"/><line x1="100" y1="480" x2="250" y2="580" stroke="url(#lg)" stroke-width="1"/><line x1="350" y1="450" x2="250" y2="580" stroke="url(#lg)" stroke-width="1"/><circle cx="120" cy="100" r="4" fill="#65c324" opacity="0.6"/>
-        <circle cx="280" cy="200" r="7" fill="#65c324" opacity="0.85"/>
-        <circle cx="450" cy="140" r="4" fill="#02369b" opacity="0.7"/>
-        <circle cx="200" cy="350" r="5" fill="#65c324" opacity="0.7"/>
-        <circle cx="420" cy="320" r="5" fill="#02369b" opacity="0.7"/>
-        <circle cx="520" cy="280" r="3" fill="#65c324" opacity="0.5"/>
-        <circle cx="350" cy="450" r="6" fill="#65c324" opacity="0.85"/>
-        <circle cx="480" cy="550" r="4" fill="#02369b" opacity="0.55"/>
-        <circle cx="100" cy="480" r="3" fill="#65c324" opacity="0.5"/>
-        <circle cx="250" cy="580" r="4" fill="#65c324" opacity="0.6"/>
-        <circle cx="280" cy="200" r="16" fill="#65c324" opacity="0.12"/>
-        <circle cx="350" cy="450" r="14" fill="#65c324" opacity="0.1"/>
-      </svg>
     </div>
 
     <div class="container">
       <div class="hero__content">
-        <div class="eyebrow eyebrow--light reveal">Core Offerings</div>
-        <h1 class="reveal d1">One Idea.<br />
-          <span class="highlight">Four Ways</span> We Apply It.</h1>
-        <p class="lead reveal d2">Every offering starts with the same question: can we test this decision before you commit to it? The Enterprise Decision Twin makes the answer yes — across applications, data, AI, and transformation strategy.</p>
+        <div class="eyebrow eyebrow--light reveal">Supporting Offerings</div>
+        <h1 class="reveal d1">The disciplines that<br /><span class="highlight">make transformation</span> stick.</h1>
+        <p class="lead reveal d2">Transformation doesn’t end when a system goes live. It delivers value when solutions work for the business, people adopt new ways of working, and organizations can scale responsibly.</p>
         <div class="hero__cta-group reveal d3">
-          <a href="#cta" class="btn btn--primary">Start with a 30-Min Awareness Meeting
+          <a href="contact.html" class="btn btn--primary">Talk to TruVs
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
           <p class="hero__support"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-            No commitment. No sales pitch — just a conversation.</p>
+            Validation, change, and sustainability — built into the lifecycle.</p>
         </div>
       </div>
     </div>
@@ -1736,27 +1746,24 @@
       <div class="twin-card">
         <div class="twin-card__head">
           <div class="twin-card__icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
           </div>
           <div>
-            <div class="twin-card__title">Enterprise Decision Twin</div>
-            <div class="twin-card__sub">ODT + DTO · Live Simulation</div>
+            <div class="twin-card__title">Supporting Offerings</div>
+            <div class="twin-card__sub">Make transformation stick</div>
           </div>
         </div>
-        <div class="twin-layer"><div class="twin-dot" style="background:#65c324"></div>Application Layer</div>
-        <div class="twin-layer"><div class="twin-dot" style="background:#02369b"></div>Data & Ground Truth</div>
-        <div class="twin-layer"><div class="twin-dot" style="background:#a8e86a"></div>AI Decision Models</div>
-        <div class="twin-layer"><div class="twin-dot" style="background:#4fa018"></div>Process Simulation</div>
+        <div class="twin-layer"><div class="twin-dot" style="background:#65c324"></div>Business Validation &amp; Testing</div>
+        <div class="twin-layer"><div class="twin-dot" style="background:#02369b"></div>Program &amp; Change Management</div>
+        <div class="twin-layer"><div class="twin-dot" style="background:#a8e86a"></div>Sustainability Transformation</div>
         <div class="twin-status">
-          <span>Decision confidence</span>
-          <span class="twin-badge">Validated</span>
+          <span>Business outcomes</span>
+          <span class="twin-badge">Protected</span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ═══════════ SECTION NAV (BMS-matched) ═══════════ -->
   <div class="section-nav-sentinel" aria-hidden="true"></div>
   <nav class="section-nav" aria-label="Page sections" id="section-nav">
     <div class="container">
@@ -1765,14 +1772,12 @@
         <a class="section-nav__link" href="#offerings" data-section="offerings" role="listitem">Offerings</a>
         <a class="section-nav__link" href="#why-truvs" data-section="why-truvs" role="listitem">Why TruVs</a>
         <a class="section-nav__link" href="#how-we-engage" data-section="how-we-engage" role="listitem">How We Engage</a>
-        <a class="section-nav__link" href="#where-we-engage" data-section="where-we-engage" role="listitem">Where We Engage</a>
         <a class="section-nav__link" href="#accelerators" data-section="accelerators" role="listitem">Accelerators</a>
         <a class="section-nav__link" href="#cta" data-section="cta" role="listitem">Get Started</a>
       </div>
     </div>
   </nav>
 
-  <!-- ═══════════ PROOF STRIP ═══════════ -->
   <section class="proof" aria-label="Trust metrics">
     <div class="container">
       <div class="proof__grid">
@@ -1786,460 +1791,315 @@
     </div>
   </section>
 
-  <!-- ═══════════ 00 — THE IDEA ═══════════ -->
   <section class="section section--alt" id="the-idea" aria-labelledby="idea-heading">
     <div class="container">
       <div class="idea__grid">
         <div>
           <div class="eyebrow reveal">Our POV</div>
-          <h2 id="idea-heading" class="reveal d1">Test Before You Commit</h2>
-          <p class="idea__body reveal d2">Business Process Modernization isn't one offering among four — it's the lead offering everything else runs through. The Enterprise Decision Twin (ODT + DTO) is the connective layer: it lets you simulate a change to your applications, your data, or your AI strategy before you commit real budget to it.</p>
+          <h2 id="idea-heading" class="reveal d1">Modernization doesn’t end at go-live.</h2>
+          <p class="idea__body reveal d2">A technically successful transformation isn’t necessarily a business success. Our Supporting Offerings are not afterthoughts or final checkpoints. We embed validation, governance, change management, and sustainability into the transformation lifecycle — from planning and delivery through adoption, optimization, and measurable outcomes.</p>
         </div>
-
-        <div class="hub reveal d2" role="img" aria-label="Hub and spoke: BPM center, Enterprise Decision Twin ring, four offering spokes">
+        <div class="hub reveal d2" role="img" aria-label="Supporting offerings around transformation outcomes">
           <div class="hub__ring" aria-hidden="true"></div>
-          <div class="hub__ring-text">Enterprise Decision Twin — ODT + DTO</div>
+          <div class="hub__ring-text">Business outcomes — not just go-live</div>
           <div class="hub__center">
-            <span class="hub__center-label">BPM</span>
-            <span class="hub__center-sub">Lead Offering</span>
+            <span class="hub__center-label">Support</span>
+            <span class="hub__center-sub">Three practices</span>
           </div>
           <div class="hub__spoke spoke-1">
-            <div class="hub__spoke-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
-            <div class="hub__spoke-label">Application Modernization</div>
+            <div class="hub__spoke-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
+            <div class="hub__spoke-label">Business Validation &amp; Testing</div>
           </div>
           <div class="hub__spoke spoke-2">
-            <div class="hub__spoke-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg></div>
-            <div class="hub__spoke-label">Data Modernization</div>
+            <div class="hub__spoke-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+            <div class="hub__spoke-label">Program &amp; Change Management</div>
           </div>
           <div class="hub__spoke spoke-3">
-            <div class="hub__spoke-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4"/></svg></div>
-            <div class="hub__spoke-label">AI Transformation</div>
-          </div>
-          <div class="hub__spoke spoke-4">
-            <div class="hub__spoke-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
-            <div class="hub__spoke-label">Transformation Services</div>
+            <div class="hub__spoke-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+            <div class="hub__spoke-label">Sustainability Transformation</div>
           </div>
         </div>
       </div>
-
       <div class="idea__caption reveal">
-        <div class="idea__caption-label">Why this matters for AI specifically</div>
-        <p>Modernized processes give AI clean inputs. Modernized data gives trustworthy ground truth. Without ODT/DTO, AI just automates guesswork faster.</p>
+        <div class="idea__caption-label">That’s where TruVs makes the difference</div>
+        <p>A system can pass technical QA and still fail business validation. A program can meet its technical milestones and still struggle with adoption. A sustainability initiative can produce reports without creating measurable operational impact.</p>
       </div>
     </div>
   </section>
 
-  <!-- ═══════════ 01 — OFFERINGS ═══════════ -->
   <section class="section" id="offerings" aria-labelledby="offerings-heading">
     <div class="container">
       <div class="section-head section-head--center">
         <div class="eyebrow reveal">The Offerings</div>
-        <h2 id="offerings-heading" class="reveal d1">Four Applications of One Decision Layer</h2>
-        <p class="lead reveal d2" style="margin-top:1rem">Each led by a dedicated practice director, backed by real client outcomes. Full capability lists shown on request.</p>
+        <h2 id="offerings-heading" class="reveal d1">Three Practices That Protect the Investment</h2>
+        <p class="lead reveal d2" style="margin-top:1rem">Each led by a dedicated practice lead, backed by measurable client outcomes.</p>
       </div>
 
-      <span id="application-modernization" class="deep-link-anchor"></span>
-      <span id="data-modernization" class="deep-link-anchor"></span>
-      <span id="ai-transformation" class="deep-link-anchor"></span>
-      <span id="transformation-services" class="deep-link-anchor"></span>
+      <span id="bvt" class="deep-link-anchor"></span>
+      <span id="pcm" class="deep-link-anchor"></span>
+      <span id="sustain" class="deep-link-anchor"></span>
       <div class="offerings-shell reveal">
-        <!-- Tab navigation -->
-        <div class="offer-tabs" role="tablist" aria-label="Core offerings">
+        <div class="offer-tabs" role="tablist" aria-label="Supporting offerings">
           <button class="offer-tab is-active" role="tab" id="offer-tab-1" aria-selected="true" aria-controls="offer-panel-1" data-offer="1" tabindex="0"><span class="offer-tab__num">01</span>
-            <span class="offer-tab__title">Application Modernization</span>
+            <span class="offer-tab__title">Business Validation and Testing</span>
             <span class="offer-tab__dir">Ram Sarma</span></button>
           <button class="offer-tab" role="tab" id="offer-tab-2" aria-selected="false" aria-controls="offer-panel-2" data-offer="2" tabindex="-1"><span class="offer-tab__num">02</span>
-            <span class="offer-tab__title">Data Modernization</span>
-            <span class="offer-tab__dir">Daniel Rubiolo</span></button>
-          <button class="offer-tab" role="tab" id="offer-tab-3" aria-selected="false" aria-controls="offer-panel-3" data-offer="3" tabindex="-1"><span class="offer-tab__num">03</span>
-            <span class="offer-tab__title">AI Transformation</span>
-            <span class="offer-tab__dir">Aditya Balasubramanian</span></button>
-          <button class="offer-tab" role="tab" id="offer-tab-4" aria-selected="false" aria-controls="offer-panel-4" data-offer="4" tabindex="-1"><span class="offer-tab__num">04</span>
-            <span class="offer-tab__title">Transformation Services</span>
+            <span class="offer-tab__title">Program and Change Management</span>
             <span class="offer-tab__dir">Jami Tribby</span></button>
+          <button class="offer-tab" role="tab" id="offer-tab-3" aria-selected="false" aria-controls="offer-panel-3" data-offer="3" tabindex="-1"><span class="offer-tab__num">03</span>
+            <span class="offer-tab__title">Sustainability Transformation</span>
+            <span class="offer-tab__dir">Samantha Wehrung</span></button>
         </div>
 
-        <!-- Panels -->
         <div class="offer-panels">
-
-          <!-- 01 Application -->
           <div class="offer-panel is-active" role="tabpanel" id="offer-panel-1" aria-labelledby="offer-tab-1">
             <div class="offer-panel__head">
-              <h3>Application Modernization</h3>
-              <p class="offer-panel__director">Practice Director: <strong>Ram Sarma</strong></p>
+              <h3>Business Validation and Testing</h3>
+              <p class="offer-panel__director">Practice Lead: <strong>Ram Sarma</strong></p>
             </div>
             <div class="offer-panel__grid">
               <div class="offer-panel__media">
-                <img
-                  src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=640&q=80&auto=format&fit=crop" alt="Application and systems modernization" width="440" height="550" loading="lazy" decoding="async"
-                />
+                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=640&q=80&auto=format&fit=crop" alt="Business validation and testing" width="440" height="550" loading="lazy" decoding="async" />
               </div>
               <div>
-                <p class="offer-panel__desc">Modernize the applications that run your business — ERP, CRM, custom platforms, and legacy systems — with the Decision Twin as your risk valve. We don't rip and replace. We simulate impact, sequence change, and deliver modernization that holds up under real enterprise load.</p>
+                <p class="offer-panel__desc">Ensure systems are business-ready — not just technically sound. TruVs validates solutions against real business processes, requirements, data, users, and operational scenarios — helping organizations move from testing to business readiness with greater confidence, speed, and quality.</p>
                 <div class="offer-result">
                   <div class="offer-result__label">Client Result</div>
-                  <p>Fortune 100 global ERP rollout supported by embedded BSA teams — accelerated design quality and reduced rework across multi-region business systems.</p>
+                  <p>ERP Transformation across 80+ countries with $0 revenue leakage at go-live — 2,400+ test scripts executed and 212 business scenarios validated.</p>
                 </div>
               </div>
               <div>
-                <div class="offer-side__label">Focus Areas</div>
+                <div class="offer-side__label">What it solves</div>
                 <div class="tags">
-                  <span class="tag">ERP & CRM</span>
-                  <span class="tag">Legacy Modernization</span>
-                  <span class="tag">Custom Apps</span>
-                  <span class="tag">Systems Analysis</span>
-                  <span class="tag">Data Migration</span>
+                  <span class="tag">Requirement gaps</span>
+                  <span class="tag">Late defects</span>
+                  <span class="tag">Manual testing</span>
+                  <span class="tag">Adoption risk</span>
                 </div>
-                <div class="offer-side__label">Capabilities</div>
+                <div class="offer-side__label">Offerings</div>
                 <div class="subs">
-                  <div class="sub">Modern ERP & CRM</div>
-                  <div class="sub">Business Requirements Documentation</div>
-                  <div class="sub">Business & Systems Analysis</div>
-                  <div class="sub">Data Migration</div>
-                  <div class="sub">Custom Business Applications</div>
-                  <div class="sub">Modern Customer Success Platforms</div>
+                  <div class="sub">End-to-End Business Process Validation</div>
+                  <div class="sub">Functional, Integration &amp; UAT</div>
+                  <div class="sub">AI-Driven Test Automation</div>
+                  <div class="sub">Performance &amp; Load Testing</div>
+                  <div class="sub">Accessibility &amp; Compliance Testing</div>
+                  <div class="sub">Continuous Quality Governance</div>
                 </div>
               </div>
             </div>
           </div>
 
-          <!-- 02 Data -->
           <div class="offer-panel" role="tabpanel" id="offer-panel-2" aria-labelledby="offer-tab-2" hidden>
             <div class="offer-panel__head">
-              <h3>Data Modernization</h3>
-              <p class="offer-panel__director">Practice Director: <strong>Daniel Rubiolo</strong></p>
+              <h3>Program and Change Management</h3>
+              <p class="offer-panel__director">Practice Lead: <strong>Jami Tribby</strong></p>
             </div>
             <div class="offer-panel__grid">
               <div class="offer-panel__media">
-                <img
-                  src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=640&q=80&auto=format&fit=crop" alt="Modern data infrastructure and analytics" width="440" height="550" loading="lazy" decoding="async"
-                />
+                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=640&q=80&auto=format&fit=crop" alt="Program and change management" width="440" height="550" loading="lazy" decoding="async" />
               </div>
               <div>
-                <p class="offer-panel__desc">Transform how your enterprise captures, stores, governs, and consumes data. From lakes and warehouses to real-time pipelines and trusted ground truth for AI — we modernize data so decisions, analytics, and automation all run on the same reliable foundation.</p>
+                <p class="offer-panel__desc">Turn transformation strategy into enterprise-wide adoption and measurable value. TruVs helps organizations govern complex transformation programs, manage organizational change, accelerate adoption, and maintain visibility from strategy through execution and value realization.</p>
                 <div class="offer-result">
                   <div class="offer-result__label">Client Result</div>
-                  <p>Enterprise data platform modernization that unified fragmented sources into governed, analytics-ready assets — enabling faster reporting cycles and AI-ready ground truth.</p>
+                  <p>APAC SRE team built from the ground up — full operational independence within one quarter, sustained across a 3-year fixed-fee program.</p>
                 </div>
               </div>
               <div>
-                <div class="offer-side__label">Focus Areas</div>
+                <div class="offer-side__label">What it solves</div>
                 <div class="tags">
-                  <span class="tag">Data Architecture</span>
-                  <span class="tag">BI & Analytics</span>
-                  <span class="tag">Data Lakes</span>
-                  <span class="tag">Governance</span>
-                  <span class="tag">ML Pipelines</span>
+                  <span class="tag">Stalled programs</span>
+                  <span class="tag">Low adoption</span>
+                  <span class="tag">Poor visibility</span>
+                  <span class="tag">Misalignment</span>
                 </div>
-                <div class="offer-side__label">Capabilities</div>
+                <div class="offer-side__label">Offerings</div>
                 <div class="subs">
-                  <div class="sub">Modern Data Capture & Storage</div>
-                  <div class="sub">Modern Data Consumption (BI, Lakes)</div>
-                  <div class="sub">Data Architecture</div>
-                  <div class="sub">Data Quality & Governance</div>
-                  <div class="sub">Machine Learning Foundations</div>
-                  <div class="sub">Real-Time Data Pipelines</div>
+                  <div class="sub">Enterprise Program Governance &amp; PMO</div>
+                  <div class="sub">Transformation Control Tower</div>
+                  <div class="sub">Change Strategy &amp; Communication</div>
+                  <div class="sub">Stakeholder Impact &amp; Readiness</div>
+                  <div class="sub">Adoption Measurement &amp; KPIs</div>
+                  <div class="sub">Benefits Realization Framework</div>
                 </div>
               </div>
             </div>
           </div>
 
-          <!-- 03 AI -->
           <div class="offer-panel" role="tabpanel" id="offer-panel-3" aria-labelledby="offer-tab-3" hidden>
             <div class="offer-panel__head">
-              <h3>AI Transformation</h3>
-              <p class="offer-panel__director">Practice Director: <strong>Aditya Balasubramanian</strong></p>
+              <h3>Sustainability Transformation</h3>
+              <p class="offer-panel__director">Practice Lead: <strong>Samantha Wehrung</strong></p>
             </div>
             <div class="offer-panel__grid">
               <div class="offer-panel__media">
-                <img
-                  src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=640&q=80&auto=format&fit=crop" alt="Artificial intelligence and intelligent systems" width="440" height="550" loading="lazy" decoding="async"
-                />
+                <img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=640&q=80&auto=format&fit=crop" alt="Sustainability transformation" width="440" height="550" loading="lazy" decoding="async" />
               </div>
               <div>
-                <p class="offer-panel__desc">AI that works because the process and data underneath are ready. We plan, pilot, and scale AI solutions — generative and operational — against the Decision Twin so every model is tested against business reality before it touches production decisions.</p>
+                <p class="offer-panel__desc">Build intelligent sustainability systems that drive action — not just reporting. TruVs helps organizations turn sustainability goals into operational action by connecting data, governance, reporting, carbon accounting, and decarbonization initiatives to measurable business outcomes.</p>
                 <div class="offer-result">
                   <div class="offer-result__label">Client Result</div>
-                  <p>AI transformation roadmap for a multi-business-unit enterprise — prioritized use cases, governed pilots, and production patterns that moved AI from experiment to operating capability.</p>
+                  <p>Microsoft Sustainability Manager across 50+ data integrations — from months-long Excel reporting to real-time Power BI dashboards with AI-driven emissions alerts.</p>
                 </div>
               </div>
               <div>
-                <div class="offer-side__label">Focus Areas</div>
+                <div class="offer-side__label">What it solves</div>
                 <div class="tags">
-                  <span class="tag">Generative AI</span>
-                  <span class="tag">AI Strategy</span>
-                  <span class="tag">Responsible AI</span>
-                  <span class="tag">ML Ops</span>
-                  <span class="tag">Process AI</span>
+                  <span class="tag">Fragmented data</span>
+                  <span class="tag">Manual reporting</span>
+                  <span class="tag">Limited visibility</span>
+                  <span class="tag">Regulatory load</span>
                 </div>
-                <div class="offer-side__label">Capabilities</div>
+                <div class="offer-side__label">Offerings</div>
                 <div class="subs">
-                  <div class="sub">AI Transformation Planning</div>
-                  <div class="sub">Generative AI Solutions</div>
-                  <div class="sub">AI in Business Modernization</div>
-                  <div class="sub">Industry AI Use Cases</div>
-                  <div class="sub">AI Governance & Responsible AI</div>
-                  <div class="sub">Implementation & ML Ops</div>
+                  <div class="sub">Sustainability Transformation Strategy</div>
+                  <div class="sub">ESG Reporting and Compliance</div>
+                  <div class="sub">Carbon Accounting &amp; Decarbonization</div>
+                  <div class="sub">Sustainability Governance</div>
+                  <div class="sub">Supply Chain Sustainability</div>
+                  <div class="sub">ESG Data Platform &amp; AI Insights</div>
                 </div>
               </div>
             </div>
           </div>
-
-          <!-- 04 Transformation -->
-          <div class="offer-panel" role="tabpanel" id="offer-panel-4" aria-labelledby="offer-tab-4" hidden>
-            <div class="offer-panel__head">
-              <h3>Transformation Services</h3>
-              <p class="offer-panel__director">Practice Director: <strong>Jami Tribby</strong></p>
-            </div>
-            <div class="offer-panel__grid">
-              <div class="offer-panel__media">
-                <img
-                  src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=640&q=80&auto=format&fit=crop" alt="Transformation team collaboration" width="440" height="550" loading="lazy" decoding="async"
-                />
-              </div>
-              <div>
-                <p class="offer-panel__desc">Strategy becomes enterprise-wide impact only when delivery, change, and program discipline are built in. We turn modernization ambition into sequenced programs — with product thinking, change management, and the operating cadence Fortune 500 teams trust.</p>
-                <div class="offer-result">
-                  <div class="offer-result__label">Client Result</div>
-                  <p>Complex multi-year transformation programs delivered with precision — change adoption, stakeholder alignment, and on-time release of mission-critical capabilities.</p>
-                </div>
-              </div>
-              <div>
-                <div class="offer-side__label">Focus Areas</div>
-                <div class="tags">
-                  <span class="tag">Program Mgmt</span>
-                  <span class="tag">Change Mgmt</span>
-                  <span class="tag">Product Mgmt</span>
-                  <span class="tag">Strategy</span>
-                  <span class="tag">Kaizen</span>
-                </div>
-                <div class="offer-side__label">Capabilities</div>
-                <div class="subs">
-                  <div class="sub">Program Management</div>
-                  <div class="sub">Change Management</div>
-                  <div class="sub">Product Management</div>
-                  <div class="sub">Project Management</div>
-                  <div class="sub">Accelerated Kaizen Workshops</div>
-                  <div class="sub">Strategy & Planning</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ═══════════ 02 — WHY TRUVS ═══════════ -->
   <section class="section section--dark" id="why-truvs" aria-labelledby="why-heading">
     <div class="container">
       <div class="section-head section-head--center">
         <div class="eyebrow eyebrow--light reveal">Why TruVs</div>
-        <h2 id="why-heading" class="reveal d1">The Operating Model That Sets Us Apart</h2>
-        <p class="lead reveal d2" style="margin-top:1rem">Not another body shop. A decision-first partner built for enterprise modernization that has to work the first time — and keep working.</p>
+        <h2 id="why-heading" class="reveal d1">Does the transformation actually work for the business?</h2>
+        <p class="lead reveal d2" style="margin-top:1rem">Across Supporting Offerings we go beyond checklists. We combine structured methodology, embedded governance, domain expertise, and AI-powered acceleration to turn transformation investment into outcomes you can prove.</p>
       </div>
-
       <div class="principles">
         <div class="principle reveal">
           <div class="principle__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
           <div class="principle__num">01</div>
-          <h3>Business-First Validation</h3>
-          <p>Every technical recommendation is stress-tested against business outcomes before budget is committed. The Decision Twin is how we make “prove it first” operational — not aspirational.</p>
+          <h3>Business-First</h3>
+          <p>We validate transformation against the way your business actually operates — not just against technical specifications.</p>
         </div>
         <div class="principle reveal d1">
-          <div class="principle__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+          <div class="principle__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
           <div class="principle__num">02</div>
-          <h3>Embedded Not Transactional</h3>
-          <p>Our consultants sit inside your design and delivery teams. We expand your bandwidth with people who already know how Fortune 500 complexity actually works — not deck-only advisors.</p>
+          <h3>Embedded Governance</h3>
+          <p>We bring governance, accountability, and visibility into delivery rather than treating them as an afterthought.</p>
         </div>
         <div class="principle reveal d2">
-          <div class="principle__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+          <div class="principle__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4"/></svg></div>
           <div class="principle__num">03</div>
-          <h3>Certified Depth On Demand</h3>
-          <p>WMBE-certified. 70+ specialized consultants. Deep process, product, and technology expertise you can scale up for mission-critical programs without long ramp-up or vendor lock-in theater.</p>
+          <h3>AI-Powered Acceleration</h3>
+          <p>We apply automation, process intelligence, and AI to accelerate validation, insight, decision-making, and execution.</p>
         </div>
         <div class="principle reveal d3">
-          <div class="principle__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
+          <div class="principle__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg></div>
           <div class="principle__num">04</div>
-          <h3>Institutional Knowledge Compounds</h3>
-          <p>Fifteen-plus years across the same class of enterprise problems means patterns, accelerators, and hard-won judgment that transfer to your program — not starting from a blank whiteboard every engagement.</p>
+          <h3>Measurable Outcomes</h3>
+          <p>We connect transformation activity to quality, adoption, efficiency, risk reduction, sustainability, and business value.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ═══════════ 03 — HOW WE ENGAGE ═══════════ -->
   <section class="section section--alt" id="how-we-engage" aria-labelledby="engage-heading">
     <div class="container">
       <div class="section-head section-head--center">
         <div class="eyebrow reveal">How We Engage</div>
-        <h2 id="engage-heading" class="reveal d1">A Low-Risk Path In</h2>
-        <p class="lead reveal d2" style="margin-top:1rem">Three clear steps. No multi-month proposal theater. You leave each stage with sharper options — and full control of whether to continue.</p>
+        <h2 id="engage-heading" class="reveal d1">A Practical Path From Opportunity to Impact</h2>
+        <p class="lead reveal d2" style="margin-top:1rem">Three clear stages across validation, program delivery, change, or sustainability — with ownership, governance, and measurable outcomes at each step.</p>
       </div>
-
       <figure class="engage__banner reveal">
-        <img
-          src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1400&q=80&auto=format&fit=crop" alt="Enterprise leadership workshop and engagement session" width="1400" height="480" loading="lazy" decoding="async"
-        />
+        <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1400&q=80&auto=format&fit=crop" alt="Engagement workshop" width="1400" height="480" loading="lazy" decoding="async" />
       </figure>
-
       <div class="steps">
         <div class="step reveal">
           <div class="step__num">1</div>
-          <h3>Awareness Meeting</h3>
-          <p>A focused 30-minute conversation about your modernization context, constraints, and where Decision Twin thinking could reduce risk. No pitch deck. No hard close.</p>
-          <span class="step__time">~30 minutes</span>
+          <h3>Discover</h3>
+          <p>Understand your current state, priorities, constraints, and goals across validation, program delivery, change, or sustainability.</p>
+          <span class="step__time">Current state</span>
         </div>
         <div class="step reveal d1">
           <div class="step__num">2</div>
-          <h3>Art of the Possible</h3>
-          <p>A structured working session that maps your problem space to proven patterns — applications, data, AI, or transformation — and surfaces 2–3 high-confidence paths forward.</p>
-          <span class="step__time">Workshop format</span>
+          <h3>Define the Opportunity</h3>
+          <p>Identify the highest-value opportunities, establish priorities, and determine the fastest path to measurable impact.</p>
+          <span class="step__time">Prioritized path</span>
         </div>
         <div class="step reveal d2">
           <div class="step__num">3</div>
-          <h3>Proposed Solution</h3>
-          <p>A clear, scoped recommendation: what to test first, what success looks like, who is involved, and how we would engage. You decide with eyes open — not under pressure.</p>
-          <span class="step__time">Written & reviewable</span>
+          <h3>Shape the Solution</h3>
+          <p>Develop a scoped, staged plan with clear milestones, ownership, governance, and measurable outcomes.</p>
+          <span class="step__time">Scoped &amp; staged</span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ═══════════ 04 — WHERE WE ENGAGE ═══════════ -->
-  <section class="section" id="where-we-engage" aria-labelledby="where-heading">
-    <div class="container">
-      <div class="section-head section-head--center">
-        <div class="eyebrow reveal">Where We Engage</div>
-        <h2 id="where-heading" class="reveal d1">Across Every Business Function</h2>
-        <p class="lead reveal d2" style="margin-top:1rem">Modernization only sticks when it respects how the enterprise actually operates. We engage with the owners of the work — not only the IT org chart.</p>
-      </div>
-
-      <div class="functions">
-        <div class="function reveal">
-          <div class="function__media">
-            <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&q=80&auto=format&fit=crop" alt="" width="600" height="240" loading="lazy" decoding="async" />
-          </div>
-          <div class="function__body">
-            <div class="function__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
-            <h3>Finance & Controlling</h3>
-            <p class="function__owner">Typically engaged with: <span>CFO / Controllers / FP&A</span></p>
-          </div>
-        </div>
-        <div class="function reveal d1">
-          <div class="function__media">
-            <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=600&q=80&auto=format&fit=crop" alt="" width="600" height="240" loading="lazy" decoding="async" />
-          </div>
-          <div class="function__body">
-            <div class="function__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg></div>
-            <h3>Supply Chain & Operations</h3>
-            <p class="function__owner">Typically engaged with: <span>COO / Supply Chain VPs</span></p>
-          </div>
-        </div>
-        <div class="function reveal d2">
-          <div class="function__media">
-            <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=600&q=80&auto=format&fit=crop" alt="" width="600" height="240" loading="lazy" decoding="async" />
-          </div>
-          <div class="function__body">
-            <div class="function__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
-            <h3>HR & Workforce</h3>
-            <p class="function__owner">Typically engaged with: <span>CHRO / HRIS / People Ops</span></p>
-          </div>
-        </div>
-        <div class="function reveal">
-          <div class="function__media">
-            <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&q=80&auto=format&fit=crop" alt="" width="600" height="240" loading="lazy" decoding="async" />
-          </div>
-          <div class="function__body">
-            <div class="function__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
-            <h3>Customer & Commercial</h3>
-            <p class="function__owner">Typically engaged with: <span>CRO / Sales Ops / CS Leaders</span></p>
-          </div>
-        </div>
-        <div class="function reveal d1">
-          <div class="function__media">
-            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&q=80&auto=format&fit=crop" alt="" width="600" height="240" loading="lazy" decoding="async" />
-          </div>
-          <div class="function__body">
-            <div class="function__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
-            <h3>Technology & Architecture</h3>
-            <p class="function__owner">Typically engaged with: <span>CIO / CTO / Enterprise Architects</span></p>
-          </div>
-        </div>
-        <div class="function reveal d2">
-          <div class="function__media">
-            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&q=80&auto=format&fit=crop" alt="" width="600" height="240" loading="lazy" decoding="async" />
-          </div>
-          <div class="function__body">
-            <div class="function__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
-            <h3>Transformation Office</h3>
-            <p class="function__owner">Typically engaged with: <span>CDO / PMO / Transformation Leads</span></p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════ 05 — ACCELERATORS ═══════════ -->
   <section class="section section--alt" id="accelerators" aria-labelledby="accel-heading">
     <div class="container">
       <div class="section-head section-head--center">
-        <div class="eyebrow reveal">Solution Accelerators</div>
-        <h2 id="accel-heading" class="reveal d1">Pre-Built Capability, Not a Cold Start</h2>
-        <p class="lead reveal d2" style="margin-top:1rem">Reusable frameworks, partner IP, and field-tested patterns that compress time-to-value — so your program inherits years of prior art on day one.</p>
+        <div class="eyebrow reveal">Accelerators &amp; Enablers</div>
+        <h2 id="accel-heading" class="reveal d1">Proven Approaches and Intelligent Tools</h2>
+        <p class="lead reveal d2" style="margin-top:1rem">Reusable frameworks that compress time-to-value across validation, change, and sustainability.</p>
       </div>
-
       <div class="accel-tabs reveal" role="tablist" aria-label="Accelerator categories">
-        <button class="accel-tab is-active" role="tab" aria-selected="true" data-panel="panel-ai">AI Accelerators</button>
-        <button class="accel-tab" role="tab" aria-selected="false" data-panel="panel-data">Data Accelerators</button>
-        <button class="accel-tab" role="tab" aria-selected="false" data-panel="panel-process">Process Accelerators</button>
-        <button class="accel-tab" role="tab" aria-selected="false" data-panel="panel-platform">Platform Accelerators</button>
+        <button class="accel-tab is-active" role="tab" aria-selected="true" data-panel="panel-ai">AI &amp; Automation</button>
+        <button class="accel-tab" role="tab" aria-selected="false" data-panel="panel-intel">Transformation Intelligence</button>
+        <button class="accel-tab" role="tab" aria-selected="false" data-panel="panel-change">Change &amp; Adoption</button>
+        <button class="accel-tab" role="tab" aria-selected="false" data-panel="panel-rapid">Rapid-Start Solutions</button>
       </div>
-
       <div class="accel-panel is-active" id="panel-ai" role="tabpanel">
         <div class="accel-grid">
-          <div class="accel-card"><div class="accel-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4"/></svg></div><h3>AI Use-Case Prioritization Matrix</h3><p>Score and sequence AI opportunities by business value, data readiness, and risk — before you fund a single pilot.</p></div>
-          <div class="accel-card"><div class="accel-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a4 4 0 0 1 4 4v2a4 4 0 0 1-8 0V6a4 4 0 0 1 4-4z"/><path d="M16 14H8a4 4 0 0 0-4 4v2h16v-2a4 4 0 0 0-4-4z"/></svg></div><h3>Generative AI Guardrails Kit</h3><p>Policy, prompt, and evaluation patterns for enterprise GenAI — so innovation doesn’t outrun governance.</p></div>
-          <div class="accel-card"><div class="accel-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div><h3>ML Ops Starter Patterns</h3><p>Deployment, monitoring, and model lifecycle templates proven across multi-environment enterprise stacks.</p></div>
-          <div class="accel-card"><div class="accel-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div><h3>Decision Twin AI Simulation Pack</h3><p>Pre-built scenarios to pressure-test AI-driven process changes against ODT/DTO before production exposure.</p></div>
-          <div class="accel-card"><div class="accel-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg></div><h3>Responsible AI Checklist</h3><p>Audit-ready controls for bias, explainability, data lineage, and human-in-the-loop design.</p></div>
-          <div class="accel-card"><div class="accel-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div><h3>Enterprise Copilot Blueprints</h3><p>Role-based copilot patterns for finance, supply chain, and operations — grounded in your process model.</p></div>
+          <div class="accel-card"><div class="accel-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4"/></svg></div><h3>AI-Driven Test Automation</h3><p>Accelerate validation cycles with intelligent automation that keeps pace with release frequency.</p></div>
+          <div class="accel-card"><div class="accel-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M18 17V9M13 17V5M8 17v-3"/></svg></div><h3>ESG Data Platform &amp; AI Insights</h3><p>Connect sustainability data to dashboards and anomaly detection so reporting becomes action.</p></div>
         </div>
       </div>
-
-      <div class="accel-panel" id="panel-data" role="tabpanel" hidden>
+      <div class="accel-panel" id="panel-intel" role="tabpanel" hidden>
         <div class="accel-grid">
-          <div class="accel-card"><div class="accel-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg></div><h3>Data Lakehouse Reference Architecture</h3><p>Battle-tested patterns for lakes, warehouses, and hybrid consumption layers at enterprise scale.</p></div>
-          <div class="accel-card"><div class="accel-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><h3>Data Quality Scorecard</h3><p>Dimension-based quality framework — completeness, accuracy, timeliness — with remediation playbooks.</p></div>
-          <div class="accel-card"><div class="accel-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div><h3>Master Data Governance Kit</h3><p>Ownership models, stewardship roles, and golden-record patterns for multi-domain MDM.</p></div>
-          <div class="accel-card"><div class="accel-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div><h3>Real-Time Pipeline Templates</h3><p>Streaming and CDC patterns for operational analytics without destabilizing source systems.</p></div>
-          <div class="accel-card"><div class="accel-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M18 17V9M13 17V5M8 17v-3"/></svg></div><h3>BI Semantic Layer Starter</h3><p>Metric definitions and semantic models so every dashboard speaks the same business language.</p></div>
-          <div class="accel-card"><div class="accel-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1"/></svg></div><h3>Migration Runbooks</h3><p>Phased data migration playbooks with validation gates, rollback criteria, and cutover checklists.</p></div>
+          <div class="accel-card"><div class="accel-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><path d="M6 21V9a9 9 0 0 0 9 9"/></svg></div><h3>Process Intelligence / Process Mining (PAPM)</h3><p>Surface as-is process reality so validation and change are grounded in how work actually happens.</p></div>
+          <div class="accel-card"><div class="accel-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div><h3>Transformation Control Tower</h3><p>Executive dashboards for priorities, risks, dependencies, and value — not just project status.</p></div>
         </div>
       </div>
-
-      <div class="accel-panel" id="panel-process" role="tabpanel" hidden>
+      <div class="accel-panel" id="panel-change" role="tabpanel" hidden>
         <div class="accel-grid">
-          <div class="accel-card"><div class="accel-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><path d="M6 21V9a9 9 0 0 0 9 9"/></svg></div><h3>Process Mining Starter Pack</h3><p>Discovery templates and KPI libraries to surface as-is process reality before redesign begins.</p></div>
-          <div class="accel-card"><div class="accel-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div><h3>Enterprise Process Architecture</h3><p>Reference process maps and capability models for complex, multi-entity organizations.</p></div>
-          <div class="accel-card"><div class="accel-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/></svg></div><h3>RPA & Hyper-Automation Catalog</h3><p>Prioritized automation candidates mapped to process pain, volume, and ROI — not bot sprawl.</p></div>
-          <div class="accel-card"><div class="accel-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div><h3>Continuous Improvement Cadence</h3><p>Kaizen workshop formats and operating rhythms that keep process gains from decaying post-go-live.</p></div>
-          <div class="accel-card"><div class="accel-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div><h3>Business Validation Testing Framework</h3><p>Scenario libraries and acceptance patterns that prove process change before full cutover.</p></div>
-          <div class="accel-card"><div class="accel-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div><h3>ODT / DTO Process Twin Pack</h3><p>Simulation scenarios that let you test process redesign impact across applications and data before commit.</p></div>
+          <div class="accel-card"><div class="accel-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div><h3>Change Strategy &amp; Communication Blueprint</h3><p>Structured Prosci® / ADKAR change design so adoption is planned, measured, and owned.</p></div>
+          <div class="accel-card"><div class="accel-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div><h3>Continuous Quality Governance Framework</h3><p>Quality gates embedded through the lifecycle — not a final checkpoint after delivery.</p></div>
         </div>
       </div>
-
-      <div class="accel-panel" id="panel-platform" role="tabpanel" hidden>
+      <div class="accel-panel" id="panel-rapid" role="tabpanel" hidden>
         <div class="accel-grid">
-          <div class="accel-card"><div class="accel-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg></div><h3>Cloud Migration Playbooks</h3><p>Private, public, and hybrid migration patterns focused on ROI, security, and operational readiness.</p></div>
-          <div class="accel-card"><div class="accel-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div><h3>ERP Implementation Accelerators</h3><p>Reusable configuration, integration, and testing assets that compress ERP and CRM delivery cycles.</p></div>
-          <div class="accel-card"><div class="accel-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><h3>Integration Security Baseline</h3><p>API, identity, and data-exchange controls aligned to enterprise security and compliance standards.</p></div>
-          <div class="accel-card"><div class="accel-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div><h3>Custom App Scaffolding</h3><p>Accelerated solution development frameworks for high-quality, business-value-driven custom apps.</p></div>
-          <div class="accel-card"><div class="accel-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg></div><h3>Partner IP Integration Packs</h3><p>Pre-validated integration patterns with strategic platform partners for faster, lower-risk implementations.</p></div>
-          <div class="accel-card"><div class="accel-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div><h3>Release & Cutover Toolkit</h3><p>Go-live checklists, war-room protocols, and rollback criteria for mission-critical platform launches.</p></div>
+          <div class="accel-card"><div class="accel-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div><h3>Carbon Accounting Proof of Concept</h3><p>A 4–6 week engagement to deploy Microsoft Sustainability Manager using client data.</p></div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <section class="cta" id="cta" aria-labelledby="cta-heading">
+    <div class="cta__photo" aria-hidden="true">
+      <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1600&q=80&auto=format&fit=crop" alt="" width="1600" height="900" loading="lazy" decoding="async" />
+    </div>
+    <div class="cta__glow" aria-hidden="true"></div>
+    <div class="container" style="position:relative;z-index:2">
+      <div class="eyebrow eyebrow--light reveal">Start the Conversation</div>
+      <h2 id="cta-heading" class="reveal d1">Ready to make transformation deliver <span class="highlight">measurable value</span>?</h2>
+      <p class="lead reveal d2">Talk with TruVs about validating your systems, strengthening program execution, accelerating adoption, or turning sustainability goals into measurable action.</p>
+      <div class="reveal d3">
+        <a href="contact.html" class="btn btn--primary">Contact TruVs
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+      <div class="trust reveal d4">
+        <div class="trust__item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          WMBE Certified
+        </div>
+        <div class="trust__item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
+          Fortune 500 Experience
+        </div>
+      </div>
+      <p class="tagline reveal d5"><span>Business First.</span> Technology Next. <span>Results Always.</span></p>
     </div>
   </section>
 
@@ -2247,7 +2107,7 @@
   <div class="related-offerings__inner">
     <p class="related-offerings__eyebrow">Explore the suite</p>
     <h2 id="related-offerings-heading">Other offerings</h2>
-    <p class="related-offerings__lead">Lead, Core, and Supporting Offerings work as one modernization stack. Open another view without leaving the conversation.</p>
+    <p class="related-offerings__lead">Lead, Core, and Supporting Offerings work as one modernization stack. Jump to another view without leaving the conversation.</p>
     <div class="related-offerings__grid">
       <article class="related-offerings__card">
         <span class="related-offerings__pill">Lead Offering</span>
@@ -2264,7 +2124,7 @@
       <article class="related-offerings__card">
         <span class="related-offerings__pill">Supporting Offerings</span>
         <h3>Testing, Change, Sustainability</h3>
-        <p>The enablement layer that makes modernization stick — expanded content will land here as it is approved.</p>
+        <p>Business Validation and Testing, Program and Change Management, and Sustainability Transformation — the disciplines that make transformation stick.</p>
         <a href="support-offerings.html" class="nb-arrow-button-v4" style="text-decoration:none;color:inherit"><div class="nb-arrow-button-v4__icon nb-arrow-button-v4__icon--duplicate"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11.293 4.707 17.586 11H4v2h13.586l-6.293 6.293 1.414 1.414L21.414 12l-8.707-8.707-1.414 1.414z"/></svg></div><div class="nb-arrow-button-v4__text"><span>View Supporting Offerings</span></div><div class="nb-arrow-button-v4__icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11.293 4.707 17.586 11H4v2h13.586l-6.293 6.293 1.414 1.414L21.414 12l-8.707-8.707-1.414 1.414z"/></svg></div></a>
       </article>
     </div>
@@ -2272,43 +2132,96 @@
 </section>
 
 
-  <!-- ═══════════ FOOTER CTA ═══════════ -->
-  <section class="cta" id="cta" aria-labelledby="cta-heading">
-    <div class="cta__photo" aria-hidden="true">
-      <img
-        src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1600&q=80&auto=format&fit=crop" alt="" width="1600" height="900" loading="lazy" decoding="async"
-      />
-    </div>
-    <div class="cta__glow" aria-hidden="true"></div>
-    <div class="container" style="position:relative;z-index:2">
-      <div class="eyebrow eyebrow--light reveal">Start the Conversation</div>
-      <h2 id="cta-heading" class="reveal d1">Start With an <span class="highlight">Awareness Meeting</span></h2>
-      <p class="lead reveal d2">30 minutes. No commitment. Walk away with a sharper view of what modernization could look like for your enterprise.</p>
-      <div class="reveal d3">
-        <a href="contact.html" class="btn btn--primary" target="_blank" rel="noopener noreferrer">Book a Conversation
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+<footer id="brx-footer" class="truvs-footer" role="contentinfo">
+  <div class="truvs-footer__inner">
+    <div class="truvs-footer__top">
+      <div class="truvs-footer__brand">
+        <a href="home.html" class="truvs-footer__logo" aria-label="TruVs home"><img
+            src="assets/remote/wp-content/uploads/2026/03/ss-3.webp" width="160" height="160" alt="TruVs" decoding="async" loading="lazy"
+          />
         </a>
       </div>
 
-      <div class="trust reveal d4">
-        <div class="trust__item">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-          WMBE Certified
-        </div>
-        <div class="trust__item">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
-          Fortune 500 Experience
-        </div>
-        <div class="trust__item">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-          5 Global Delivery Centers
-        </div>
+      <div class="truvs-footer__col">
+                <h5 class="truvs-footer__heading">Offerings</h5>
+        <ul class="truvs-footer__list">
+          <li><a href="bms.html">Business Process Modernization</a></li>
+          <li><a href="support-offerings.html">Supporting Offerings</a></li>
+<li><a href="core-offerings.html#application-modernization">Application Modernization</a></li>
+          <li><a href="core-offerings.html#data-modernization">Data Modernization</a></li>
+          <li><a href="core-offerings.html#ai-transformation">AI Transformation</a></li>
+          <li><a href="core-offerings.html#offerings">Strategy and Planning</a></li>
+          <li><a href="core-offerings.html#offerings">Business Validation and Testing</a></li>
+          <li><a href="core-offerings.html#offerings">Program and Change Management</a></li>
+        </ul>
       </div>
 
-      <p class="tagline reveal d5"><span>Business First.</span> Technology Next. <span>Results Always.</span></p>
-    </div>
-  </section>
 
+      <div class="truvs-footer__col">
+        <h5 class="truvs-footer__heading">Company</h5>
+        <ul class="truvs-footer__list">
+          <li><a href="about-us.html">About Us</a></li>
+          <li><a href="careers.html">Careers</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="partnerships.html">Partnerships</a></li>
+        </ul>
+      </div>
+
+      <div class="truvs-footer__col">
+        <h5 class="truvs-footer__heading">Resources</h5>
+        <ul class="truvs-footer__list">
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="case-studies.html">Case Studies</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="truvs-footer__mid">
+      <div class="truvs-footer__meta">
+        <h5 class="truvs-footer__heading">Office</h5>
+        <p>USA · Canada · India · Singapore</p>
+      </div>
+      <div class="truvs-footer__meta">
+        <h5 class="truvs-footer__heading">Email us</h5>
+        <p><a href="mailto:info@truvs.com">info@truvs.com</a></p>
+      </div>
+      <div class="truvs-footer__meta">
+        <h5 class="truvs-footer__heading">Call Us</h5>
+        <p><a href="tel:+18559987887">+1 (855) 998-7887</a></p>
+      </div>
+      <div class="truvs-footer__meta">
+        <h5 class="truvs-footer__heading">Social Links</h5>
+        <ul class="truvs-footer__social" aria-label="Social media">
+          <li><a href="https://www.linkedin.com/company/truvs" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.88 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8.5h4V23h-4V8.5zM8.5 8.5h3.8v2h.05c.53-1 1.84-2.05 3.79-2.05 4.05 0 4.8 2.67 4.8 6.15V23h-4v-6.5c0-1.55-.03-3.55-2.16-3.55-2.16 0-2.49 1.69-2.49 3.43V23h-4V8.5z"/></svg>
+            </a>
+          </li>
+          <li><a href="https://www.facebook.com/TruVsSeattle" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0 0 22 12z"/></svg>
+            </a>
+          </li>
+          <li><a href="https://x.com/TrueValueSols" target="_blank" rel="noopener noreferrer" aria-label="X"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M18.9 2H22l-6.8 7.8L23 22h-6.6l-5.2-6.8L5.3 22H2.2l7.3-8.3L1 2h6.7l4.7 6.2L18.9 2zm-1.2 18h1.8L6.4 3.9H4.5L17.7 20z"/></svg>
+            </a>
+          </li>
+                  <li><a href="https://www.youtube.com/@infotruvs3990" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31.5 31.5 0 0 0 0 12a31.5 31.5 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31.5 31.5 0 0 0 24 12a31.5 31.5 0 0 0-.5-5.8zM9.75 15.5v-7l6.5 3.5-6.5 3.5z"/></svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="truvs-footer__bottom">
+    <div class="truvs-footer__inner truvs-footer__bottom-inner">
+            <div class="truvs-footer__copy">
+        <span>© 2026 TruVs Inc. All rights reserved.</span>
+        <span class="truvs-footer__credit">Designed And Developed By <a href="https://brandsynthesisglobal.com/" target="_blank" rel="noopener noreferrer">Brand Synthesis Global</a></span>
+      </div>
+      <div class="truvs-footer__legal">
+        <a href="terms.html">Terms of Use</a>
+        <a href="privacy.html">Privacy Policy</a>
+      </div>
+    </div>
+  </div>
+</footer>
   <script>
     (function () {
       'use strict';
@@ -2444,19 +2357,18 @@
 
         // Deep-link from homepage / nav: #application-modernization, #data-modernization, etc.
         const offerHashMap = {
-          'application-modernization': '1',
-          'data-modernization': '2',
-          'ai-transformation': '3',
-          'transformation-services': '4',
-          'transformation-advisory': '4',
+          'bvt': '1',
+          'business-validation-and-testing': '1',
+          'pcm': '2',
+          'program-and-change-management': '2',
+          'sustain': '3',
+          'sustainability-transformation': '3',
           'offer-panel-1': '1',
           'offer-panel-2': '2',
           'offer-panel-3': '3',
-          'offer-panel-4': '4',
           'offer-tab-1': '1',
           'offer-tab-2': '2',
-          'offer-tab-3': '3',
-          'offer-tab-4': '4'
+          'offer-tab-3': '3'
         };
         function scrollOfferIntoView(id) {
           const target = document.getElementById(id);
@@ -2579,99 +2491,6 @@
       }
     })();
   </script>
-
-<footer id="brx-footer" class="truvs-footer" role="contentinfo">
-  <div class="truvs-footer__inner">
-    <div class="truvs-footer__top">
-      <div class="truvs-footer__brand">
-        <a href="home.html" class="truvs-footer__logo" aria-label="TruVs home"><img
-            src="assets/remote/wp-content/uploads/2026/03/ss-3.webp" width="160" height="160" alt="TruVs" decoding="async" loading="lazy"
-          />
-        </a>
-      </div>
-
-      <div class="truvs-footer__col">
-                <h5 class="truvs-footer__heading">Offerings</h5>
-        <ul class="truvs-footer__list">
-          <li><a href="bms.html">Business Process Modernization</a></li>
-          <li><a href="support-offerings.html">Supporting Offerings</a></li>
-<li><a href="core-offerings.html#application-modernization">Application Modernization</a></li>
-          <li><a href="core-offerings.html#data-modernization">Data Modernization</a></li>
-          <li><a href="core-offerings.html#ai-transformation">AI Transformation</a></li>
-          <li><a href="core-offerings.html#offerings">Strategy and Planning</a></li>
-          <li><a href="core-offerings.html#offerings">Business Validation and Testing</a></li>
-          <li><a href="core-offerings.html#offerings">Program and Change Management</a></li>
-        </ul>
-      </div>
-
-
-      <div class="truvs-footer__col">
-        <h5 class="truvs-footer__heading">Company</h5>
-        <ul class="truvs-footer__list">
-          <li><a href="about-us.html">About Us</a></li>
-          <li><a href="careers.html">Careers</a></li>
-          <li><a href="contact.html">Contact</a></li>
-          <li><a href="partnerships.html">Partnerships</a></li>
-        </ul>
-      </div>
-
-      <div class="truvs-footer__col">
-        <h5 class="truvs-footer__heading">Resources</h5>
-        <ul class="truvs-footer__list">
-          <li><a href="blog.html">Blog</a></li>
-          <li><a href="case-studies.html">Case Studies</a></li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="truvs-footer__mid">
-      <div class="truvs-footer__meta">
-        <h5 class="truvs-footer__heading">Office</h5>
-        <p>USA · Canada · India · Singapore</p>
-      </div>
-      <div class="truvs-footer__meta">
-        <h5 class="truvs-footer__heading">Email us</h5>
-        <p><a href="mailto:info@truvs.com">info@truvs.com</a></p>
-      </div>
-      <div class="truvs-footer__meta">
-        <h5 class="truvs-footer__heading">Call Us</h5>
-        <p><a href="tel:+18559987887">+1 (855) 998-7887</a></p>
-      </div>
-      <div class="truvs-footer__meta">
-        <h5 class="truvs-footer__heading">Social Links</h5>
-        <ul class="truvs-footer__social" aria-label="Social media">
-          <li><a href="https://www.linkedin.com/company/truvs" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.88 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8.5h4V23h-4V8.5zM8.5 8.5h3.8v2h.05c.53-1 1.84-2.05 3.79-2.05 4.05 0 4.8 2.67 4.8 6.15V23h-4v-6.5c0-1.55-.03-3.55-2.16-3.55-2.16 0-2.49 1.69-2.49 3.43V23h-4V8.5z"/></svg>
-            </a>
-          </li>
-          <li><a href="https://www.facebook.com/TruVsSeattle" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0 0 22 12z"/></svg>
-            </a>
-          </li>
-          <li><a href="https://x.com/TrueValueSols" target="_blank" rel="noopener noreferrer" aria-label="X"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M18.9 2H22l-6.8 7.8L23 22h-6.6l-5.2-6.8L5.3 22H2.2l7.3-8.3L1 2h6.7l4.7 6.2L18.9 2zm-1.2 18h1.8L6.4 3.9H4.5L17.7 20z"/></svg>
-            </a>
-          </li>
-                  <li><a href="https://www.youtube.com/@infotruvs3990" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31.5 31.5 0 0 0 0 12a31.5 31.5 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31.5 31.5 0 0 0 24 12a31.5 31.5 0 0 0-.5-5.8zM9.75 15.5v-7l6.5 3.5-6.5 3.5z"/></svg>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-
-  <div class="truvs-footer__bottom">
-    <div class="truvs-footer__inner truvs-footer__bottom-inner">
-            <div class="truvs-footer__copy">
-        <span>© 2026 TruVs Inc. All rights reserved.</span>
-        <span class="truvs-footer__credit">Designed And Developed By <a href="https://brandsynthesisglobal.com/" target="_blank" rel="noopener noreferrer">Brand Synthesis Global</a></span>
-      </div>
-      <div class="truvs-footer__legal">
-        <a href="terms.html">Terms of Use</a>
-        <a href="privacy.html">Privacy Policy</a>
-      </div>
-    </div>
-  </div>
-</footer>
-
-
-<script src="shared/site-chrome.js?v=28" defer></script>
+<script src="shared/site-chrome.js?v=30" defer></script>
 </body>
 </html>
