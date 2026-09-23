@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 72 28">
+  <defs>
+    <mask id="ibm">
+      <rect width="72" height="28" fill="black"/>
+      <text x="2" y="23" font-family="Arial Black, Arial, Helvetica, sans-serif" font-size="24" font-weight="800" fill="white">IBM</text>
+    </mask>
+  </defs>
+  <g mask="url(#ibm)">
+    <rect width="72" height="28" fill="#0f62fe"/>
+    <g fill="#fff">
+      <rect y="3" width="72" height="1.6"/>
+      <rect y="7" width="72" height="1.6"/>
+      <rect y="11" width="72" height="1.6"/>
+      <rect y="15" width="72" height="1.6"/>
+      <rect y="19" width="72" height="1.6"/>
+      <rect y="23" width="72" height="1.6"/>
+    </g>
+  </g>
+</svg>

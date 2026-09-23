@@ -244,13 +244,13 @@ html:has(#bpm-service-landing) {
 .bpm-service-landing-eyebrow {
   display: inline-block;
   font-family: var(--bpm-service-landing-font-body) !important;
-  font-size: 14px;
-  font-weight: 600;
-  letter-spacing: 0.12em;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--bpm-service-landing-primary-dark) !important;
   margin-bottom: 0.875rem;
-  padding: 0.35rem 0.9rem;
+  padding: 10px 20px;
   background: var(--bpm-service-landing-primary-soft);
   border-radius: 999px;
 }
@@ -2036,7 +2036,7 @@ html:has(#bpm-service-landing) {
   }
 
   .bpm-service-landing-eyebrow {
-    font-size: 14px;
+    font-size: 15px;
   }
 
   .bpm-service-landing-trust-bar span {
@@ -12816,32 +12816,33 @@ body:has(.navbar.fixed-top) #brx-content .bpm-service-landing .bpm-service-landi
 .bpm-service-landing-partner-card__logo {
   display: flex;
   align-items: center;
-  justify-content: center;
-  width: 2.75rem;
-  height: 2.75rem;
-  border-radius: 50%;
-  background: #f3f4f6;
-  flex-shrink: 0;
+  justify-content: flex-start;
+  width: auto;
+  max-width: 11rem;
+  height: 2.5rem;
+  padding: 0.2rem 0.45rem;
+  border-radius: 0.55rem;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  flex-shrink: 1;
+  min-width: 0;
 }
 
 .bpm-service-landing-partner-card__logo--wide {
-  width: auto;
-  min-width: 2.75rem;
-  padding: 0 0.35rem;
-  border-radius: 999px;
+  max-width: 13.5rem;
 }
 
 .bpm-service-landing-partner-card__logo img {
   display: block;
-  width: 1.65rem;
-  height: 1.65rem;
+  width: auto;
+  height: 1.55rem;
+  max-width: 100%;
   object-fit: contain;
 }
 
 .bpm-service-landing-partner-card__logo--wide img {
-  width: auto;
-  height: 1.35rem;
-  max-width: 2.75rem;
+  height: 1.45rem;
+  max-width: 12.5rem;
 }
 
 .bpm-service-landing-partner-card__status {
@@ -14118,8 +14119,9 @@ html:has(#brx-content .bpm-service-landing) {
         </div>
       </div>
 
-      <aside class="bpm-service-landing-benefits-detail" data-bpm-service-landing-benefits-detail aria-live="polite"><p class="bpm-service-landing-benefits-detail__eyebrow">Client outcomes</p>
+      <aside class="bpm-service-landing-benefits-detail" data-bpm-service-landing-benefits-detail aria-live="polite">
         <div class="bpm-service-landing-benefits-detail__body">
+          <p class="bpm-service-landing-benefits-detail__eyebrow">Client outcomes</p>
           <span class="bpm-service-landing-benefits-detail__num">01</span>
           <h3 class="bpm-service-landing-benefits-detail__title">Reduced Cycle Times (30–50%)</h3>
           <p class="bpm-service-landing-benefits-detail__text">Process Mining exposes the true time-cost of every step, handoff, and exception path. Redesign and automation compress end-to-end cycle times — in manufacturing, procurement, and service delivery — by 30–50% on average.</p>
@@ -14244,7 +14246,7 @@ html:has(#brx-content .bpm-service-landing) {
             <div class="bpm-service-landing-partner-card__face bpm-service-landing-partner-card__face--front">
           <div class="bpm-service-landing-partner-card__head">
             <div class="bpm-service-landing-partner-card__logo">
-              <img referrerpolicy="no-referrer" decoding="async" loading="eager" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20role%3D%22img%22%20aria-label%3D%22Celonis%22%3E%0A%20%20%3Cpath%20fill%3D%22%23FF007A%22%20d%3D%22M12%202C6.48%202%202%206.48%202%2012s4.48%2010%2010%2010%2010-4.48%2010-10S17.52%202%2012%202zm4.2%2014.2c-1.1%201.1-2.62%201.8-4.2%201.8-3.31%200-6-2.69-6-6s2.69-6%206-6c1.58%200%203.1.69%204.2%201.8l-1.4%201.4A3.978%203.978%200%200%200%2012%208c-2.21%200-4%201.79-4%204s1.79%204%204%204c1.04%200%202.01-.4%202.75-1.1l-1.55-1.5H12v-2h4.6l-.4%203.8z%22%2F%3E%0A%3C%2Fsvg%3E" alt="Celonis logo" width="28" height="28" decoding="async">
+              <img referrerpolicy="no-referrer" decoding="async" loading="eager" src="assets/images/partners/celonis.svg" alt="Celonis logo" width="28" height="28" decoding="async">
             </div>
             <span class="bpm-service-landing-partner-card__status"><i class="fas fa-certificate" aria-hidden="true"></i> Certified</span>
           </div>
@@ -14274,7 +14276,7 @@ html:has(#brx-content .bpm-service-landing) {
             <div class="bpm-service-landing-partner-card__face bpm-service-landing-partner-card__face--front">
           <div class="bpm-service-landing-partner-card__head">
             <div class="bpm-service-landing-partner-card__logo">
-              <img referrerpolicy="no-referrer" decoding="async" loading="eager" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20role%3D%22img%22%20aria-label%3D%22SAP%22%3E%0A%20%20%3Cpath%20fill%3D%22%230FAAFF%22%20d%3D%22M12%202%202%207v10l10%205%2010-5V7L12%202z%22%2F%3E%0A%20%20%3Cpath%20fill%3D%22%23F0AB00%22%20d%3D%22M12%204.5%204.5%208.5v7L12%2019.5%2019.5%2015.5v-7L12%204.5z%22%2F%3E%0A%20%20%3Cpath%20fill%3D%22%23fff%22%20d%3D%22M12%207%207.5%209.5v5L12%2017l4.5-2.5v-5L12%207z%22%2F%3E%0A%3C%2Fsvg%3E" alt="SAP Signavio logo" width="28" height="28" decoding="async">
+              <img referrerpolicy="no-referrer" decoding="async" loading="eager" src="assets/images/partners/sap-signavio.svg" alt="SAP Signavio logo" width="28" height="28" decoding="async">
             </div>
             <span class="bpm-service-landing-partner-card__status"><i class="fas fa-project-diagram" aria-hidden="true"></i> Simulation</span>
           </div>
@@ -14304,7 +14306,7 @@ html:has(#brx-content .bpm-service-landing) {
             <div class="bpm-service-landing-partner-card__face bpm-service-landing-partner-card__face--front">
           <div class="bpm-service-landing-partner-card__head">
             <div class="bpm-service-landing-partner-card__logo">
-              <img referrerpolicy="no-referrer" decoding="async" loading="eager" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20role%3D%22img%22%20aria-label%3D%22IBM%22%3E%0A%20%20%3Cpath%20fill%3D%22%23052FAD%22%20d%3D%22M0%206h4v1H0V6zm0%202h4v1H0V8zm0%202h4v1H0v-1zm0%202h4v1H0v-1zm0%202h4v1H0v-1zm5-8h4v1H5V6zm0%202h4v1H5V8zm0%202h4v1H5v-1zm0%202h4v1H5v-1zm0%202h4v1H5v-1zm5-8h4v1h-4V6zm0%202h4v1h-4V8zm0%202h4v1h-4v-1zm0%202h4v1h-4v-1zm0%202h4v1h-4v-1z%22%2F%3E%0A%3C%2Fsvg%3E" alt="IBM logo" width="28" height="28" decoding="async">
+              <img referrerpolicy="no-referrer" decoding="async" loading="eager" src="assets/images/partners/ibm.svg" alt="IBM logo" width="28" height="28" decoding="async">
             </div>
             <span class="bpm-service-landing-partner-card__status"><i class="fas fa-shield-alt" aria-hidden="true"></i> Governed</span>
           </div>
@@ -14334,7 +14336,7 @@ html:has(#brx-content .bpm-service-landing) {
             <div class="bpm-service-landing-partner-card__face bpm-service-landing-partner-card__face--front">
           <div class="bpm-service-landing-partner-card__head">
             <div class="bpm-service-landing-partner-card__logo">
-              <img referrerpolicy="no-referrer" decoding="async" loading="eager" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20role%3D%22img%22%20aria-label%3D%22Microsoft%22%3E%0A%20%20%3Cpath%20fill%3D%22%23F25022%22%20d%3D%22M1%201h10v10H1V1z%22%2F%3E%0A%20%20%3Cpath%20fill%3D%22%237FBA00%22%20d%3D%22M13%201h10v10H13V1z%22%2F%3E%0A%20%20%3Cpath%20fill%3D%22%2300A4EF%22%20d%3D%22M1%2013h10v10H1V13z%22%2F%3E%0A%20%20%3Cpath%20fill%3D%22%23FFB900%22%20d%3D%22M13%2013h10v10H13V13z%22%2F%3E%0A%3C%2Fsvg%3E" alt="Microsoft Power Automate logo" width="28" height="28" decoding="async">
+              <img referrerpolicy="no-referrer" decoding="async" loading="eager" src="assets/images/partners/power-automate.svg" alt="Microsoft Power Automate logo" width="28" height="28" decoding="async">
             </div>
             <span class="bpm-service-landing-partner-card__status"><i class="fas fa-bolt" aria-hidden="true"></i> M365-ready</span>
           </div>
@@ -14364,7 +14366,7 @@ html:has(#brx-content .bpm-service-landing) {
             <div class="bpm-service-landing-partner-card__face bpm-service-landing-partner-card__face--front">
           <div class="bpm-service-landing-partner-card__head">
             <div class="bpm-service-landing-partner-card__logo">
-              <img referrerpolicy="no-referrer" decoding="async" loading="eager" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20role%3D%22img%22%20aria-label%3D%22rampp.ai%22%3E%0A%20%20%3Crect%20width%3D%2224%22%20height%3D%2224%22%20rx%3D%226%22%20fill%3D%22%2302369b%22%2F%3E%0A%20%20%3Cpath%20fill%3D%22%2365c324%22%20d%3D%22M7%2016V8h2.5l3.5%204.8V8H16v8h-2.4l-3.6-4.9V16H7z%22%2F%3E%0A%20%20%3Ccircle%20cx%3D%2218%22%20cy%3D%227%22%20r%3D%222%22%20fill%3D%22%23fff%22%2F%3E%0A%3C%2Fsvg%3E" alt="rampp.ai logo" width="28" height="28" decoding="async">
+              <img referrerpolicy="no-referrer" decoding="async" loading="eager" src="assets/images/partners/rampp.svg" alt="rampp.ai logo" width="28" height="28" decoding="async">
             </div>
             <span class="bpm-service-landing-partner-card__status bpm-service-landing-partner-card__status--accent"><i class="fas fa-star" aria-hidden="true"></i> Proprietary</span>
           </div>
@@ -14394,7 +14396,7 @@ html:has(#brx-content .bpm-service-landing) {
             <div class="bpm-service-landing-partner-card__face bpm-service-landing-partner-card__face--front">
           <div class="bpm-service-landing-partner-card__head">
             <div class="bpm-service-landing-partner-card__logo">
-              <img referrerpolicy="no-referrer" decoding="async" loading="eager" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20role%3D%22img%22%20aria-label%3D%22botminds.ai%22%3E%0A%20%20%3Crect%20width%3D%2224%22%20height%3D%2224%22%20rx%3D%226%22%20fill%3D%22%232563eb%22%2F%3E%0A%20%20%3Cpath%20fill%3D%22%23fff%22%20d%3D%22M7%208h10v2H7V8zm0%204h8v2H7v-2zm0%204h6v2H7v-2z%22%2F%3E%0A%20%20%3Ccircle%20cx%3D%2217%22%20cy%3D%2217%22%20r%3D%223%22%20fill%3D%22%2365c324%22%2F%3E%0A%3C%2Fsvg%3E" alt="botminds.ai logo" width="28" height="28" decoding="async">
+              <img referrerpolicy="no-referrer" decoding="async" loading="eager" src="assets/images/partners/botminds.svg" alt="botminds.ai logo" width="28" height="28" decoding="async">
             </div>
             <span class="bpm-service-landing-partner-card__status"><i class="fas fa-file-alt" aria-hidden="true"></i> Documents</span>
           </div>
@@ -14424,7 +14426,7 @@ html:has(#brx-content .bpm-service-landing) {
             <div class="bpm-service-landing-partner-card__face bpm-service-landing-partner-card__face--front">
           <div class="bpm-service-landing-partner-card__head">
             <div class="bpm-service-landing-partner-card__logo bpm-service-landing-partner-card__logo--wide">
-              <img referrerpolicy="no-referrer" decoding="async" loading="eager" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2040%2024%22%20role%3D%22img%22%20aria-label%3D%22Snowflake%20and%20Databricks%22%3E%0A%20%20%3Cpath%20fill%3D%22%2329B5E8%22%20d%3D%22M12%202v20M4%206l16%2012M4%2018l16-12M20%2012H4M20%206L4%2018M20%2018L4%206%22%2F%3E%0A%20%20%3Ccircle%20cx%3D%2212%22%20cy%3D%2212%22%20r%3D%222.5%22%20fill%3D%22%2329B5E8%22%2F%3E%0A%20%20%3Cpath%20fill%3D%22%23FF3621%22%20d%3D%22M28%204l8%2016h-4l-1.6-3.2H25.6L24%2020h-4l8-16zm0%209.2L26.4%2016h3.2L28%2013.2z%22%2F%3E%0A%3C%2Fsvg%3E" alt="Snowflake and Databricks logos" width="40" height="24" decoding="async">
+              <img referrerpolicy="no-referrer" decoding="async" loading="eager" src="assets/images/partners/snowflake-databricks.svg" alt="Snowflake and Databricks logos" width="40" height="24" decoding="async">
             </div>
             <span class="bpm-service-landing-partner-card__status"><i class="fas fa-database" aria-hidden="true"></i> DataOps</span>
           </div>
@@ -14454,7 +14456,7 @@ html:has(#brx-content .bpm-service-landing) {
             <div class="bpm-service-landing-partner-card__face bpm-service-landing-partner-card__face--front">
           <div class="bpm-service-landing-partner-card__head">
             <div class="bpm-service-landing-partner-card__logo bpm-service-landing-partner-card__logo--wide">
-              <img referrerpolicy="no-referrer" decoding="async" loading="eager" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2040%2024%22%20role%3D%22img%22%20aria-label%3D%22Apromore%20and%20Power%20BI%22%3E%0A%20%20%3Crect%20x%3D%222%22%20y%3D%2214%22%20width%3D%224%22%20height%3D%228%22%20rx%3D%221%22%20fill%3D%22%2302369b%22%2F%3E%0A%20%20%3Crect%20x%3D%228%22%20y%3D%2210%22%20width%3D%224%22%20height%3D%2212%22%20rx%3D%221%22%20fill%3D%22%2302369b%22%2F%3E%0A%20%20%3Crect%20x%3D%2214%22%20y%3D%226%22%20width%3D%224%22%20height%3D%2216%22%20rx%3D%221%22%20fill%3D%22%2365c324%22%2F%3E%0A%20%20%3Cpath%20fill%3D%22%23F2C811%22%20d%3D%22M24%204h12v16H24V4zm2%202v12h8V6h-8z%22%2F%3E%0A%20%20%3Cpath%20fill%3D%22%23000%22%20d%3D%22M26%2014h4v2h-4v-2zm0-4h6v2h-6v-2z%22%2F%3E%0A%3C%2Fsvg%3E" alt="Apromore and Power BI logos" width="40" height="24" decoding="async">
+              <img referrerpolicy="no-referrer" decoding="async" loading="eager" src="assets/images/partners/apromore-powerbi.svg" alt="Apromore and Power BI logos" width="40" height="24" decoding="async">
             </div>
             <span class="bpm-service-landing-partner-card__status"><i class="fas fa-chart-line" aria-hidden="true"></i> What-If</span>
           </div>
@@ -16361,15 +16363,18 @@ if (!window.__BPM_SERVICE_LANDING_BRICKS__.pageLoaded) {
 .bpm-service-landing-benefits-orbit__hub-metric strong {
   font-family: var(--bpm-service-landing-font-heading, "Century Gothic", sans-serif);
   font-size: 1.35rem;
-  color: #02369b;
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
   line-height: 1.1;
 }
 .bpm-service-landing-benefits-orbit__hub-metric span {
   font-size: 12px;
-  color: #4a5568;
+  color: rgba(255, 255, 255, 0.88) !important;
+  -webkit-text-fill-color: rgba(255, 255, 255, 0.88) !important;
 }
 .bpm-service-landing-benefits-detail__eyebrow {
-  display: inline-flex !important;
+  display: block !important;
+  width: fit-content;
   background: #65c324 !important;
   color: #fff !important;
   border-radius: 999px !important;
@@ -16377,7 +16382,7 @@ if (!window.__BPM_SERVICE_LANDING_BRICKS__.pageLoaded) {
   font-size: 11px !important;
   letter-spacing: .1em !important;
   text-transform: uppercase !important;
-  margin: 0 0 12px !important;
+  margin: 0 0 14px !important;
 }
 .bpm-service-landing-benefits-orbit__track {
   transition: stroke .8s ease;

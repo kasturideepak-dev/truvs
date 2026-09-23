@@ -2023,14 +2023,14 @@ nav.section-nav .section-nav__inner {
 .related-offerings__eyebrow {
   display: inline-flex;
   margin: 0 0 10px;
-  padding: 6px 12px;
+  padding: 10px 20px;
   border-radius: 999px;
   background: #02369b;
   color: #fff;
   font-family: var(--truvs-font-heading);
-  font-size: 11px;
+  font-size: 15px;
   font-weight: 700;
-  letter-spacing: .12em;
+  letter-spacing: .1em;
   text-transform: uppercase;
 }
 .related-offerings h2 {

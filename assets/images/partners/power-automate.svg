@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 168 32">
+  <g>
+    <rect fill="#f25022" x="0" y="6" width="9" height="9"/>
+    <rect fill="#7fba00" x="11" y="6" width="9" height="9"/>
+    <rect fill="#00a4ef" x="0" y="17" width="9" height="9"/>
+    <rect fill="#ffb900" x="11" y="17" width="9" height="9"/>
+  </g>
+  <path fill="#0f6cbd" d="M30 8l16 8-16 8z"/>
+  <path fill="#3aa0f3" d="M38 6l22 10-22 10z"/>
+  <text x="66" y="20" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="11" font-weight="600" fill="#5b5fc7">Power Automate</text>
+</svg>
