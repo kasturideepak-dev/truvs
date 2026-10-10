@@ -431,9 +431,9 @@
       'Contact TruVs',
       'Get Started',
       'Book a Conversation',
+      'Book a 15-min discovery call',
       'Book 15 min discovery call',
       'Start Your Project',
-      'Start with a 30-Min Awareness Meeting',
       'Discuss similar outcomes',
       'Schedule a meeting with TruVs',
     ];
