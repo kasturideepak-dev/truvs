@@ -2802,7 +2802,14 @@ engagement, and data-driven workforce planning.​</span></div></div></div></div
     function start(){if(!canPlay||playing)return;playing=true;timer=setInterval(function(){go(idx+1);},2800);var s=play.querySelector("svg");if(s)s.innerHTML='<rect class="tvic-icon-fill" x="1" y="0" width="4" height="14" rx="1.5"/><rect class="tvic-icon-fill" x="7.5" y="0" width="4" height="14" rx="1.5"/>';}
     cards.forEach(function(c){
       if(c.getAttribute("data-tvic-bound"))return;c.setAttribute("data-tvic-bound","1");
-      c.addEventListener("click",function(){stop();});
+      c.addEventListener("click",function(e){
+        var href=c.getAttribute("href");
+        if(!href||href.charAt(0)==="#")return;
+        e.preventDefault();
+        if(e.stopImmediatePropagation)e.stopImmediatePropagation();
+        stop();
+        window.location.href=href;
+      },true);
     });
     stage.addEventListener("touchstart",function(e){tx=e.touches[0].clientX;},{passive:true});
     stage.addEventListener("touchend",function(e){var dx=e.changedTouches[0].clientX-tx;if(Math.abs(dx)>48){stop();go(idx+(dx<0?1:-1));}},{passive:true});
